@@ -2,7 +2,7 @@
  * File:   main.c
  * Author: KIKI
  *
- * Created on 2019년 7월 27일 (토), 오전 12:05
+ * Created on 2019년 7월 27일 (토), 오전 9:33
  */
 
 
@@ -76,30 +76,30 @@
 
 void main(void) {
     
-    /* HFINTSOC */
-    OSCCON = 0x72;          /* 16MHz, Internal OSC */
+    /* 16MHz, Internal OSC */
+    OSCCON = 0x72;
             
     /* Disable Analog Input */    
-    ANSELH = 0x0;    
+    ANSEL = 0x0;
+    ANSELH = 0x0;
         
-    /* PB0-7 Output*/
+    /* PORTB Output */
     TRISB = 0x0;
-
-    uint8_t val = 0x01;    
-            
+    
+    /* PORTD Input */
+    TRISD = 0xFF;
+                
     while(1)
-    {
-        /* Turn on LED */
-        LATB = val;
+    {        
+        //LATB = ~PORTD;
         
-        /* Move */
-        val = val << 1;
-        
-        /* Overflow, reset value */
-        if(val == 0) val = 0x01;
-        
-        /* Delay */
-        __delay_ms(100);    /* Max value : 50,463,240 */
+        LATBbits.LB0 = ~PORTDbits.RD0;
+        LATBbits.LB1 = ~PORTDbits.RD1;        
+        LATBbits.LB3 = ~PORTDbits.RD3;
+        LATBbits.LB4 = ~PORTDbits.RD4;
+        LATBbits.LB5 = ~PORTDbits.RD5;
+        LATBbits.LB6 = ~PORTDbits.RD6;        
+        LATBbits.LB7 = ~PORTDbits.RD7;
     }    
    
     return;
