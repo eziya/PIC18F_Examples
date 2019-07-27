@@ -81,72 +81,73 @@ const uint8_t SEG_NUMS[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x
 /* P, L, A, Y */
 const uint8_t SEG_CHARS[4] = {0x8C, 0xC7, 0x88, 0x91};
 
-void main(void) 
-{    
+void main(void) {
     /* 16MHz, Internal OSC */
     OSCCON = 0x72;
-            
-    /* Disable Analog Input */    
+
+    /* Disable Analog Input */
     ANSEL = 0x0;
     ANSELH = 0x0;
-    
+
     /* RA0, RA1, RA2, RA3 Output */
     TRISA = 0xF0;
-    
+
     /* RB0-7 Output */
-    TRISB = 0x00;       
-     
-    /* Show 'PLAY' for 2 sec */
-    for(int i = 0; i < 500; i++)
-    {        
-        LATB = SEG_CHARS[0];     
-        LATA = (0x01 << 0);                
-        __delay_ms(1);
-        
-        LATB = SEG_CHARS[1];     
-        LATA = (0x01 << 1);                
-        __delay_ms(1);
-        
-        LATB = SEG_CHARS[2];     
-        LATA = (0x01 << 2);                
-        __delay_ms(1);
-        
-        LATB = SEG_CHARS[3];     
-        LATA = (0x01 << 3);                
-        __delay_ms(1);        
-    }
-        
-    while(1)
-    {   
+    TRISB = 0x00;
+
+    /* PORTD Input */
+    TRISD = 0xFF;
+
+    /* Wait RD0 Input */
+    while (PORTDbits.RD0 == 1);
+
+    while (1) {
+        /* Show 'PLAY' for 2 sec */
+        for (int i = 0; i < 500; i++) {
+            LATB = SEG_CHARS[0];
+            LATA = (0x01 << 0);
+            __delay_ms(1);
+
+            LATB = SEG_CHARS[1];
+            LATA = (0x01 << 1);
+            __delay_ms(1);
+
+            LATB = SEG_CHARS[2];
+            LATA = (0x01 << 2);
+            __delay_ms(1);
+
+            LATB = SEG_CHARS[3];
+            LATA = (0x01 << 3);
+            __delay_ms(1);
+        }
+
         /* Increase count from 0 to 9999 */
-        for (int i = 0; i < 10000; i++) 
-        {            
-            for (int j = 0; j < LOOP_NUM; j++) 
-            {
+        for (int i = 0; i < 10000; i++) {
+            for (int j = 0; j < LOOP_NUM; j++) {
                 int val = i;
-                
-                LATB = SEG_NUMS[val%10];     
-                LATA = (0x01 << 3);                
+
+                LATB = SEG_NUMS[val % 10];
+                LATA = (0x01 << 3);
                 __delay_ms(1);
                 val = val / 10;
-                
-                LATB = SEG_NUMS[val%10];     
-                LATA = (0x01 << 2);                
+
+                LATB = SEG_NUMS[val % 10];
+                LATA = (0x01 << 2);
                 __delay_ms(1);
                 val = val / 10;
-                
-                LATB = SEG_NUMS[val%10];     
-                LATA = (0x01 << 1);                
+
+                LATB = SEG_NUMS[val % 10];
+                LATA = (0x01 << 1);
                 __delay_ms(1);
                 val = val / 10;
-                
-                LATB = SEG_NUMS[val%10];     
-                LATA = (0x01 << 0);                
+
+                LATB = SEG_NUMS[val % 10];
+                LATA = (0x01 << 0);
                 __delay_ms(1);
             }
         }
     }
-    
-    
+
+
     return;
 }
