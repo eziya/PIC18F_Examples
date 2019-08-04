@@ -10,7 +10,7 @@
 void __interrupt(high_priority) highISR(void) {
     if (INTCONbits.INT0IF) {
         
-        __delay_ms(200);    //debounce
+        __delay_ms(100);    //button debounce
         
         if (INTCONbits.INT0IF) {
             LATBbits.LATB6 = ~LATBbits.LATB6;       //led6 toggle
@@ -24,7 +24,7 @@ void __interrupt(high_priority) highISR(void) {
 void __interrupt(low_priority) lowISR(void) {
     if (INTCON3bits.INT1F) {
         
-        __delay_ms(200);    //debounce
+        __delay_ms(100);    //button debounce
 
         if (INTCON3bits.INT1F) {
             
