@@ -13,7 +13,7 @@ void __interrupt() ISR(void) {
             LATBbits.LATB0 = ~LATBbits.LATB0;   //toggle led
         }
         
-        TMR0L = 5;  //preloading 255-5 = 250us
+        TMR0L = 6;  //preloading 256-6 = 250us
         INTCONbits.TMR0IF = 0;
     }
 }
@@ -37,7 +37,7 @@ void main(void) {
     INTCONbits.PEIE = 1;    //enable peripheral interrupt
     INTCONbits.GIE = 1;     //enable global interrupt
     
-    TMR0L = 5;  //preloading (255 - 5 = 250us)
+    TMR0L = 6;  //preloading (256 - 6 = 250us)
     T0CONbits.TMR0ON = 1;
 
     while (1) {
