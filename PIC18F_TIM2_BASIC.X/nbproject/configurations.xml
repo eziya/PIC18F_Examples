@@ -69,7 +69,7 @@
         <property key="define-macros" value=""/>
         <property key="disable-optimizations" value="true"/>
         <property key="extra-include-directories"
-                  value="D:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99;D:\Program Files (x86)\Microchip\xc8\v2.05\pic\include"/>
+                  value="D:\Program Files (x86)\Microchip\xc8\v2.05\pic\include;D:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99"/>
         <property key="favor-optimization-for" value="-speed,+space"/>
         <property key="garbage-collect-data" value="true"/>
         <property key="garbage-collect-functions" value="true"/>
