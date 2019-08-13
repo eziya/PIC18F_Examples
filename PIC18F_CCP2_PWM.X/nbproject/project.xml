@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>PIC18F_TIM2_PWM</name>
+            <name>PIC18F_CCP2_PWM</name>
             <creation-uuid>97cdbcf5-056f-427e-99e3-09d94f16f4ee</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
