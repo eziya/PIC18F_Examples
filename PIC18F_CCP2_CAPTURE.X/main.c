@@ -3,26 +3,24 @@
 
 char msgBuf[16];
 
-volatile uint16_t oldCCPR2, nowCCPR2, period;
-volatile uint8_t TMR1Count;
-volatile uint8_t lcdFlag;
+volatile uint16_t oldCCPR2, nowCCPR2, period; //variables to capture TMR1 and calculate period
 
-void CCP2_InitCapture();
-void printLCD();
+void CCP2_InitCapture(); //initialize CCP2 capture mode
+void printLCD(); //print period value
 
 void __interrupt() ISR(void) {
 
-    if (PIR2bits.CCP2IF) {
-        nowCCPR2 = CCPR2;
+    if (PIR2bits.CCP2IF) { //capture event
+        nowCCPR2 = CCPR2; //load current CCPR2 value
 
-        if (oldCCPR2 >= nowCCPR2) {
+        if (oldCCPR2 >= nowCCPR2) { //calculate period between two rising edge
             period = (65535 - oldCCPR2) + nowCCPR2;
         } else {
-            period = nowCCPR2 - oldCCPR2; //calculate period between two rising edge
+            period = nowCCPR2 - oldCCPR2;
         }
 
-        oldCCPR2 = nowCCPR2;
-        PIR2bits.CCP2IF = 0;
+        oldCCPR2 = nowCCPR2; //save current CCPR2 value
+        PIR2bits.CCP2IF = 0; //clear caputre flag
     }
 }
 
@@ -33,11 +31,11 @@ void main(void) {
     ANSEL = 0x0; //disable analog input     
     ANSELH = 0x0;
 
-    CLCD_Initialize();
-    CCP2_InitCapture();
+    CLCD_Initialize(); //initialize CLCD
+    CCP2_InitCapture(); //initialize caputre mode
 
-    while (1) {        
-        printLCD();
+    while (1) {
+        printLCD(); //print period value
         __delay_ms(1000);
     }
     return;
