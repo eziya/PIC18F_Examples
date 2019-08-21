@@ -1,8 +1,11 @@
 #include "main.h"
 
 volatile uint8_t flagINT0 = 0;
+uint8_t defaultDuty = 70;
 
-void __interrupt(high_priority) highISR(void) {
+void setPWMDuty(uint8_t duty);
+
+void __interrupt() ISR(void) {
     if (INTCONbits.INT0IF) {
         
         __delay_ms(100);    //button debounce
@@ -15,9 +18,7 @@ void __interrupt(high_priority) highISR(void) {
     }
 }
 
-void main(void) {
-    uint8_t duty;
-    uint16_t dutyVal;
+void main(void) {    
 
     OSCCON = 0x72; //16MHz, Internal OSC
 
@@ -40,24 +41,29 @@ void main(void) {
 
     T2CONbits.T2CKPS = 2; //Prescaler 1:16, 16MHz / 4 / 16 = 250kHz
     PR2 = 249; //4us * 250 = 1ms, PWM Freq = 1kHz      
-    duty = 70; //duty ration 70%
-    dutyVal = (PR2 + 1) * 4 / 100 * duty; //4*(PR2+1)*Duty Ratio
-    CCPR1L = dutyVal >> 2; //duty registers
-    CCP1CONbits.DC1B = (dutyVal & 0x03); //duty registers
+    
+    setPWMDuty(defaultDuty);
 
     T2CONbits.TMR2ON = 1;
     while (1) {
         if (flagINT0) {
             flagINT0 = 0;
-
-            CCP1CONbits.CCP1M = 0x0; //stop pwm
-            __delay_ms(5);
+            
+            CCP1CONbits.CCP1M = 0x0; //pwm off
+            __delay_ms(1);
 
             if (CCP1CONbits.P1M == 1) CCP1CONbits.P1M = 3; //switch to reverse
             else CCP1CONbits.P1M = 1; //switch to forward
-
-            CCP1CONbits.CCP1M = 0xC; //enable pwm
+            
+            CCP1CONbits.CCP1M = 0xC; //pwm on
         }
     }
     return;
+}
+
+void setPWMDuty(uint8_t duty)
+{    
+    uint16_t dutyVal = (PR2 + 1) * 4 / 100 * duty; //4*(PR2+1)*Duty Ratio
+    CCPR1L = dutyVal >> 2; //duty registers
+    CCP1CONbits.DC1B = (dutyVal & 0x03); //duty registers    
 }
