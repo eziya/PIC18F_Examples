@@ -1,0 +1,1327 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                               Wed Aug 28 23:31:53 2019
+
+Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
+     1                           	processor	18F45K20
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1,noexec
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     9                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    16                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    19                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    20                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    21                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1
+    22  0000                     
+    23                           ; Version 2.05
+    24                           ; Generated 20/12/2018 GMT
+    25                           ; 
+    26                           ; Copyright © 2018, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    27                           ; All rights reserved.
+    28                           ; 
+    29                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    30                           ; 
+    31                           ; Redistribution and use in source and binary forms, with or without modification, are
+    32                           ; permitted provided that the following conditions are met:
+    33                           ; 
+    34                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    35                           ;        conditions and the following disclaimer.
+    36                           ; 
+    37                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    38                           ;        of conditions and the following disclaimer in the documentation and/or other
+    39                           ;        materials provided with the distribution.
+    40                           ; 
+    41                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    42                           ;        software without specific prior written permission.
+    43                           ; 
+    44                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    45                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    46                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    47                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    48                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    49                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    50                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    51                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    52                           ; 
+    53                           ; 
+    54                           ; Code-generator required, PIC18F45K20 Definitions
+    55                           ; 
+    56                           ; SFR Addresses
+    57  0000                     _TXREG	set	4013
+    58  0000                     _RCSTAbits	set	4011
+    59  0000                     _SPBRG	set	4015
+    60  0000                     _BAUDCONbits	set	4024
+    61  0000                     _TXSTAbits	set	4012
+    62  0000                     _INTCONbits	set	4082
+    63  0000                     _PIE1bits	set	3997
+    64  0000                     _TRISCbits	set	3988
+    65  0000                     _ANSELH	set	3967
+    66  0000                     _ANSEL	set	3966
+    67  0000                     _OSCCON	set	4051
+    68  0000                     _RCREG	set	4014
+    69  0000                     _PIR1bits	set	3998
+    70                           
+    71                           	psect	smallconst
+    72  000600                     __psmallconst:
+    73                           	opt callstack 0
+    74  000600  00                 	db	0
+    75  000601                     STR_1:
+    76  000601  23                 	db	35
+    77  000602  23                 	db	35
+    78  000603  23                 	db	35
+    79  000604  20                 	db	32
+    80  000605  50                 	db	80	;'P'
+    81  000606  49                 	db	73	;'I'
+    82  000607  43                 	db	67	;'C'
+    83  000608  31                 	db	49	;'1'
+    84  000609  38                 	db	56	;'8'
+    85  00060A  66                 	db	102	;'f'
+    86  00060B  20                 	db	32
+    87  00060C  55                 	db	85	;'U'
+    88  00060D  41                 	db	65	;'A'
+    89  00060E  52                 	db	82	;'R'
+    90  00060F  54                 	db	84	;'T'
+    91  000610  20                 	db	32
+    92  000611  44                 	db	68	;'D'
+    93  000612  65                 	db	101	;'e'
+    94  000613  6D                 	db	109	;'m'
+    95  000614  6F                 	db	111	;'o'
+    96  000615  20                 	db	32
+    97  000616  23                 	db	35
+    98  000617  23                 	db	35
+    99  000618  23                 	db	35
+   100  000619  0D                 	db	13
+   101  00061A  0A                 	db	10
+   102  00061B  00                 	db	0
+   103                           
+   104                           ; #config settings
+   105  00061C  00                 	db	0	; dummy byte at the end
+   106  0000                     
+   107                           	psect	cinit
+   108  000808                     __pcinit:
+   109                           	opt callstack 0
+   110  000808                     start_initialization:
+   111                           	opt callstack 0
+   112  000808                     __initialization:
+   113                           	opt callstack 0
+   114                           
+   115                           ; Clear objects allocated to COMRAM (36 bytes)
+   116  000808  EE00  F001         	lfsr	0,__pbssCOMRAM
+   117  00080C  0E24               	movlw	36
+   118  00080E                     clear_0:
+   119  00080E  6AEE               	clrf	postinc0,c
+   120  000810  06E8               	decf	wreg,f,c
+   121  000812  E1FD               	bnz	clear_0
+   122  000814                     end_of_initialization:
+   123                           	opt callstack 0
+   124  000814                     __end_of__initialization:
+   125                           	opt callstack 0
+   126  000814  903B               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
+   127  000816  923B               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+   128  000818  0E00               	movlw	low (__Lsmallconst shr (0+16))
+   129  00081A  6EF8               	movwf	tblptru,c
+   130  00081C  0E06               	movlw	high __Lsmallconst
+   131  00081E  6EF7               	movwf	tblptrh,c
+   132  000820  0100               	movlb	0
+   133  000822  EF7D  F003         	goto	_main	;jump to C main() function
+   134                           
+   135                           	psect	bssCOMRAM
+   136  000001                     __pbssCOMRAM:
+   137                           	opt callstack 0
+   138  000001                     _uartFlag:
+   139                           	opt callstack 0
+   140  000001                     	ds	1
+   141  000002                     _ring_buffer:
+   142                           	opt callstack 0
+   143  000002                     	ds	34
+   144  000024                     main@data:
+   145                           	opt callstack 0
+   146  000024                     	ds	1
+   147                           
+   148                           	psect	cstackCOMRAM
+   149  000025                     __pcstackCOMRAM:
+   150                           	opt callstack 0
+   151  000025                     ring_buffer_is_full@buffer:
+   152                           	opt callstack 0
+   153                           
+   154                           ; 2 bytes @ 0x0
+   155  000025                     	ds	2
+   156  000027                     ??_ring_buffer_is_full:
+   157                           
+   158                           ; 1 bytes @ 0x2
+   159  000027                     	ds	3
+   160  00002A                     ring_buffer_queue@buffer:
+   161                           	opt callstack 0
+   162                           
+   163                           ; 2 bytes @ 0x5
+   164  00002A                     	ds	2
+   165  00002C                     ring_buffer_queue@data:
+   166                           	opt callstack 0
+   167                           
+   168                           ; 1 bytes @ 0x7
+   169  00002C                     	ds	1
+   170  00002D                     ??_ring_buffer_queue:
+   171                           
+   172                           ; 1 bytes @ 0x8
+   173  00002D                     	ds	1
+   174  00002E                     ??_ISR:
+   175                           
+   176                           ; 1 bytes @ 0x9
+   177  00002E                     	ds	4
+   178  000032                     UART_putch@ch:
+   179                           	opt callstack 0
+   180  000032                     ring_buffer_init@buffer:
+   181                           	opt callstack 0
+   182  000032                     ring_buffer_is_empty@buffer:
+   183                           	opt callstack 0
+   184                           
+   185                           ; 2 bytes @ 0xD
+   186  000032                     	ds	1
+   187  000033                     UART_puts@str:
+   188                           	opt callstack 0
+   189                           
+   190                           ; 2 bytes @ 0xE
+   191  000033                     	ds	1
+   192  000034                     
+   193                           ; 1 bytes @ 0xF
+   194  000034                     	ds	1
+   195  000035                     
+   196                           ; 1 bytes @ 0x10
+   197  000035                     	ds	1
+   198  000036                     ring_buffer_dequeue@buffer:
+   199                           	opt callstack 0
+   200                           
+   201                           ; 2 bytes @ 0x11
+   202  000036                     	ds	2
+   203  000038                     ring_buffer_dequeue@data:
+   204                           	opt callstack 0
+   205                           
+   206                           ; 2 bytes @ 0x13
+   207  000038                     	ds	2
+   208  00003A                     ??_ring_buffer_dequeue:
+   209                           
+   210                           ; 1 bytes @ 0x15
+   211  00003A                     	ds	1
+   212  00003B                     
+   213                           ; 1 bytes @ 0x16
+   214 ;;
+   215 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   216 ;;
+   217 ;; *************** function _main *****************
+   218 ;; Defined at:
+   219 ;;		line 21 in file "main.c"
+   220 ;; Parameters:    Size  Location     Type
+   221 ;;		None
+   222 ;; Auto vars:     Size  Location     Type
+   223 ;;		None
+   224 ;; Return value:  Size  Location     Type
+   225 ;;                  1    wreg      void 
+   226 ;; Registers used:
+   227 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   228 ;; Tracked objects:
+   229 ;;		On entry : 0/0
+   230 ;;		On exit  : 0/0
+   231 ;;		Unchanged: 0/0
+   232 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   233 ;;      Params:         0       0       0       0       0       0       0
+   234 ;;      Locals:         0       0       0       0       0       0       0
+   235 ;;      Temps:          0       0       0       0       0       0       0
+   236 ;;      Totals:         0       0       0       0       0       0       0
+   237 ;;Total ram usage:        0 bytes
+   238 ;; Hardware stack levels required when called:    5
+   239 ;; This function calls:
+   240 ;;		_UART_config
+   241 ;;		_UART_putch
+   242 ;;		_UART_puts
+   243 ;;		_ring_buffer_dequeue
+   244 ;;		_ring_buffer_init
+   245 ;; This function is called by:
+   246 ;;		Startup code after reset
+   247 ;; This function uses a non-reentrant model
+   248 ;;
+   249                           
+   250                           	psect	text0
+   251  0006FA                     __ptext0:
+   252                           	opt callstack 0
+   253  0006FA                     _main:
+   254                           	opt callstack 26
+   255                           
+   256                           ;main.c: 23:     OSCCON = 0x72;
+   257                           
+   258                           ;incstack = 0
+   259  0006FA  0E72               	movlw	114
+   260  0006FC  6ED3               	movwf	4051,c	;volatile
+   261                           
+   262                           ;main.c: 25:     ANSEL = 0x0;
+   263  0006FE  0E00               	movlw	0
+   264  000700  6E7E               	movwf	3966,c	;volatile
+   265                           
+   266                           ;main.c: 26:     ANSELH = 0x0;
+   267  000702  0E00               	movlw	0
+   268  000704  6E7F               	movwf	3967,c	;volatile
+   269                           
+   270                           ;main.c: 28:     ring_buffer_init(&ring_buffer);
+   271  000706  0E02               	movlw	low _ring_buffer
+   272  000708  6E32               	movwf	ring_buffer_init@buffer,c
+   273  00070A  0E00               	movlw	high _ring_buffer
+   274  00070C  6E33               	movwf	ring_buffer_init@buffer+1,c
+   275  00070E  ECF3  F003         	call	_ring_buffer_init	;wreg free
+   276                           
+   277                           ;main.c: 29:     UART_config();
+   278  000712  EC13  F004         	call	_UART_config	;wreg free
+   279                           
+   280                           ;main.c: 31:     UART_puts("### PIC18f UART Demo ###\r\n");
+   281  000716  0E01               	movlw	low STR_1
+   282  000718  6E33               	movwf	UART_puts@str,c
+   283  00071A  0E06               	movlw	high STR_1
+   284  00071C  6E34               	movwf	UART_puts@str+1,c
+   285  00071E  ECCA  F003         	call	_UART_puts	;wreg free
+   286  000722                     l973:
+   287                           
+   288                           ;main.c: 34:         if (uartFlag) {
+   289  000722  5001               	movf	_uartFlag,w,c
+   290  000724  B4D8               	btfsc	status,2,c
+   291  000726  D7FD               	goto	l973
+   292                           
+   293                           ;main.c: 35:             uartFlag = 0;
+   294  000728  0E00               	movlw	0
+   295  00072A  6E01               	movwf	_uartFlag,c
+   296                           
+   297                           ;main.c: 36:             static uint8_t data;;main.c: 37:             while (ring_buffer
+      +                          _dequeue(&ring_buffer, (char*) &data) > 0) {
+   298  00072C  D003               	goto	l979
+   299  00072E                     l977:
+   300                           
+   301                           ;main.c: 38:                 UART_putch(data);
+   302  00072E  5024               	movf	main@data,w,c
+   303  000730  EC22  F004         	call	_UART_putch
+   304  000734                     l979:
+   305                           
+   306                           ;main.c: 37:             while (ring_buffer_dequeue(&ring_buffer, (char*) &data) > 0) {
+   307  000734  0E02               	movlw	low _ring_buffer
+   308  000736  6E36               	movwf	ring_buffer_dequeue@buffer,c
+   309  000738  0E00               	movlw	high _ring_buffer
+   310  00073A  6E37               	movwf	ring_buffer_dequeue@buffer+1,c
+   311  00073C  0E24               	movlw	low main@data
+   312  00073E  6E38               	movwf	ring_buffer_dequeue@data,c
+   313  000740  0E00               	movlw	high main@data
+   314  000742  6E39               	movwf	ring_buffer_dequeue@data+1,c
+   315  000744  EC4B  F003         	call	_ring_buffer_dequeue	;wreg free
+   316  000748  0900               	iorlw	0
+   317  00074A  B4D8               	btfsc	status,2,c
+   318  00074C  D7EA               	goto	l973
+   319  00074E  D7EF               	goto	l977
+   320  000750                     __end_of_main:
+   321                           	opt callstack 0
+   322                           
+   323 ;; *************** function _ring_buffer_init *****************
+   324 ;; Defined at:
+   325 ;;		line 8 in file "ringbuffer.c"
+   326 ;; Parameters:    Size  Location     Type
+   327 ;;  buffer          2   13[COMRAM] PTR struct ring_buffer_t
+   328 ;;		 -> ring_buffer(34), 
+   329 ;; Auto vars:     Size  Location     Type
+   330 ;;		None
+   331 ;; Return value:  Size  Location     Type
+   332 ;;                  1    wreg      void 
+   333 ;; Registers used:
+   334 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+   335 ;; Tracked objects:
+   336 ;;		On entry : 0/0
+   337 ;;		On exit  : 0/0
+   338 ;;		Unchanged: 0/0
+   339 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   340 ;;      Params:         2       0       0       0       0       0       0
+   341 ;;      Locals:         0       0       0       0       0       0       0
+   342 ;;      Temps:          0       0       0       0       0       0       0
+   343 ;;      Totals:         2       0       0       0       0       0       0
+   344 ;;Total ram usage:        2 bytes
+   345 ;; Hardware stack levels used:    1
+   346 ;; Hardware stack levels required when called:    3
+   347 ;; This function calls:
+   348 ;;		Nothing
+   349 ;; This function is called by:
+   350 ;;		_main
+   351 ;; This function uses a non-reentrant model
+   352 ;;
+   353                           
+   354                           	psect	text1
+   355  0007E6                     __ptext1:
+   356                           	opt callstack 0
+   357  0007E6                     _ring_buffer_init:
+   358                           	opt callstack 27
+   359                           
+   360                           ;ringbuffer.c: 9:   buffer->tail_index = 0;
+   361                           
+   362                           ;incstack = 0
+   363  0007E6  EE20 F020          	lfsr	2,32
+   364  0007EA  5032               	movf	ring_buffer_init@buffer,w,c
+   365  0007EC  26D9               	addwf	fsr2l,f,c
+   366  0007EE  5033               	movf	ring_buffer_init@buffer+1,w,c
+   367  0007F0  22DA               	addwfc	fsr2h,f,c
+   368  0007F2  0E00               	movlw	0
+   369  0007F4  6EDF               	movwf	indf2,c
+   370                           
+   371                           ;ringbuffer.c: 10:   buffer->head_index = 0;
+   372  0007F6  EE20 F021          	lfsr	2,33
+   373  0007FA  5032               	movf	ring_buffer_init@buffer,w,c
+   374  0007FC  26D9               	addwf	fsr2l,f,c
+   375  0007FE  5033               	movf	ring_buffer_init@buffer+1,w,c
+   376  000800  22DA               	addwfc	fsr2h,f,c
+   377  000802  0E00               	movlw	0
+   378  000804  6EDF               	movwf	indf2,c
+   379  000806  0012               	return		;funcret
+   380  000808                     __end_of_ring_buffer_init:
+   381                           	opt callstack 0
+   382                           
+   383 ;; *************** function _ring_buffer_dequeue *****************
+   384 ;; Defined at:
+   385 ;;		line 34 in file "ringbuffer.c"
+   386 ;; Parameters:    Size  Location     Type
+   387 ;;  buffer          2   17[COMRAM] PTR struct ring_buffer_t
+   388 ;;		 -> ring_buffer(34), 
+   389 ;;  data            2   19[COMRAM] PTR unsigned char 
+   390 ;;		 -> main@data(1), 
+   391 ;; Auto vars:     Size  Location     Type
+   392 ;;		None
+   393 ;; Return value:  Size  Location     Type
+   394 ;;                  1    wreg      unsigned char 
+   395 ;; Registers used:
+   396 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, cstack
+   397 ;; Tracked objects:
+   398 ;;		On entry : 0/0
+   399 ;;		On exit  : 0/0
+   400 ;;		Unchanged: 0/0
+   401 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   402 ;;      Params:         4       0       0       0       0       0       0
+   403 ;;      Locals:         0       0       0       0       0       0       0
+   404 ;;      Temps:          1       0       0       0       0       0       0
+   405 ;;      Totals:         5       0       0       0       0       0       0
+   406 ;;Total ram usage:        5 bytes
+   407 ;; Hardware stack levels used:    1
+   408 ;; Hardware stack levels required when called:    4
+   409 ;; This function calls:
+   410 ;;		_ring_buffer_is_empty
+   411 ;; This function is called by:
+   412 ;;		_main
+   413 ;;		_ring_buffer_dequeue_arr
+   414 ;; This function uses a non-reentrant model
+   415 ;;
+   416                           
+   417                           	psect	text2
+   418  000696                     __ptext2:
+   419                           	opt callstack 0
+   420  000696                     _ring_buffer_dequeue:
+   421                           	opt callstack 26
+   422                           
+   423                           ;ringbuffer.c: 35:   if(ring_buffer_is_empty(buffer)) {
+   424                           
+   425                           ;incstack = 0
+   426  000696  C036  F032         	movff	ring_buffer_dequeue@buffer,ring_buffer_is_empty@buffer
+   427  00069A  C037  F033         	movff	ring_buffer_dequeue@buffer+1,ring_buffer_is_empty@buffer+1
+   428  00069E  ECDF  F003         	call	_ring_buffer_is_empty	;wreg free
+   429  0006A2  0900               	iorlw	0
+   430  0006A4  B4D8               	btfsc	status,2,c
+   431  0006A6  D002               	goto	l947
+   432                           
+   433                           ;ringbuffer.c: 37:     return 0;
+   434  0006A8  0E00               	movlw	0
+   435  0006AA  0012               	return	
+   436  0006AC                     l947:
+   437                           
+   438                           ;ringbuffer.c: 40:   *data = buffer->buffer[buffer->tail_index];
+   439  0006AC  EE20 F020          	lfsr	2,32
+   440  0006B0  5036               	movf	ring_buffer_dequeue@buffer,w,c
+   441  0006B2  26D9               	addwf	fsr2l,f,c
+   442  0006B4  5037               	movf	ring_buffer_dequeue@buffer+1,w,c
+   443  0006B6  22DA               	addwfc	fsr2h,f,c
+   444  0006B8  50DF               	movf	indf2,w,c
+   445  0006BA  6E3A               	movwf	??_ring_buffer_dequeue& (0+255),c
+   446  0006BC  503A               	movf	??_ring_buffer_dequeue,w,c
+   447  0006BE  2436               	addwf	ring_buffer_dequeue@buffer,w,c
+   448  0006C0  6ED9               	movwf	fsr2l,c
+   449  0006C2  0E00               	movlw	0
+   450  0006C4  2037               	addwfc	ring_buffer_dequeue@buffer+1,w,c
+   451  0006C6  6EDA               	movwf	fsr2h,c
+   452  0006C8  C038  FFE1         	movff	ring_buffer_dequeue@data,fsr1l
+   453  0006CC  C039  FFE2         	movff	ring_buffer_dequeue@data+1,fsr1h
+   454  0006D0  CFDF FFE7          	movff	indf2,indf1
+   455                           
+   456                           ;ringbuffer.c: 41:   buffer->tail_index = ((buffer->tail_index + 1) & (32 -1));
+   457  0006D4  EE20 F020          	lfsr	2,32
+   458  0006D8  5036               	movf	ring_buffer_dequeue@buffer,w,c
+   459  0006DA  26D9               	addwf	fsr2l,f,c
+   460  0006DC  5037               	movf	ring_buffer_dequeue@buffer+1,w,c
+   461  0006DE  22DA               	addwfc	fsr2h,f,c
+   462  0006E0  EE10 F020          	lfsr	1,32
+   463  0006E4  5036               	movf	ring_buffer_dequeue@buffer,w,c
+   464  0006E6  26E1               	addwf	fsr1l,f,c
+   465  0006E8  5037               	movf	ring_buffer_dequeue@buffer+1,w,c
+   466  0006EA  22E2               	addwfc	fsr1h,f,c
+   467  0006EC  50E7               	movf	indf1,w,c
+   468  0006EE  6E3A               	movwf	??_ring_buffer_dequeue& (0+255),c
+   469  0006F0  283A               	incf	??_ring_buffer_dequeue,w,c
+   470  0006F2  0B1F               	andlw	31
+   471  0006F4  6EDF               	movwf	indf2,c
+   472                           
+   473                           ;ringbuffer.c: 42:   return 1;
+   474  0006F6  0E01               	movlw	1
+   475  0006F8  0012               	return		;funcret
+   476  0006FA                     __end_of_ring_buffer_dequeue:
+   477                           	opt callstack 0
+   478                           
+   479 ;; *************** function _ring_buffer_is_empty *****************
+   480 ;; Defined at:
+   481 ;;		line 73 in file "ringbuffer.c"
+   482 ;; Parameters:    Size  Location     Type
+   483 ;;  buffer          2   13[COMRAM] PTR struct ring_buffer_t
+   484 ;;		 -> ring_buffer(34), 
+   485 ;; Auto vars:     Size  Location     Type
+   486 ;;		None
+   487 ;; Return value:  Size  Location     Type
+   488 ;;                  1    wreg      unsigned char 
+   489 ;; Registers used:
+   490 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0
+   491 ;; Tracked objects:
+   492 ;;		On entry : 0/0
+   493 ;;		On exit  : 0/0
+   494 ;;		Unchanged: 0/0
+   495 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   496 ;;      Params:         2       0       0       0       0       0       0
+   497 ;;      Locals:         0       0       0       0       0       0       0
+   498 ;;      Temps:          2       0       0       0       0       0       0
+   499 ;;      Totals:         4       0       0       0       0       0       0
+   500 ;;Total ram usage:        4 bytes
+   501 ;; Hardware stack levels used:    1
+   502 ;; Hardware stack levels required when called:    3
+   503 ;; This function calls:
+   504 ;;		Nothing
+   505 ;; This function is called by:
+   506 ;;		_ring_buffer_dequeue
+   507 ;;		_ring_buffer_dequeue_arr
+   508 ;; This function uses a non-reentrant model
+   509 ;;
+   510                           
+   511                           	psect	text3
+   512  0007BE                     __ptext3:
+   513                           	opt callstack 0
+   514  0007BE                     _ring_buffer_is_empty:
+   515                           	opt callstack 26
+   516                           
+   517                           ;ringbuffer.c: 74:   return (buffer->head_index == buffer->tail_index);
+   518                           
+   519                           ;incstack = 0
+   520  0007BE  EE20 F020          	lfsr	2,32
+   521  0007C2  5032               	movf	ring_buffer_is_empty@buffer,w,c
+   522  0007C4  26D9               	addwf	fsr2l,f,c
+   523  0007C6  5033               	movf	ring_buffer_is_empty@buffer+1,w,c
+   524  0007C8  22DA               	addwfc	fsr2h,f,c
+   525  0007CA  EE10 F021          	lfsr	1,33
+   526  0007CE  5032               	movf	ring_buffer_is_empty@buffer,w,c
+   527  0007D0  26E1               	addwf	fsr1l,f,c
+   528  0007D2  5033               	movf	ring_buffer_is_empty@buffer+1,w,c
+   529  0007D4  22E2               	addwfc	fsr1h,f,c
+   530  0007D6  50DE               	movf	postinc2,w,c
+   531  0007D8  18E6               	xorwf	postinc1,w,c
+   532  0007DA  A4D8               	btfss	status,2,c
+   533  0007DC  D002               	goto	u210
+   534  0007DE  0E01               	movlw	1
+   535  0007E0  0012               	return	
+   536  0007E2                     u210:
+   537  0007E2  0E00               	movlw	0
+   538  0007E4  0012               	return		;funcret
+   539  0007E6                     __end_of_ring_buffer_is_empty:
+   540                           	opt callstack 0
+   541                           
+   542 ;; *************** function _UART_puts *****************
+   543 ;; Defined at:
+   544 ;;		line 71 in file "main.c"
+   545 ;; Parameters:    Size  Location     Type
+   546 ;;  str             2   14[COMRAM] PTR unsigned char 
+   547 ;;		 -> STR_1(27), 
+   548 ;; Auto vars:     Size  Location     Type
+   549 ;;		None
+   550 ;; Return value:  Size  Location     Type
+   551 ;;                  1    wreg      void 
+   552 ;; Registers used:
+   553 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   554 ;; Tracked objects:
+   555 ;;		On entry : 0/0
+   556 ;;		On exit  : 0/0
+   557 ;;		Unchanged: 0/0
+   558 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   559 ;;      Params:         2       0       0       0       0       0       0
+   560 ;;      Locals:         0       0       0       0       0       0       0
+   561 ;;      Temps:          0       0       0       0       0       0       0
+   562 ;;      Totals:         2       0       0       0       0       0       0
+   563 ;;Total ram usage:        2 bytes
+   564 ;; Hardware stack levels used:    1
+   565 ;; Hardware stack levels required when called:    4
+   566 ;; This function calls:
+   567 ;;		_UART_putch
+   568 ;; This function is called by:
+   569 ;;		_main
+   570 ;; This function uses a non-reentrant model
+   571 ;;
+   572                           
+   573                           	psect	text4
+   574  000794                     __ptext4:
+   575                           	opt callstack 0
+   576  000794                     _UART_puts:
+   577                           	opt callstack 26
+   578                           
+   579                           ;main.c: 72:     while (*str) {
+   580                           
+   581                           ;incstack = 0
+   582  000794  D00A               	goto	l939
+   583  000796                     l935:
+   584                           
+   585                           ;main.c: 73:         UART_putch(*str);
+   586  000796  C033  FFF6         	movff	UART_puts@str,tblptrl
+   587  00079A  C034  FFF7         	movff	UART_puts@str+1,tblptrh
+   588  00079E                     	if	0	;tblptru may be non-zero
+   589  00079E                     	endif
+   590  00079E                     	if	0	;tblptru may be non-zero
+   591  00079E                     	endif
+   592  00079E  0008               	tblrd		*
+   593  0007A0  50F5               	movf	tablat,w,c
+   594  0007A2  EC22  F004         	call	_UART_putch
+   595                           
+   596                           ;main.c: 74:         str++;
+   597  0007A6  4A33               	infsnz	UART_puts@str,f,c
+   598  0007A8  2A34               	incf	UART_puts@str+1,f,c
+   599  0007AA                     l939:
+   600                           
+   601                           ;main.c: 72:     while (*str) {
+   602  0007AA  C033  FFF6         	movff	UART_puts@str,tblptrl
+   603  0007AE  C034  FFF7         	movff	UART_puts@str+1,tblptrh
+   604  0007B2                     	if	0	;tblptru may be non-zero
+   605  0007B2                     	endif
+   606  0007B2                     	if	0	;tblptru may be non-zero
+   607  0007B2                     	endif
+   608  0007B2  0008               	tblrd		*
+   609  0007B4  50F5               	movf	tablat,w,c
+   610  0007B6  0900               	iorlw	0
+   611  0007B8  B4D8               	btfsc	status,2,c
+   612  0007BA  0012               	return	
+   613  0007BC  D7EC               	goto	l935
+   614  0007BE                     __end_of_UART_puts:
+   615                           	opt callstack 0
+   616                           
+   617 ;; *************** function _UART_putch *****************
+   618 ;; Defined at:
+   619 ;;		line 66 in file "main.c"
+   620 ;; Parameters:    Size  Location     Type
+   621 ;;  ch              1    wreg     unsigned char 
+   622 ;; Auto vars:     Size  Location     Type
+   623 ;;  ch              1   13[COMRAM] unsigned char 
+   624 ;; Return value:  Size  Location     Type
+   625 ;;                  1    wreg      void 
+   626 ;; Registers used:
+   627 ;;		wreg
+   628 ;; Tracked objects:
+   629 ;;		On entry : 0/0
+   630 ;;		On exit  : 0/0
+   631 ;;		Unchanged: 0/0
+   632 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   633 ;;      Params:         0       0       0       0       0       0       0
+   634 ;;      Locals:         1       0       0       0       0       0       0
+   635 ;;      Temps:          0       0       0       0       0       0       0
+   636 ;;      Totals:         1       0       0       0       0       0       0
+   637 ;;Total ram usage:        1 bytes
+   638 ;; Hardware stack levels used:    1
+   639 ;; Hardware stack levels required when called:    3
+   640 ;; This function calls:
+   641 ;;		Nothing
+   642 ;; This function is called by:
+   643 ;;		_main
+   644 ;;		_UART_puts
+   645 ;; This function uses a non-reentrant model
+   646 ;;
+   647                           
+   648                           	psect	text5
+   649  000844                     __ptext5:
+   650                           	opt callstack 0
+   651  000844                     _UART_putch:
+   652                           	opt callstack 26
+   653                           
+   654                           ;incstack = 0
+   655                           ;UART_putch@ch stored from wreg
+   656  000844  6E32               	movwf	UART_putch@ch,c
+   657  000846                     
+   658                           ;main.c: 67:     while (!TXSTAbits.TRMT);
+   659  000846  A2AC               	btfss	4012,1,c	;volatile
+   660  000848  D7FE               	goto	l801
+   661                           
+   662                           ;main.c: 68:     TXREG = ch;
+   663  00084A  C032  FFAD         	movff	UART_putch@ch,4013	;volatile
+   664  00084E  0012               	return		;funcret
+   665  000850                     __end_of_UART_putch:
+   666                           	opt callstack 0
+   667                           
+   668 ;; *************** function _UART_config *****************
+   669 ;; Defined at:
+   670 ;;		line 46 in file "main.c"
+   671 ;; Parameters:    Size  Location     Type
+   672 ;;		None
+   673 ;; Auto vars:     Size  Location     Type
+   674 ;;		None
+   675 ;; Return value:  Size  Location     Type
+   676 ;;                  1    wreg      void 
+   677 ;; Registers used:
+   678 ;;		wreg, status,2
+   679 ;; Tracked objects:
+   680 ;;		On entry : 0/0
+   681 ;;		On exit  : 0/0
+   682 ;;		Unchanged: 0/0
+   683 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   684 ;;      Params:         0       0       0       0       0       0       0
+   685 ;;      Locals:         0       0       0       0       0       0       0
+   686 ;;      Temps:          0       0       0       0       0       0       0
+   687 ;;      Totals:         0       0       0       0       0       0       0
+   688 ;;Total ram usage:        0 bytes
+   689 ;; Hardware stack levels used:    1
+   690 ;; Hardware stack levels required when called:    3
+   691 ;; This function calls:
+   692 ;;		Nothing
+   693 ;; This function is called by:
+   694 ;;		_main
+   695 ;; This function uses a non-reentrant model
+   696 ;;
+   697                           
+   698                           	psect	text6
+   699  000826                     __ptext6:
+   700                           	opt callstack 0
+   701  000826                     _UART_config:
+   702                           	opt callstack 27
+   703                           
+   704                           ;main.c: 47:     TRISCbits.RC6 = 1;
+   705                           
+   706                           ;incstack = 0
+   707  000826  8C94               	bsf	3988,6,c	;volatile
+   708                           
+   709                           ;main.c: 48:     TRISCbits.RC7 = 1;
+   710  000828  8E94               	bsf	3988,7,c	;volatile
+   711                           
+   712                           ;main.c: 50:     PIR1bits.RCIF = 0;
+   713  00082A  9A9E               	bcf	3998,5,c	;volatile
+   714                           
+   715                           ;main.c: 51:     PIE1bits.RCIE = 1;
+   716  00082C  8A9D               	bsf	3997,5,c	;volatile
+   717                           
+   718                           ;main.c: 52:     INTCONbits.PEIE = 1;
+   719  00082E  8CF2               	bsf	4082,6,c	;volatile
+   720                           
+   721                           ;main.c: 53:     INTCONbits.GIE = 1;
+   722  000830  8EF2               	bsf	4082,7,c	;volatile
+   723                           
+   724                           ;main.c: 55:     TXSTAbits.SYNC = 0;
+   725  000832  98AC               	bcf	4012,4,c	;volatile
+   726                           
+   727                           ;main.c: 57:     BAUDCONbits.BRG16 = 0;
+   728  000834  96B8               	bcf	4024,3,c	;volatile
+   729                           
+   730                           ;main.c: 58:     TXSTAbits.BRGH = 1;
+   731  000836  84AC               	bsf	4012,2,c	;volatile
+   732                           
+   733                           ;main.c: 59:     SPBRG = 16000000 / (16 * (115200 + 1));
+   734  000838  0E08               	movlw	8
+   735  00083A  6EAF               	movwf	4015,c	;volatile
+   736                           
+   737                           ;main.c: 61:     RCSTAbits.SPEN = 1;
+   738  00083C  8EAB               	bsf	4011,7,c	;volatile
+   739                           
+   740                           ;main.c: 62:     TXSTAbits.TXEN = 1;
+   741  00083E  8AAC               	bsf	4012,5,c	;volatile
+   742                           
+   743                           ;main.c: 63:     RCSTAbits.CREN = 1;
+   744  000840  88AB               	bsf	4011,4,c	;volatile
+   745  000842  0012               	return		;funcret
+   746  000844                     __end_of_UART_config:
+   747                           	opt callstack 0
+   748                           
+   749 ;; *************** function _ISR *****************
+   750 ;; Defined at:
+   751 ;;		line 13 in file "main.c"
+   752 ;; Parameters:    Size  Location     Type
+   753 ;;		None
+   754 ;; Auto vars:     Size  Location     Type
+   755 ;;		None
+   756 ;; Return value:  Size  Location     Type
+   757 ;;                  1    wreg      void 
+   758 ;; Registers used:
+   759 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, cstack
+   760 ;; Tracked objects:
+   761 ;;		On entry : 0/0
+   762 ;;		On exit  : 0/0
+   763 ;;		Unchanged: 0/0
+   764 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   765 ;;      Params:         0       0       0       0       0       0       0
+   766 ;;      Locals:         0       0       0       0       0       0       0
+   767 ;;      Temps:          4       0       0       0       0       0       0
+   768 ;;      Totals:         4       0       0       0       0       0       0
+   769 ;;Total ram usage:        4 bytes
+   770 ;; Hardware stack levels used:    1
+   771 ;; Hardware stack levels required when called:    2
+   772 ;; This function calls:
+   773 ;;		_ring_buffer_queue
+   774 ;; This function is called by:
+   775 ;;		Interrupt level 2
+   776 ;; This function uses a non-reentrant model
+   777 ;;
+   778                           
+   779                           	psect	intcode
+   780  000008                     __pintcode:
+   781                           	opt callstack 0
+   782  000008                     _ISR:
+   783                           	opt callstack 26
+   784                           
+   785                           ;incstack = 0
+   786  000008  823B               	bsf	btemp,1,c	;set compiler interrupt flag (level 2)
+   787  00000A  CFE1 F02E          	movff	fsr1l,??_ISR
+   788  00000E  CFE2 F02F          	movff	fsr1h,??_ISR+1
+   789  000012  CFD9 F030          	movff	fsr2l,??_ISR+2
+   790  000016  CFDA F031          	movff	fsr2h,??_ISR+3
+   791                           
+   792                           ;main.c: 14:     if (PIR1bits.RCIF) {
+   793  00001A  AA9E               	btfss	3998,5,c	;volatile
+   794  00001C  D013               	goto	i2l51
+   795                           
+   796                           ;main.c: 15:         ring_buffer_queue(&ring_buffer, RCREG);
+   797  00001E  0E02               	movlw	low _ring_buffer
+   798  000020  6E2A               	movwf	ring_buffer_queue@buffer,c
+   799  000022  0E00               	movlw	high _ring_buffer
+   800  000024  6E2B               	movwf	ring_buffer_queue@buffer+1,c
+   801  000026  CFAE F02C          	movff	4014,ring_buffer_queue@data	;volatile
+   802  00002A  EC0F  F003         	call	_ring_buffer_queue	;wreg free
+   803                           
+   804                           ;main.c: 16:         if (RCREG == '\r' || RCREG == '\n') uartFlag = 1;
+   805  00002E  0E0D               	movlw	13
+   806  000030  18AE               	xorwf	4014,w,c	;volatile
+   807  000032  B4D8               	btfsc	status,2,c
+   808  000034  D004               	goto	i2u28_40
+   809  000036  0E0A               	movlw	10
+   810  000038  18AE               	xorwf	4014,w,c	;volatile
+   811  00003A  A4D8               	btfss	status,2,c
+   812  00003C  D002               	goto	i2l963
+   813  00003E                     i2u28_40:
+   814  00003E  0E01               	movlw	1
+   815  000040  6E01               	movwf	_uartFlag,c
+   816  000042                     i2l963:
+   817                           
+   818                           ;main.c: 17:         PIR1bits.RCIF = 0;
+   819  000042  9A9E               	bcf	3998,5,c	;volatile
+   820  000044                     i2l51:
+   821  000044  C031  FFDA         	movff	??_ISR+3,fsr2h
+   822  000048  C030  FFD9         	movff	??_ISR+2,fsr2l
+   823  00004C  C02F  FFE2         	movff	??_ISR+1,fsr1h
+   824  000050  C02E  FFE1         	movff	??_ISR,fsr1l
+   825  000054  923B               	bcf	btemp,1,c	;clear compiler interrupt flag (level 2)
+   826  000056  0011               	retfie		f
+   827  000058                     __end_of_ISR:
+   828                           	opt callstack 0
+   829                           
+   830 ;; *************** function _ring_buffer_queue *****************
+   831 ;; Defined at:
+   832 ;;		line 13 in file "ringbuffer.c"
+   833 ;; Parameters:    Size  Location     Type
+   834 ;;  buffer          2    5[COMRAM] PTR struct ring_buffer_t
+   835 ;;		 -> ring_buffer(34), 
+   836 ;;  data            1    7[COMRAM] unsigned char 
+   837 ;; Auto vars:     Size  Location     Type
+   838 ;;		None
+   839 ;; Return value:  Size  Location     Type
+   840 ;;                  1    wreg      void 
+   841 ;; Registers used:
+   842 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, cstack
+   843 ;; Tracked objects:
+   844 ;;		On entry : 0/0
+   845 ;;		On exit  : 0/0
+   846 ;;		Unchanged: 0/0
+   847 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   848 ;;      Params:         3       0       0       0       0       0       0
+   849 ;;      Locals:         0       0       0       0       0       0       0
+   850 ;;      Temps:          1       0       0       0       0       0       0
+   851 ;;      Totals:         4       0       0       0       0       0       0
+   852 ;;Total ram usage:        4 bytes
+   853 ;; Hardware stack levels used:    1
+   854 ;; Hardware stack levels required when called:    1
+   855 ;; This function calls:
+   856 ;;		_ring_buffer_is_full
+   857 ;; This function is called by:
+   858 ;;		_ISR
+   859 ;;		_ring_buffer_queue_arr
+   860 ;; This function uses a non-reentrant model
+   861 ;;
+   862                           
+   863                           	psect	text8
+   864  00061E                     __ptext8:
+   865                           	opt callstack 0
+   866  00061E                     _ring_buffer_queue:
+   867                           	opt callstack 26
+   868                           
+   869                           ;ringbuffer.c: 15:   if(ring_buffer_is_full(buffer)) {
+   870                           
+   871                           ;incstack = 0
+   872  00061E  C02A  F025         	movff	ring_buffer_queue@buffer,ring_buffer_is_full@buffer
+   873  000622  C02B  F026         	movff	ring_buffer_queue@buffer+1,ring_buffer_is_full@buffer+1
+   874  000626  ECA8  F003         	call	_ring_buffer_is_full	;wreg free
+   875  00062A  0900               	iorlw	0
+   876  00062C  B4D8               	btfsc	status,2,c
+   877  00062E  D011               	goto	i2l927
+   878                           
+   879                           ;ringbuffer.c: 18:     buffer->tail_index = ((buffer->tail_index + 1) & (32 -1));
+   880  000630  EE20 F020          	lfsr	2,32
+   881  000634  502A               	movf	ring_buffer_queue@buffer,w,c
+   882  000636  26D9               	addwf	fsr2l,f,c
+   883  000638  502B               	movf	ring_buffer_queue@buffer+1,w,c
+   884  00063A  22DA               	addwfc	fsr2h,f,c
+   885  00063C  EE10 F020          	lfsr	1,32
+   886  000640  502A               	movf	ring_buffer_queue@buffer,w,c
+   887  000642  26E1               	addwf	fsr1l,f,c
+   888  000644  502B               	movf	ring_buffer_queue@buffer+1,w,c
+   889  000646  22E2               	addwfc	fsr1h,f,c
+   890  000648  50E7               	movf	indf1,w,c
+   891  00064A  6E2D               	movwf	??_ring_buffer_queue& (0+255),c
+   892  00064C  282D               	incf	??_ring_buffer_queue,w,c
+   893  00064E  0B1F               	andlw	31
+   894  000650  6EDF               	movwf	indf2,c
+   895  000652                     i2l927:
+   896                           
+   897                           ;ringbuffer.c: 22:   buffer->buffer[buffer->head_index] = data;
+   898  000652  EE20 F021          	lfsr	2,33
+   899  000656  502A               	movf	ring_buffer_queue@buffer,w,c
+   900  000658  26D9               	addwf	fsr2l,f,c
+   901  00065A  502B               	movf	ring_buffer_queue@buffer+1,w,c
+   902  00065C  22DA               	addwfc	fsr2h,f,c
+   903  00065E  50DF               	movf	indf2,w,c
+   904  000660  6E2D               	movwf	??_ring_buffer_queue& (0+255),c
+   905  000662  502D               	movf	??_ring_buffer_queue,w,c
+   906  000664  242A               	addwf	ring_buffer_queue@buffer,w,c
+   907  000666  6ED9               	movwf	fsr2l,c
+   908  000668  0E00               	movlw	0
+   909  00066A  202B               	addwfc	ring_buffer_queue@buffer+1,w,c
+   910  00066C  6EDA               	movwf	fsr2h,c
+   911  00066E  C02C  FFDF         	movff	ring_buffer_queue@data,indf2
+   912                           
+   913                           ;ringbuffer.c: 23:   buffer->head_index = ((buffer->head_index + 1) & (32 -1));
+   914  000672  EE20 F021          	lfsr	2,33
+   915  000676  502A               	movf	ring_buffer_queue@buffer,w,c
+   916  000678  26D9               	addwf	fsr2l,f,c
+   917  00067A  502B               	movf	ring_buffer_queue@buffer+1,w,c
+   918  00067C  22DA               	addwfc	fsr2h,f,c
+   919  00067E  EE10 F021          	lfsr	1,33
+   920  000682  502A               	movf	ring_buffer_queue@buffer,w,c
+   921  000684  26E1               	addwf	fsr1l,f,c
+   922  000686  502B               	movf	ring_buffer_queue@buffer+1,w,c
+   923  000688  22E2               	addwfc	fsr1h,f,c
+   924  00068A  50E7               	movf	indf1,w,c
+   925  00068C  6E2D               	movwf	??_ring_buffer_queue& (0+255),c
+   926  00068E  282D               	incf	??_ring_buffer_queue,w,c
+   927  000690  0B1F               	andlw	31
+   928  000692  6EDF               	movwf	indf2,c
+   929  000694  0012               	return		;funcret
+   930  000696                     __end_of_ring_buffer_queue:
+   931                           	opt callstack 0
+   932                           
+   933 ;; *************** function _ring_buffer_is_full *****************
+   934 ;; Defined at:
+   935 ;;		line 77 in file "ringbuffer.c"
+   936 ;; Parameters:    Size  Location     Type
+   937 ;;  buffer          2    0[COMRAM] PTR struct ring_buffer_t
+   938 ;;		 -> ring_buffer(34), 
+   939 ;; Auto vars:     Size  Location     Type
+   940 ;;		None
+   941 ;; Return value:  Size  Location     Type
+   942 ;;                  1    wreg      unsigned char 
+   943 ;; Registers used:
+   944 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+   945 ;; Tracked objects:
+   946 ;;		On entry : 0/0
+   947 ;;		On exit  : 0/0
+   948 ;;		Unchanged: 0/0
+   949 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   950 ;;      Params:         2       0       0       0       0       0       0
+   951 ;;      Locals:         0       0       0       0       0       0       0
+   952 ;;      Temps:          3       0       0       0       0       0       0
+   953 ;;      Totals:         5       0       0       0       0       0       0
+   954 ;;Total ram usage:        5 bytes
+   955 ;; Hardware stack levels used:    1
+   956 ;; This function calls:
+   957 ;;		Nothing
+   958 ;; This function is called by:
+   959 ;;		_ring_buffer_queue
+   960 ;; This function uses a non-reentrant model
+   961 ;;
+   962                           
+   963                           	psect	text9
+   964  000750                     __ptext9:
+   965                           	opt callstack 0
+   966  000750                     _ring_buffer_is_full:
+   967                           	opt callstack 26
+   968                           
+   969                           ;ringbuffer.c: 78:   return ((buffer->head_index - buffer->tail_index) & (32 -1)) == (32
+      +                           -1);
+   970                           
+   971                           ;incstack = 0
+   972  000750  EE20 F021          	lfsr	2,33
+   973  000754  5025               	movf	ring_buffer_is_full@buffer,w,c
+   974  000756  26D9               	addwf	fsr2l,f,c
+   975  000758  5026               	movf	ring_buffer_is_full@buffer+1,w,c
+   976  00075A  22DA               	addwfc	fsr2h,f,c
+   977  00075C  50DF               	movf	indf2,w,c
+   978  00075E  6E27               	movwf	??_ring_buffer_is_full& (0+255),c
+   979  000760  6A28               	clrf	(??_ring_buffer_is_full+1)& (0+255),c
+   980  000762  EE20 F020          	lfsr	2,32
+   981  000766  5025               	movf	ring_buffer_is_full@buffer,w,c
+   982  000768  26D9               	addwf	fsr2l,f,c
+   983  00076A  5026               	movf	ring_buffer_is_full@buffer+1,w,c
+   984  00076C  22DA               	addwfc	fsr2h,f,c
+   985  00076E  50DF               	movf	indf2,w,c
+   986  000770  6E29               	movwf	(??_ring_buffer_is_full+2)& (0+255),c
+   987  000772  5029               	movf	??_ring_buffer_is_full+2,w,c
+   988  000774  5E27               	subwf	??_ring_buffer_is_full,f,c
+   989  000776  0E00               	movlw	0
+   990  000778  5A28               	subwfb	??_ring_buffer_is_full+1,f,c
+   991  00077A  0E1F               	movlw	31
+   992  00077C  1627               	andwf	??_ring_buffer_is_full,f,c
+   993  00077E  0E00               	movlw	0
+   994  000780  1628               	andwf	??_ring_buffer_is_full+1,f,c
+   995  000782  0E1F               	movlw	31
+   996  000784  1827               	xorwf	??_ring_buffer_is_full,w,c
+   997  000786  1028               	iorwf	??_ring_buffer_is_full+1,w,c
+   998  000788  A4D8               	btfss	status,2,c
+   999  00078A  D002               	goto	i2u19_40
+  1000  00078C  0E01               	movlw	1
+  1001  00078E  0012               	return	
+  1002  000790                     i2u19_40:
+  1003  000790  0E00               	movlw	0
+  1004  000792  0012               	return		;funcret
+  1005  000794                     __end_of_ring_buffer_is_full:
+  1006                           	opt callstack 0
+  1007                           
+  1008                           	psect	rparam
+  1009  0000                     
+  1010                           	psect	temp
+  1011  00003B                     btemp:
+  1012                           	opt callstack 0
+  1013  00003B                     	ds	1
+  1014  0000                     int$flags	set	btemp
+  1015  0000                     wtemp8	set	btemp+1
+  1016  0000                     ttemp5	set	btemp+1
+  1017  0000                     ttemp6	set	btemp+4
+  1018  0000                     ttemp7	set	btemp+8
+  1019                           tosu	equ	0xFFF
+  1020                           tosh	equ	0xFFE
+  1021                           tosl	equ	0xFFD
+  1022                           stkptr	equ	0xFFC
+  1023                           pclatu	equ	0xFFB
+  1024                           pclath	equ	0xFFA
+  1025                           pcl	equ	0xFF9
+  1026                           tblptru	equ	0xFF8
+  1027                           tblptrh	equ	0xFF7
+  1028                           tblptrl	equ	0xFF6
+  1029                           tablat	equ	0xFF5
+  1030                           prodh	equ	0xFF4
+  1031                           prodl	equ	0xFF3
+  1032                           indf0	equ	0xFEF
+  1033                           postinc0	equ	0xFEE
+  1034                           postdec0	equ	0xFED
+  1035                           preinc0	equ	0xFEC
+  1036                           plusw0	equ	0xFEB
+  1037                           fsr0h	equ	0xFEA
+  1038                           fsr0l	equ	0xFE9
+  1039                           wreg	equ	0xFE8
+  1040                           indf1	equ	0xFE7
+  1041                           postinc1	equ	0xFE6
+  1042                           postdec1	equ	0xFE5
+  1043                           preinc1	equ	0xFE4
+  1044                           plusw1	equ	0xFE3
+  1045                           fsr1h	equ	0xFE2
+  1046                           fsr1l	equ	0xFE1
+  1047                           bsr	equ	0xFE0
+  1048                           indf2	equ	0xFDF
+  1049                           postinc2	equ	0xFDE
+  1050                           postdec2	equ	0xFDD
+  1051                           preinc2	equ	0xFDC
+  1052                           plusw2	equ	0xFDB
+  1053                           fsr2h	equ	0xFDA
+  1054                           fsr2l	equ	0xFD9
+  1055                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     27
+    Constant    0
+    Data        0
+    BSS         36
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           94     22      58
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    ring_buffer_is_full@buffer	PTR struct ring_buffer_t size(2) Largest target is 34
+		 -> ring_buffer(COMRAM[34]), 
+
+    ring_buffer_is_empty@buffer	PTR struct ring_buffer_t size(2) Largest target is 34
+		 -> ring_buffer(COMRAM[34]), 
+
+    ring_buffer_dequeue@data	PTR unsigned char  size(2) Largest target is 1
+		 -> main@data(COMRAM[1]), 
+
+    ring_buffer_dequeue@buffer	PTR struct ring_buffer_t size(2) Largest target is 34
+		 -> ring_buffer(COMRAM[34]), 
+
+    ring_buffer_queue@buffer	PTR struct ring_buffer_t size(2) Largest target is 34
+		 -> ring_buffer(COMRAM[34]), 
+
+    ring_buffer_init@buffer	PTR struct ring_buffer_t size(2) Largest target is 34
+		 -> ring_buffer(COMRAM[34]), 
+
+    UART_puts@str	PTR unsigned char  size(2) Largest target is 27
+		 -> STR_1(CODE[27]), 
+
+
+Critical Paths under _main in COMRAM
+
+    _main->_ring_buffer_dequeue
+    _ring_buffer_dequeue->_ring_buffer_is_empty
+    _UART_puts->_UART_putch
+
+Critical Paths under _ISR in COMRAM
+
+    _ISR->_ring_buffer_queue
+    _ring_buffer_queue->_ring_buffer_is_full
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _ISR in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _ISR in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _ISR in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _ISR in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _ISR in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _ISR in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     903
+                        _UART_config
+                         _UART_putch
+                          _UART_puts
+                _ring_buffer_dequeue
+                   _ring_buffer_init
+ ---------------------------------------------------------------------------------
+ (1) _ring_buffer_init                                     2     0      2     120
+                                             13 COMRAM     2     0      2
+ ---------------------------------------------------------------------------------
+ (1) _ring_buffer_dequeue                                  5     1      4     632
+                                             17 COMRAM     5     1      4
+               _ring_buffer_is_empty
+ ---------------------------------------------------------------------------------
+ (2) _ring_buffer_is_empty                                 4     2      2     196
+                                             13 COMRAM     4     2      2
+ ---------------------------------------------------------------------------------
+ (1) _UART_puts                                            2     0      2     136
+                                             14 COMRAM     2     0      2
+                         _UART_putch
+ ---------------------------------------------------------------------------------
+ (2) _UART_putch                                           1     1      0      15
+                                             13 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _UART_config                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _ISR                                                  4     4      0     600
+                                              9 COMRAM     4     4      0
+                  _ring_buffer_queue
+ ---------------------------------------------------------------------------------
+ (4) _ring_buffer_queue                                    4     1      3     600
+                                              5 COMRAM     4     1      3
+                _ring_buffer_is_full
+ ---------------------------------------------------------------------------------
+ (5) _ring_buffer_is_full                                  5     3      2     120
+                                              0 COMRAM     5     3      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 5
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _UART_config
+   _UART_putch
+   _UART_puts
+     _UART_putch
+   _ring_buffer_dequeue
+     _ring_buffer_is_empty
+   _ring_buffer_init
+
+ _ISR (ROOT)
+   _ring_buffer_queue
+     _ring_buffer_is_full
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             5FF      0       0      17        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK5           100      0       0      16        0.0%
+BANK5              100      0       0      14        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITCOMRAM           5E      0       0       0        0.0%
+COMRAM              5E     16      3A       1       61.7%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      3A      15        0.0%
+DATA                 0      0      3A       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
+Symbol Table                                                                                   Wed Aug 28 23:31:53 2019
+
+      ring_buffer_dequeue@data 0038                   __CFG_CP0$OFF 000000                   __CFG_CP1$OFF 000000  
+                 __CFG_CP2$OFF 000000                   __CFG_CP3$OFF 000000                            l801 0846  
+                          l935 0796                            l939 07AA                            l947 06AC  
+                          l973 0722                            l977 072E                            l979 0734  
+                 __CFG_CPB$OFF 000000                            u210 07E2                   __CFG_CPD$OFF 000000  
+                          _ISR 0008                   __CFG_BORV$18 000000                            wreg 000FE8  
+                 __CFG_LVP$OFF 000000                           ?_ISR 0025                           STR_1 0601  
+                         i2l51 0044                           _main 06FA                           fsr1h 000FE2  
+                         fsr2h 000FDA                           indf1 000FE7                           indf2 000FDF  
+                         fsr1l 000FE1                           fsr2l 000FD9                           btemp 003B  
+                         start 0058                  __CFG_IESO$OFF 000000                  __CFG_MCLRE$ON 000000  
+                 ___param_bank 000000                          ??_ISR 002E                          ?_main 0025  
+                        _ANSEL 000F7E                          i2l927 0652                          i2l963 0042  
+                        _RCREG 000FAE                          _SPBRG 000FAF                          _TXREG 000FAD  
+                __CFG_PWRT$OFF 000000                  __CFG_WRT0$OFF 000000                  __CFG_WRT1$OFF 000000  
+                __CFG_WRT2$OFF 000000                  __CFG_WRT3$OFF 000000                 __CFG_EBTR0$OFF 000000  
+               __CFG_FCMEN$OFF 000000                 __CFG_EBTR1$OFF 000000                 __CFG_EBTR2$OFF 000000  
+               __CFG_EBTR3$OFF 000000                  __CFG_WRTB$OFF 000000                  __CFG_WRTC$OFF 000000  
+                __CFG_WRTD$OFF 000000                 __CFG_EBTRB$OFF 000000             __size_of_UART_puts 002A  
+                  ?_UART_putch 0025                 __CFG_BOREN$OFF 000000                          tablat 000FF5  
+  __end_of_ring_buffer_dequeue 06FA                          ttemp5 003C                          ttemp6 003F  
+                        ttemp7 0043                          status 000FD8                          wtemp8 003C  
+               __CFG_HFOFST$ON 000000    __end_of_ring_buffer_is_full 0794                 __CFG_PBADEN$ON 000000  
+              __initialization 0808                   __end_of_main 0750                         ??_main 003B  
+                __activetblptr 000001                         _ANSELH 000F7F                 __CFG_WDTEN$OFF 000000  
+                       _OSCCON 000FD3                 __CFG_XINST$OFF 000000                   ?_UART_config 0025  
+               __CFG_STVREN$ON 000000              __end_of_UART_puts 07BE            __size_of_UART_putch 000C  
+                       clear_0 080E              ?_ring_buffer_init 0032             ??_ring_buffer_init 0034  
+                 __mediumconst 0000                         tblptrh 000FF7                         tblptrl 000FF6  
+                       tblptru 000FF8   __end_of_ring_buffer_is_empty 07E6                     __accesstop 0060  
+      __end_of__initialization 0814                  ___rparam_used 000001                 __pcstackCOMRAM 0025  
+                      i2u19_40 0790                        i2u28_40 003E                   ??_UART_putch 0032  
+                      __Hparam 0000                        __Lparam 0000                   __psmallconst 0600  
+                      __pcinit 0808           __size_of_UART_config 001E             __end_of_UART_putch 0850  
+                      __ramtop 0600           _ring_buffer_is_empty 07BE                        __ptext0 06FA  
+                      __ptext1 07E6                        __ptext2 0696                        __ptext3 07BE  
+                      __ptext4 0794                        __ptext5 0844                        __ptext6 0826  
+                      __ptext8 061E                        __ptext9 0750                   __size_of_ISR 0050  
+            _ring_buffer_queue 061E             ?_ring_buffer_queue 002A           end_of_initialization 0814  
+          ??_ring_buffer_queue 002D   __size_of_ring_buffer_dequeue 0064                      _RCSTAbits 000FAB  
+                      postinc0 000FEE                        postinc1 000FE6                        postinc2 000FDE  
+ __size_of_ring_buffer_is_full 0044          ?_ring_buffer_is_empty 0032                      _UART_puts 0794  
+    __end_of_ring_buffer_queue 0696                      _TRISCbits 000F94      ring_buffer_is_full@buffer 0025  
+    __size_of_ring_buffer_init 0022                      _TXSTAbits 000FAC                    _BAUDCONbits 000FB8  
+                   ?_UART_puts 0033            start_initialization 0808                    __end_of_ISR 0058  
+      ring_buffer_queue@buffer 002A     ring_buffer_is_empty@buffer 0032         ring_buffer_init@buffer 0032  
+       ??_ring_buffer_is_empty 0034               __CFG_LPT1OSC$OFF 000000     __size_of_ring_buffer_queue 0078  
+                  __pbssCOMRAM 0001      ring_buffer_dequeue@buffer 0036              __CFG_CCP2MX$PORTC 000000  
+                    __pintcode 0008                    ??_UART_puts 0035                    __smallconst 0600  
+          _ring_buffer_dequeue 0696            _ring_buffer_is_full 0750               _ring_buffer_init 07E6  
+                     _PIE1bits 000F9D                       _PIR1bits 000F9E           ?_ring_buffer_dequeue 0036  
+             __CFG_WDTPS$32768 000000                  ??_UART_config 0032           ?_ring_buffer_is_full 0025  
+                     __Hrparam 0000          ??_ring_buffer_dequeue 003A                       __Lrparam 0000  
+                 __Lsmallconst 0600          ??_ring_buffer_is_full 0027            __end_of_UART_config 0844  
+                __size_of_main 0056                       _uartFlag 0001                       int$flags 003B  
+                     main@data 0024          ring_buffer_queue@data 002C                     _INTCONbits 000FF2  
+                     intlevel2 0000                    _ring_buffer 0002                   UART_putch@ch 0032  
+                 UART_puts@str 0033                    _UART_config 0826       __end_of_ring_buffer_init 0808  
+__size_of_ring_buffer_is_empty 0028                     _UART_putch 0844              __CFG_FOSC$INTIO67 000000  
