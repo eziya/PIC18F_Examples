@@ -1,0 +1,540 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F45K20 ]
+[d frameptr 4065 ]
+"4 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_25LC010A.X\25LC010A.c
+[v _EEPROM_WriteEnable EEPROM_WriteEnable `(v  1 e 1 0 ]
+"10
+[v _EEPROM_ReadByte EEPROM_ReadByte `(uc  1 e 1 0 ]
+"22
+[v _EEPROM_ReadBuffer EEPROM_ReadBuffer `(v  1 e 1 0 ]
+"28
+[v _EEPROM_WriteByte EEPROM_WriteByte `(v  1 e 1 0 ]
+"38
+[v _EEPROM_WriteBuffer EEPROM_WriteBuffer `(v  1 e 1 0 ]
+"63
+[v _EEPROM_EraseAll EEPROM_EraseAll `(v  1 e 1 0 ]
+"72 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _pad pad `(i  1 s 2 pad ]
+"259
+[v _ctoa ctoa `(i  1 s 2 ctoa ]
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+"1368
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"4 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"4 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
+"8 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"9 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"7 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+"10 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"12 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"15 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"13 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_25LC010A.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"6 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_25LC010A.X\spi_master.c
+[v _SPI_Init SPI_Init `(v  1 e 1 0 ]
+"22
+[v _SPI_Rx SPI_Rx `(uc  1 e 1 0 ]
+"28
+[v _SPI_Tx SPI_Tx `(v  1 e 1 0 ]
+"47
+[v _SPI_Select SPI_Select `(v  1 e 1 0 ]
+"52
+[v _SPI_Deselect SPI_Deselect `(v  1 e 1 0 ]
+"5 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_25LC010A.X\uart.c
+[v _UART_Init UART_Init `(v  1 e 1 0 ]
+"20
+[v _UART_putch UART_putch `(v  1 e 1 0 ]
+"25
+[v _UART_puts UART_puts `(v  1 e 1 0 ]
+"32
+[v _UART_getch UART_getch `(uc  1 e 1 0 ]
+"446 D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include\pic18f45k20.h
+[v _ANSEL ANSEL `VEuc  1 e 1 @3966 ]
+"508
+[v _ANSELH ANSELH `VEuc  1 e 1 @3967 ]
+[s S184 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"1783
+[s S193 . 1 `uc 1 LC0 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+`uc 1 LC2 1 0 :1:2 
+`uc 1 LC3 1 0 :1:3 
+`uc 1 LC4 1 0 :1:4 
+`uc 1 LC5 1 0 :1:5 
+`uc 1 LC6 1 0 :1:6 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S202 . 1 `S184 1 . 1 0 `S193 1 . 1 0 ]
+[v _LATCbits LATCbits `VES202  1 e 1 @3979 ]
+[s S144 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"2508
+[s S153 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S162 . 1 `S144 1 . 1 0 `S153 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES162  1 e 1 @3988 ]
+[s S604 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"3241
+[s S613 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S617 . 1 `S604 1 . 1 0 `S613 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES617  1 e 1 @3998 ]
+[s S549 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3796
+[s S558 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S561 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S564 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S567 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S570 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S572 . 1 `S549 1 . 1 0 `S558 1 . 1 0 `S561 1 . 1 0 `S564 1 . 1 0 `S567 1 . 1 0 `S570 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES572  1 e 1 @4011 ]
+[s S454 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"4004
+[s S463 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S472 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S475 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S477 . 1 `S454 1 . 1 0 `S463 1 . 1 0 `S472 1 . 1 0 `S475 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES477  1 e 1 @4012 ]
+"4221
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"4233
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"4245
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+[s S506 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 CKTXP 1 0 :1:4 
+`uc 1 DTRXP 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"4689
+[s S515 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SCKP 1 0 :1:4 
+]
+[s S518 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 RXCKP 1 0 :1:5 
+]
+[s S521 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 W4E 1 0 :1:1 
+]
+[u S524 . 1 `S506 1 . 1 0 `S515 1 . 1 0 `S518 1 . 1 0 `S521 1 . 1 0 ]
+[v _BAUDCONbits BAUDCONbits `VES524  1 e 1 @4024 ]
+[s S359 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"5397
+[s S365 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S370 . 1 `S359 1 . 1 0 `S365 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES370  1 e 1 @4038 ]
+[s S224 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"5527
+[s S227 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S230 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S239 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S244 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 A 1 0 :1:5 
+]
+[s S249 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S254 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S259 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S262 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S265 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S270 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+]
+[s S274 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DA 1 0 :1:5 
+]
+[s S279 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 NOT_A 1 0 :1:5 
+]
+[u S284 . 1 `S224 1 . 1 0 `S227 1 . 1 0 `S230 1 . 1 0 `S239 1 . 1 0 `S244 1 . 1 0 `S249 1 . 1 0 `S254 1 . 1 0 `S259 1 . 1 0 `S262 1 . 1 0 `S265 1 . 1 0 `S270 1 . 1 0 `S274 1 . 1 0 `S279 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES284  1 e 1 @4039 ]
+"5679
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+"6429
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"55 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _flags flags `i  1 s 2 flags ]
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"66
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+"69
+[v _nout nout `i  1 s 2 nout ]
+"8 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_25LC010A.X\main.c
+[v _data data `VEuc  1 e 1 0 ]
+"9
+[v _msg msg `[30]uc  1 e 30 0 ]
+"11
+[v _rcvBuffer rcvBuffer `[30]uc  1 e 30 0 ]
+"13
+[v _main main `(v  1 e 1 0 ]
+{
+"50
+} 0
+"9 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[s S1179 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+"13
+[v sprintf@f f `S1179  1 a 6 59 ]
+"12
+[v sprintf@ap ap `[1]*.39v  1 a 2 57 ]
+"9
+[v sprintf@s s `*.39uc  1 p 2 49 ]
+[v sprintf@fmt fmt `*.25Cuc  1 p 2 51 ]
+"23
+} 0
+"1368 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1371
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 47 ]
+[s S679 _IO_FILE 0 ]
+"1368
+[v vfprintf@fp fp `*.39S679  1 p 2 41 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 43 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 45 ]
+"1382
+} 0
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+"672
+[v vfpfcnvrt@c c `uc  1 a 1 40 ]
+[s S679 _IO_FILE 0 ]
+"670
+[v vfpfcnvrt@fp fp `*.39S679  1 p 2 32 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 34 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 36 ]
+"1365
+} 0
+"259
+[v _ctoa ctoa `(i  1 s 2 ctoa ]
+{
+"261
+[v ctoa@w w `i  1 a 2 30 ]
+[s S679 _IO_FILE 0 ]
+"259
+[v ctoa@fp fp `*.39S679  1 p 2 27 ]
+[v ctoa@c c `uc  1 p 1 29 ]
+"270
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+"74
+[v pad@w w `i  1 a 2 25 ]
+[v pad@i i `i  1 a 2 23 ]
+[s S679 _IO_FILE 0 ]
+"72
+[v pad@fp fp `*.39S679  1 p 2 16 ]
+[v pad@buf buf `*.39uc  1 p 2 18 ]
+[v pad@p p `i  1 p 2 20 ]
+"95
+} 0
+"12 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"14
+[v strlen@a a `*.35Cuc  1 a 2 2 ]
+"12
+[v strlen@s s `*.35Cuc  1 p 2 0 ]
+"26
+} 0
+"8 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+"11
+[v fputs@i i `i  1 a 2 14 ]
+"10
+[v fputs@c c `uc  1 a 1 13 ]
+"8
+[v fputs@s s `*.39Cuc  1 p 2 9 ]
+[s S1179 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S1179  1 p 2 11 ]
+"19
+} 0
+"8 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 0 ]
+[s S1179 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S1179  1 p 2 2 ]
+"21
+} 0
+"7 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"4 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
+{
+"6
+[v memset@s s `*.39uc  1 a 2 10 ]
+"7
+[v memset@k k `ui  1 a 2 8 ]
+"4
+[v memset@dest dest `*.39v  1 p 2 0 ]
+[v memset@c c `i  1 p 2 2 ]
+[v memset@n n `ui  1 p 2 4 ]
+"90
+} 0
+"25 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_25LC010A.X\uart.c
+[v _UART_puts UART_puts `(v  1 e 1 0 ]
+{
+[v UART_puts@str str `*.39uc  1 p 2 1 ]
+"30
+} 0
+"20
+[v _UART_putch UART_putch `(v  1 e 1 0 ]
+{
+[v UART_putch@ch ch `uc  1 a 1 wreg ]
+[v UART_putch@ch ch `uc  1 a 1 wreg ]
+[v UART_putch@ch ch `uc  1 a 1 0 ]
+"23
+} 0
+"5
+[v _UART_Init UART_Init `(v  1 e 1 0 ]
+{
+"18
+} 0
+"6 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_25LC010A.X\spi_master.c
+[v _SPI_Init SPI_Init `(v  1 e 1 0 ]
+{
+"20
+} 0
+"28 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_25LC010A.X\25LC010A.c
+[v _EEPROM_WriteByte EEPROM_WriteByte `(v  1 e 1 0 ]
+{
+[v EEPROM_WriteByte@address address `uc  1 a 1 wreg ]
+[v EEPROM_WriteByte@address address `uc  1 a 1 wreg ]
+[v EEPROM_WriteByte@data data `uc  1 p 1 2 ]
+[v EEPROM_WriteByte@address address `uc  1 a 1 4 ]
+"36
+} 0
+"38
+[v _EEPROM_WriteBuffer EEPROM_WriteBuffer `(v  1 e 1 0 ]
+{
+[v EEPROM_WriteBuffer@address address `uc  1 a 1 wreg ]
+"45
+[v EEPROM_WriteBuffer@i i `uc  1 a 1 10 ]
+"38
+[v EEPROM_WriteBuffer@address address `uc  1 a 1 wreg ]
+[v EEPROM_WriteBuffer@buffer buffer `*.25uc  1 p 2 4 ]
+[v EEPROM_WriteBuffer@length length `uc  1 p 1 6 ]
+[v EEPROM_WriteBuffer@address address `uc  1 a 1 9 ]
+"61
+} 0
+"22
+[v _EEPROM_ReadBuffer EEPROM_ReadBuffer `(v  1 e 1 0 ]
+{
+[v EEPROM_ReadBuffer@address address `uc  1 a 1 wreg ]
+"23
+[v EEPROM_ReadBuffer@i i `uc  1 a 1 8 ]
+"22
+[v EEPROM_ReadBuffer@address address `uc  1 a 1 wreg ]
+[v EEPROM_ReadBuffer@buffer buffer `*.39uc  1 p 2 4 ]
+[v EEPROM_ReadBuffer@length length `uc  1 p 1 6 ]
+[v EEPROM_ReadBuffer@address address `uc  1 a 1 7 ]
+"26
+} 0
+"10
+[v _EEPROM_ReadByte EEPROM_ReadByte `(uc  1 e 1 0 ]
+{
+[v EEPROM_ReadByte@address address `uc  1 a 1 wreg ]
+"11
+[v EEPROM_ReadByte@data data `uc  1 a 1 3 ]
+"10
+[v EEPROM_ReadByte@address address `uc  1 a 1 wreg ]
+"13
+[v EEPROM_ReadByte@address address `uc  1 a 1 2 ]
+"20
+} 0
+"22 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_25LC010A.X\spi_master.c
+[v _SPI_Rx SPI_Rx `(uc  1 e 1 0 ]
+{
+"26
+} 0
+"63 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_25LC010A.X\25LC010A.c
+[v _EEPROM_EraseAll EEPROM_EraseAll `(v  1 e 1 0 ]
+{
+"73
+[v EEPROM_EraseAll@i i `uc  1 a 1 4 ]
+"64
+[v EEPROM_EraseAll@address address `uc  1 a 1 3 ]
+"81
+} 0
+"4
+[v _EEPROM_WriteEnable EEPROM_WriteEnable `(v  1 e 1 0 ]
+{
+"8
+} 0
+"28 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_25LC010A.X\spi_master.c
+[v _SPI_Tx SPI_Tx `(v  1 e 1 0 ]
+{
+[v SPI_Tx@data data `uc  1 a 1 wreg ]
+[v SPI_Tx@data data `uc  1 a 1 wreg ]
+"30
+[v SPI_Tx@data data `uc  1 a 1 1 ]
+"33
+} 0
+"47
+[v _SPI_Select SPI_Select `(v  1 e 1 0 ]
+{
+"50
+} 0
+"52
+[v _SPI_Deselect SPI_Deselect `(v  1 e 1 0 ]
+{
+"55
+} 0

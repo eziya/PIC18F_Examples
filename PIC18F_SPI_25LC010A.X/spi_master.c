@@ -20,26 +20,16 @@ void SPI_Init(void) {
 }
 
 uint8_t SPI_Rx() {
-    uint8_t dummy;
-    dummy = SSPBUF;
-    PIR1bits.SSPIF = 0;    
     SSPBUF=0x00;
-    while(!PIR1bits.SSPIF);
-    return SSPBUF;
-    
-    //while(!SSPSTATbits.BF);	    
-    //return SSPBUF; //read  buffer
+    while(!SSPSTATbits.BF);	    
+    return SSPBUF; //read  buffer
 }
 
 void SPI_Tx(uint8_t data) {    
     uint8_t dummy;
-    dummy = SSPBUF;
-    PIR1bits.SSPIF = 0;
     SSPBUF = data; //write to buffer
-    while(!PIR1bits.SSPIF);
-    
-    //while(!SSPSTATbits.BF);	       
-    //dummy = SSPBUF;
+    while(!SSPSTATbits.BF);	       
+    dummy = SSPBUF;
 }
 
 void SPI_RxBuffer(uint8_t *buffer, uint8_t length) {
