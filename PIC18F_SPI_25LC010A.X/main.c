@@ -6,47 +6,43 @@
 #include "25LC010A.h"
 
 volatile uint8_t data = 0;
-char msg[30];
 char *sndBuffer = "HELLO WORLD!HELLO WORLD!\r\n";
 char rcvBuffer[30];
-    
+
 void main(void) {
 
     OSCCON = 0x72; //16MHz, Internal OSC
 
     ANSEL = 0x0; //disable analog input     
     ANSELH = 0x0;
-        	
-	SPI_Init();
-	UART_Init();
-	
-	EEPROM_WriteByte(0x00, 'A');
-	data = EEPROM_ReadByte(0x00);
-	memset(msg, 0, sizeof(msg));	
-	sprintf(msg, "READ Byte: %c\r\n", data);
-	UART_puts(msg);
-	
-	EEPROM_WriteByte(0x01, 'B');
-	data = EEPROM_ReadByte(0x01);
-	memset(msg, 0, sizeof(msg));
-	sprintf(msg, "READ Byte: %c\r\n", data);
-	UART_puts(msg);
-	
-	EEPROM_WriteBuffer(0x02, (uint8_t*)sndBuffer, strlen(sndBuffer));
-	memset(rcvBuffer, 0, sizeof(rcvBuffer));
-	EEPROM_ReadBuffer(0x02, (uint8_t*)rcvBuffer,strlen(sndBuffer));
-	UART_puts(rcvBuffer);
-	
-	EEPROM_EraseAll();	
-	data = EEPROM_ReadByte(0x00);
-	memset(msg, 0, sizeof(msg));
-	sprintf(msg, "READ Byte: %c\r\n", data);
-	UART_puts(msg);
+
+    SPI_Init(); //init spi
+    UART_Init(); //init uart
+
+    EEPROM_WriteByte(0x00, 'A'); //write 'A' at 0x00
+    data = EEPROM_ReadByte(0x00); //read data
+
+    if (data != 'A') UART_puts("EEPROM_WriteByte 'A' Failed.\r\n");
+    else UART_puts("EEPROM_WriteByte 'A' OK.\r\n");
+
+    EEPROM_WriteByte(0x01, 'B'); //write 'B' at 0x01
+    data = EEPROM_ReadByte(0x01); //read data
+
+    if (data != 'B') UART_puts("EEPROM_WriteByte 'B' Failed.\r\n");
+    else UART_puts("EEPROM_WriteByte 'B' OK.\r\n");
+
+    EEPROM_WriteBuffer(0x02, (uint8_t*) sndBuffer, strlen(sndBuffer)); //write string
+    EEPROM_ReadBuffer(0x02, (uint8_t*) rcvBuffer, strlen(sndBuffer)); //read string
+    UART_puts(rcvBuffer);
+
+    EEPROM_EraseAll(); //erase all
+    data = EEPROM_ReadByte(0x00); //read data at 0x00
+
+    if (data != 0) UART_puts("EEPROM_EraseAll Failed.\r\n");
+    else UART_puts("EEPROM_EraseAll OK.\r\n");
 
     while (1) {
     }
 
     return;
 }
-
-

@@ -32,7 +32,7 @@ void EEPROM_WriteByte(uint8_t address, uint8_t data) {
     SPI_Tx(address);
     SPI_Tx(data);
     SPI_Deselect();
-    __delay_ms(5);
+    __delay_ms(5); //write cycle interval
 }
 
 void EEPROM_WriteBuffer(uint8_t address, uint8_t *buffer, uint8_t length) {
@@ -52,12 +52,11 @@ void EEPROM_WriteBuffer(uint8_t address, uint8_t *buffer, uint8_t length) {
             SPI_Tx(EEPROM_CMD_WRITE);
             SPI_Tx(address + i);
         }
-
         SPI_Tx(buffer[i]);
     }
 
     SPI_Deselect();
-    __delay_ms(5);
+    __delay_ms(5); //write cycle interval
 }
 
 void EEPROM_EraseAll(void) {
@@ -75,7 +74,7 @@ void EEPROM_EraseAll(void) {
         }
 
         SPI_Deselect();
-        __delay_ms(5);
+        __delay_ms(5); //write cycle interval
         address += EEPROM_PAGE_SIZE;
     }
 }
