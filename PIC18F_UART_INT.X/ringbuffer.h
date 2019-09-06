@@ -63,22 +63,22 @@ struct ring_buffer_t {
 void ring_buffer_init(ring_buffer_t *buffer);
 
 /**
- * Adds a byte to a ring buffer.
+ * Adds a uint8_t to a ring buffer.
  * @param buffer The buffer in which the data should be placed.
- * @param data The byte to place.
+ * @param data The uint8_t to place.
  */
 void ring_buffer_queue(ring_buffer_t *buffer, char data);
 
 /**
- * Adds an array of bytes to a ring buffer.
+ * Adds an array of uint8_ts to a ring buffer.
  * @param buffer The buffer in which the data should be placed.
- * @param data A pointer to the array of bytes to place in the queue.
+ * @param data A pointer to the array of uint8_ts to place in the queue.
  * @param size The size of the array.
  */
 void ring_buffer_queue_arr(ring_buffer_t *buffer, const char *data, ring_buffer_size_t size);
 
 /**
- * Returns the oldest byte in a ring buffer.
+ * Returns the oldest uint8_t in a ring buffer.
  * @param buffer The buffer from which the data should be returned.
  * @param data A pointer to the location at which the data should be placed.
  * @return 1 if data was returned; 0 otherwise.
@@ -86,11 +86,11 @@ void ring_buffer_queue_arr(ring_buffer_t *buffer, const char *data, ring_buffer_
 uint8_t ring_buffer_dequeue(ring_buffer_t *buffer, char *data);
 
 /**
- * Returns the <em>len</em> oldest bytes in a ring buffer.
+ * Returns the <em>len</em> oldest uint8_ts in a ring buffer.
  * @param buffer The buffer from which the data should be returned.
  * @param data A pointer to the array at which the data should be placed.
- * @param len The maximum number of bytes to return.
- * @return The number of bytes returned.
+ * @param len The maximum number of uint8_ts to return.
+ * @return The number of uint8_ts returned.
  */
 uint8_t ring_buffer_dequeue_arr(ring_buffer_t *buffer, char *data, ring_buffer_size_t len);
 /**

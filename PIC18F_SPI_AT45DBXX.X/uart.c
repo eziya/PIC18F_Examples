@@ -23,7 +23,7 @@ void UART_putch(uint8_t ch) {
 }
 
 void UART_puts(char *str) {
-    while (*str) {
+    while (*str != 0) {
         UART_putch(*str);
         str++;
     }

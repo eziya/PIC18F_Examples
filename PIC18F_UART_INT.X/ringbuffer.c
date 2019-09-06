@@ -13,7 +13,7 @@ void ring_buffer_init(ring_buffer_t *buffer) {
 void ring_buffer_queue(ring_buffer_t *buffer, char data) {
   /* Is buffer full? */
   if(ring_buffer_is_full(buffer)) {
-    /* Is going to overwrite the oldest byte */
+    /* Is going to overwrite the oldest uint8_t */
     /* Increase tail index */
     buffer->tail_index = ((buffer->tail_index + 1) & RING_BUFFER_MASK);
   }
@@ -24,7 +24,7 @@ void ring_buffer_queue(ring_buffer_t *buffer, char data) {
 }
 
 void ring_buffer_queue_arr(ring_buffer_t *buffer, const char *data, ring_buffer_size_t size) {
-  /* Add bytes; one by one */
+  /* Add uint8_ts; one by one */
   ring_buffer_size_t i;
   for(i = 0; i < size; i++) {
     ring_buffer_queue(buffer, data[i]);

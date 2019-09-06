@@ -1,0 +1,406 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F45K20 ]
+[d frameptr 4065 ]
+"40 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_AT45DBXX.X\at45dbxx.c
+[v _flash_wait_ready flash_wait_ready `(v  1 e 1 0 ]
+"46
+[v _flash_read_status flash_read_status `(uc  1 e 1 0 ]
+"58
+[v _flash_check_present flash_check_present `(uc  1 e 1 0 ]
+"68
+[v _flash_erase_all flash_erase_all `(v  1 e 1 0 ]
+"84
+[v _flash_read_page flash_read_page `(v  1 e 1 0 ]
+"107
+[v _flash_write_page flash_write_page `(v  1 e 1 0 ]
+"4 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"12 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"15 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"12 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_AT45DBXX.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"6 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_AT45DBXX.X\spi_master.c
+[v _SPI_Init SPI_Init `(v  1 e 1 0 ]
+"22
+[v _SPI_Rx SPI_Rx `(uc  1 e 1 0 ]
+"28
+[v _SPI_Tx SPI_Tx `(v  1 e 1 0 ]
+"53
+[v _SPI_Select SPI_Select `(v  1 e 1 0 ]
+"58
+[v _SPI_Deselect SPI_Deselect `(v  1 e 1 0 ]
+"5 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_AT45DBXX.X\uart.c
+[v _UART_Init UART_Init `(v  1 e 1 0 ]
+"20
+[v _UART_putch UART_putch `(v  1 e 1 0 ]
+"25
+[v _UART_puts UART_puts `(v  1 e 1 0 ]
+"32
+[v _UART_getch UART_getch `(uc  1 e 1 0 ]
+"446 D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include\pic18f45k20.h
+[v _ANSEL ANSEL `VEuc  1 e 1 @3966 ]
+"508
+[v _ANSELH ANSELH `VEuc  1 e 1 @3967 ]
+[s S120 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"1559
+[s S129 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+`uc 1 LA7 1 0 :1:7 
+]
+[u S138 . 1 `S120 1 . 1 0 `S129 1 . 1 0 ]
+[v _LATAbits LATAbits `VES138  1 e 1 @3977 ]
+[s S80 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"2064
+[s S89 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+[u S98 . 1 `S80 1 . 1 0 `S89 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES98  1 e 1 @3986 ]
+[s S160 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"2508
+[s S169 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S178 . 1 `S160 1 . 1 0 `S169 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES178  1 e 1 @3988 ]
+[s S596 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"3241
+[s S605 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S609 . 1 `S596 1 . 1 0 `S605 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES609  1 e 1 @3998 ]
+[s S541 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3796
+[s S550 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S553 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S556 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S559 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S562 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S564 . 1 `S541 1 . 1 0 `S550 1 . 1 0 `S553 1 . 1 0 `S556 1 . 1 0 `S559 1 . 1 0 `S562 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES564  1 e 1 @4011 ]
+[s S446 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"4004
+[s S455 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S464 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S467 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S469 . 1 `S446 1 . 1 0 `S455 1 . 1 0 `S464 1 . 1 0 `S467 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES469  1 e 1 @4012 ]
+"4221
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"4233
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"4245
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+[s S498 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 CKTXP 1 0 :1:4 
+`uc 1 DTRXP 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"4689
+[s S507 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SCKP 1 0 :1:4 
+]
+[s S510 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 RXCKP 1 0 :1:5 
+]
+[s S513 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 W4E 1 0 :1:1 
+]
+[u S516 . 1 `S498 1 . 1 0 `S507 1 . 1 0 `S510 1 . 1 0 `S513 1 . 1 0 ]
+[v _BAUDCONbits BAUDCONbits `VES516  1 e 1 @4024 ]
+[s S335 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"5397
+[s S341 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S346 . 1 `S335 1 . 1 0 `S341 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES346  1 e 1 @4038 ]
+[s S200 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"5527
+[s S203 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S206 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S215 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S220 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 A 1 0 :1:5 
+]
+[s S225 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S230 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S235 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S238 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S241 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S246 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+]
+[s S250 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DA 1 0 :1:5 
+]
+[s S255 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 NOT_A 1 0 :1:5 
+]
+[u S260 . 1 `S200 1 . 1 0 `S203 1 . 1 0 `S206 1 . 1 0 `S215 1 . 1 0 `S220 1 . 1 0 `S225 1 . 1 0 `S230 1 . 1 0 `S235 1 . 1 0 `S238 1 . 1 0 `S241 1 . 1 0 `S246 1 . 1 0 `S250 1 . 1 0 `S255 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES260  1 e 1 @4039 ]
+"5679
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+"6429
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"8 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_AT45DBXX.X\main.c
+[v _buffer buffer `[256]uc  1 e 256 0 ]
+"12
+[v _main main `(v  1 e 1 0 ]
+{
+"57
+} 0
+"12 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"14
+[v strlen@a a `*.25Cuc  1 a 2 2 ]
+"12
+[v strlen@s s `*.25Cuc  1 p 2 0 ]
+"26
+} 0
+"107 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_AT45DBXX.X\at45dbxx.c
+[v _flash_write_page flash_write_page `(v  1 e 1 0 ]
+{
+[v flash_write_page@address address `ul  1 p 4 4 ]
+[v flash_write_page@buffer buffer `*.35uc  1 p 2 8 ]
+[v flash_write_page@len len `ui  1 p 2 10 ]
+[v flash_write_page@erase_first erase_first `uc  1 p 1 12 ]
+"139
+} 0
+"40
+[v _flash_wait_ready flash_wait_ready `(v  1 e 1 0 ]
+{
+"44
+} 0
+"84
+[v _flash_read_page flash_read_page `(v  1 e 1 0 ]
+{
+[v flash_read_page@address address `ul  1 p 4 4 ]
+[v flash_read_page@buffer buffer `*.39uc  1 p 2 8 ]
+[v flash_read_page@len len `ui  1 p 2 10 ]
+"105
+} 0
+"58
+[v _flash_check_present flash_check_present `(uc  1 e 1 0 ]
+{
+"59
+[v flash_check_present@data data `uc  1 a 1 3 ]
+"66
+} 0
+"46
+[v _flash_read_status flash_read_status `(uc  1 e 1 0 ]
+{
+"47
+[v flash_read_status@status status `uc  1 a 1 2 ]
+"56
+} 0
+"28 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_AT45DBXX.X\spi_master.c
+[v _SPI_Tx SPI_Tx `(v  1 e 1 0 ]
+{
+[v SPI_Tx@data data `uc  1 a 1 wreg ]
+[v SPI_Tx@data data `uc  1 a 1 wreg ]
+"30
+[v SPI_Tx@data data `uc  1 a 1 1 ]
+"33
+} 0
+"53
+[v _SPI_Select SPI_Select `(v  1 e 1 0 ]
+{
+"56
+} 0
+"22
+[v _SPI_Rx SPI_Rx `(uc  1 e 1 0 ]
+{
+"26
+} 0
+"58
+[v _SPI_Deselect SPI_Deselect `(v  1 e 1 0 ]
+{
+"61
+} 0
+"25 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_AT45DBXX.X\uart.c
+[v _UART_puts UART_puts `(v  1 e 1 0 ]
+{
+[v UART_puts@str str `*.35uc  1 p 2 1 ]
+"30
+} 0
+"20
+[v _UART_putch UART_putch `(v  1 e 1 0 ]
+{
+[v UART_putch@ch ch `uc  1 a 1 wreg ]
+[v UART_putch@ch ch `uc  1 a 1 wreg ]
+[v UART_putch@ch ch `uc  1 a 1 0 ]
+"23
+} 0
+"5
+[v _UART_Init UART_Init `(v  1 e 1 0 ]
+{
+"18
+} 0
+"6 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_AT45DBXX.X\spi_master.c
+[v _SPI_Init SPI_Init `(v  1 e 1 0 ]
+{
+"20
+} 0

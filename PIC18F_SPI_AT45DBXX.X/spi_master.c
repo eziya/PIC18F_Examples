@@ -1,7 +1,7 @@
 #include "spi_master.h"
 
-#define SS_TRIS TRISCbits.RC2
-#define SS_PIN  LATCbits.LATC2
+#define SS_TRIS TRISAbits.RA5
+#define SS_PIN  LATAbits.LATA5
 
 void SPI_Init(void) {
     SS_TRIS = 0; //ss output
@@ -19,7 +19,7 @@ void SPI_Init(void) {
     SSPCON1bits.SSPEN = 1; //enable SPI
 }
 
-uint8_t SPI_Rx() {
+uint8_t SPI_Rx(void) {
     SSPBUF = 0x00; //dummy tx
     while (!SSPSTATbits.BF);
     return SSPBUF; //read  buffer
@@ -30,6 +30,12 @@ void SPI_Tx(uint8_t data) {
     SSPBUF = data; //write to buffer
     while (!SSPSTATbits.BF);
     dummy = SSPBUF; //discard dummy
+}
+
+uint8_t SPI_TxRx(uint8_t data) {
+    SSPBUF = data; //write to buffer
+    while (!SSPSTATbits.BF);
+    return SSPBUF;
 }
 
 void SPI_RxBuffer(uint8_t *buffer, uint8_t length) {

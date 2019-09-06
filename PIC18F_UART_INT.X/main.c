@@ -12,8 +12,8 @@ uint8_t uartFlag = 0; //uart flag
 
 void __interrupt() ISR(void) {
     if (PIR1bits.RCIF) {
-        ring_buffer_queue(&ring_buffer, RCREG); //queue received byte
-        if (RCREG == '\r' || RCREG == '\n') uartFlag = 1; //if received byte is CRLF, set flag
+        ring_buffer_queue(&ring_buffer, RCREG); //queue received uint8_t
+        if (RCREG == '\r' || RCREG == '\n') uartFlag = 1; //if received uint8_t is CRLF, set flag
         PIR1bits.RCIF = 0; //clear interrupt flag
     }
 }

@@ -19,11 +19,11 @@
 #define EEPROM_TOTAL_SIZE	128
 
 void EEPROM_WriteEnable(void);
-uint8_t EEPROM_ReadByte(uint8_t address);
+uint8_t EEPROM_Readuint8_t(uint8_t address);
 void EEPROM_ReadBuffer(uint8_t address, uint8_t *buffer, uint8_t length);
-void EEPROM_WriteByte(uint8_t address, uint8_t data);
+void EEPROM_Writeuint8_t(uint8_t address, uint8_t data);
 void EEPROM_WriteBuffer(uint8_t address, uint8_t *buffer, uint8_t length);
-void EEPROM_EraseAll(void);
+void EEPROdeviceinfo.eraseModeAll(void);
 
 #endif	/* __25LC010A_H */
 
