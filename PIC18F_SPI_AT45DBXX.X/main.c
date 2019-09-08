@@ -29,10 +29,13 @@ void main(void) {
         //    UART_puts("FLASH TEST FAILED.\r\n");
         //}
 
-        //flash_erase_all();
+        UART_puts("ERASING blocks...\r\n");
+        flash_erase_all();
+        UART_puts("ERASING blocks DONE...\r\n");
+        
         UART_puts("WRITE:");
         UART_puts((char*)msg1);
-        flash_write_page(0, (uint8_t*)msg1, strlen(msg1), 1);
+        flash_write_page(0, (uint8_t*)msg1, strlen(msg1), 0);
         
         flash_read_page(0, (uint8_t*)buffer, strlen(msg1));
         UART_puts("READ:");
@@ -40,7 +43,7 @@ void main(void) {
         
         UART_puts("WRITE:");
         UART_puts((char*)msg2);
-        flash_write_page((FLASH_END_ADDRESS/2), (uint8_t*)msg2, strlen(msg2), 1);
+        flash_write_page((FLASH_END_ADDRESS/2), (uint8_t*)msg2, strlen(msg2), 0);
         
         flash_read_page((FLASH_END_ADDRESS/2), (uint8_t*)buffer, strlen(msg2));
         UART_puts("READ:");
