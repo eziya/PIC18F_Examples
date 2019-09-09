@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>PIC18F_SPI_AT45DBXX</name>
+            <name>PIC18F_SPI_AT45DB041X</name>
             <creation-uuid>47b3a8a4-d235-41f9-965c-071503b7c4fa</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>

@@ -3,11 +3,12 @@
 #include "main.h"
 #include "uart.h"
 #include "spi_master.h"
-#include "at45dbxx.h"
+#include "at45db041x.h"
 
-char buffer[256];
+char buffer[AT45DB041X_PAGE_SIZE];
 const char* msg1 = "HELLO WORLD!!!\r\n";
 const char* msg2 = "PIC18F TESTING...\r\n";
+const char* msg3 = "Think like a man of the action, act like a man of the thought.\r\n";
 
 void main(void) {
 
@@ -22,31 +23,33 @@ void main(void) {
     UART_puts("FLASH TESTING...\r\n");
 
     if (flash_check_present()) {
-
-        //if (flash_test_memory() == 1) {
-        //    UART_puts("FLASH TEST O.K\r\n");
-        //} else {
-        //    UART_puts("FLASH TEST FAILED.\r\n");
-        //}
-
+        
         UART_puts("ERASING blocks...\r\n");
         flash_erase_all();
         UART_puts("ERASING blocks DONE...\r\n");
         
         UART_puts("WRITE:");
         UART_puts((char*)msg1);
-        flash_write_page(0, (uint8_t*)msg1, strlen(msg1), 0);
-        
+        flash_write_page(0, (uint8_t*)msg1, strlen(msg1), 0);        
+        memset(buffer, 0, sizeof(buffer));
         flash_read_page(0, (uint8_t*)buffer, strlen(msg1));
-        UART_puts("READ:");
+        UART_puts("READ :");
         UART_puts(buffer);
         
         UART_puts("WRITE:");
         UART_puts((char*)msg2);
-        flash_write_page((FLASH_END_ADDRESS/2), (uint8_t*)msg2, strlen(msg2), 0);
+        flash_write_page(999, (uint8_t*)msg2, strlen(msg2), 0);        
+        memset(buffer, 0, sizeof(buffer));
+        flash_read_page(999, (uint8_t*)buffer, strlen(msg2));
+        UART_puts("READ :");
+        UART_puts(buffer);        
         
-        flash_read_page((FLASH_END_ADDRESS/2), (uint8_t*)buffer, strlen(msg2));
-        UART_puts("READ:");
+        UART_puts("WRITE:");
+        UART_puts((char*)msg3);
+        flash_write_page(2047, (uint8_t*)msg3, strlen(msg3), 0);        
+        memset(buffer, 0, sizeof(buffer));
+        flash_read_page(2047, (uint8_t*)buffer, strlen(msg3));
+        UART_puts("READ :");
         UART_puts(buffer);
 
     } else {

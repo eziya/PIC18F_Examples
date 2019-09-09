@@ -7,7 +7,7 @@
       <itemPath>main.h</itemPath>
       <itemPath>spi_master.h</itemPath>
       <itemPath>uart.h</itemPath>
-      <itemPath>at45dbxx.h</itemPath>
+      <itemPath>at45db041x.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,7 +19,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>spi_master.c</itemPath>
       <itemPath>uart.c</itemPath>
-      <itemPath>at45dbxx.c</itemPath>
+      <itemPath>at45db041x.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
