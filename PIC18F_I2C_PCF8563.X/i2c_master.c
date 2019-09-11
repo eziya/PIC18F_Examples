@@ -153,7 +153,8 @@ static bool I2C_Rx(uint8_t *data, uint8_t ack) {
         }
     };
     *data = SSPBUF;
-
+    
+    PIR1bits.SSPIF = 0;
     SSPCON2bits.ACKDT = ack; //0:ack, 1:nack
     SSPCON2bits.ACKEN = 1; //send ack
 
@@ -166,5 +167,6 @@ static bool I2C_Rx(uint8_t *data, uint8_t ack) {
         }
     };
 
+    PIR1bits.SSPIF = 0;    
     return true;
 }
