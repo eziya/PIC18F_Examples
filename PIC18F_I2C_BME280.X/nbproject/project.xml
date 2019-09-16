@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>PIC18F_I2S_BME280</name>
+            <name>PIC18F_I2C_BME280</name>
             <creation-uuid>14076fcd-a099-4556-919e-a2286651c2e3</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
