@@ -58,115 +58,96 @@ bool I2C_TxBuffer(uint8_t deviceAddr, uint8_t registerAddr, uint8_t *data, uint8
 }
 
 static bool I2C_Start(void) {
-    PIR1bits.SSPIF = 0; //clear flag       
     while (SSPSTATbits.BF); //wait buffer empty
     SSPCON2bits.SEN = 1; //start condition
-    while (!PIR1bits.SSPIF) //wait start condition
-    {
-        //check bus collision
-        if (PIR2bits.BCLIF) {
-            PIR2bits.BCLIF = 0; //clear flag
-            return false;
-        }
-    };
-    PIR1bits.SSPIF = 0;
+    while (SSPCON2bits.SEN); //wait start condition
+    
+    if (PIR2bits.BCLIF) {
+        PIR2bits.BCLIF = 0; //check bus collision
+        return false;
+    }
+
     return true;
 }
 
 static bool I2C_Restart(void) {
-    PIR1bits.SSPIF = 0; //clear flag       
+
     while (SSPSTATbits.BF); //wait buffer empty
     SSPCON2bits.RSEN = 1; //repeated start condition
-    while (!PIR1bits.SSPIF) //wait start condition
-    {
-        //check bus collision
-        if (PIR2bits.BCLIF) {
-            PIR2bits.BCLIF = 0; //clear flag
-            return false;
-        }
-    };
-    PIR1bits.SSPIF = 0;
+    while (SSPCON2bits.RSEN);
+
+    if (PIR2bits.BCLIF) {
+        PIR2bits.BCLIF = 0; //check bus collision
+        return false;
+    }
+
     return true;
 }
 
 static bool I2C_Stop(void) {
-    PIR1bits.SSPIF = 0; //clear flag       
+
     while (SSPSTATbits.BF); //wait buffer empty
     SSPCON2bits.PEN = 1; //stop condition
-    while (!PIR1bits.SSPIF) //wait start condition
-    {
-        //check bus collision
-        if (PIR2bits.BCLIF) {
-            PIR2bits.BCLIF = 0; //clear flag
-            return false;
-        }
-    };
-    PIR1bits.SSPIF = 0;
+    while (SSPCON2bits.PEN); //wait stop condition
+
+    if (PIR2bits.BCLIF) {
+        PIR2bits.BCLIF = 0; //check bus collision
+        return false;
+    }
+
     return true;
 }
 
 static bool I2C_Tx(uint8_t data) {
-    PIR1bits.SSPIF = 0; //clear flag       
+
     while (SSPSTATbits.BF); //wait buffer empty
     SSPBUF = data;
-    while (!PIR1bits.SSPIF) //wait tx condition
-    {
-        //check bus collision
-        if (PIR2bits.BCLIF) {
-            PIR2bits.BCLIF = 0; //clear flag
-            return false;
-        }
+    while (SSPSTATbits.BF); //tx in progress;
 
-        //write collision
-        if (SSPCON1bits.WCOL) {
-            SSPCON1bits.WCOL = 0; //clear flag;
-            return false;
-        }
-    };
-    PIR1bits.SSPIF = 0;
+    if (PIR2bits.BCLIF) {
+        PIR2bits.BCLIF = 0; //check bus collision
+        return false;
+    }
+
+    if (SSPCON1bits.WCOL) {
+        SSPCON1bits.WCOL = 0; //write collision
+        return false;
+    }
 
     return !SSPCON2bits.ACKSTAT; //ACK is low
 }
 
 static bool I2C_Rx(uint8_t *data, uint8_t ack) {
-    PIR1bits.SSPIF = 0; //clear flag       
+    
     while (SSPSTATbits.BF); //wait buffer empty
     SSPCON2bits.RCEN = 1; //receive
-    while (!PIR1bits.SSPIF) //wait rx condition
-    {
-        //check bus collision
-        if (PIR2bits.BCLIF) {
-            PIR2bits.BCLIF = 0; //clear flag
-            return false;
-        }
+    while (SSPCON2bits.RCEN); //wait rx condition
 
-        //check overflow        
-        if (SSPCON1bits.SSPOV) {
-            SSPCON1bits.SSPOV = 0; //clear flag;
-            return false;
-        }
+    if (PIR2bits.BCLIF) {
+        PIR2bits.BCLIF = 0; //check bus collision
+        return false;
+    }
 
-        //write collision
-        if (SSPCON1bits.WCOL) {
-            SSPCON1bits.WCOL = 0; //clear flag;
-            return false;
-        }
-    };
+    if (SSPCON1bits.SSPOV) {
+        SSPCON1bits.SSPOV = 0; //check overflow        
+        return false;
+    }
+
+    if (SSPCON1bits.WCOL) {
+        SSPCON1bits.WCOL = 0; //write collision
+        return false;
+    }
+
     *data = SSPBUF;
-    
-    PIR1bits.SSPIF = 0;
+
     SSPCON2bits.ACKDT = ack; //0:ack, 1:nack
     SSPCON2bits.ACKEN = 1; //send ack
 
-    while (!PIR1bits.SSPIF) //wait ack condition
-    {
-        //check bus collision
-        if (PIR2bits.BCLIF) {
-            PIR2bits.BCLIF = 0; //clear flag
-            return false;
-        }
-    };
+    while (SSPCON2bits.ACKEN); //wait ack condition
+    if (PIR2bits.BCLIF) {
+        PIR2bits.BCLIF = 0; //clear flag
+        return false;
+    }
 
-    PIR1bits.SSPIF = 0;    
     return true;
 }

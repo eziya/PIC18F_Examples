@@ -1,0 +1,2248 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                               Wed Sep 18 07:16:07 2019
+
+Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
+     1                           	processor	18F45K20
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	idataCOMRAM,global,class=CODE,delta=1,noexec
+     6                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1,noexec
+     7                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     8                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     9                           	psect	dataCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+    10                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+    11                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text7,global,reloc=2,class=CODE,delta=1,group=1
+    19                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    20                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    21                           	psect	text10,global,reloc=2,class=CODE,delta=1
+    22                           	psect	text11,global,reloc=2,class=CODE,delta=1
+    23                           	psect	text12,global,reloc=2,class=CODE,delta=1
+    24                           	psect	text13,global,reloc=2,class=CODE,delta=1
+    25                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    26                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    27  0000                     
+    28                           ; Version 2.05
+    29                           ; Generated 20/12/2018 GMT
+    30                           ; 
+    31                           ; Copyright © 2018, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    32                           ; All rights reserved.
+    33                           ; 
+    34                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    35                           ; 
+    36                           ; Redistribution and use in source and binary forms, with or without modification, are
+    37                           ; permitted provided that the following conditions are met:
+    38                           ; 
+    39                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    40                           ;        conditions and the following disclaimer.
+    41                           ; 
+    42                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    43                           ;        of conditions and the following disclaimer in the documentation and/or other
+    44                           ;        materials provided with the distribution.
+    45                           ; 
+    46                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    47                           ;        software without specific prior written permission.
+    48                           ; 
+    49                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    50                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    51                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    52                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    53                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    54                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    55                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    56                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    57                           ; 
+    58                           ; 
+    59                           ; Code-generator required, PIC18F45K20 Definitions
+    60                           ; 
+    61                           ; SFR Addresses
+    62  0000                     
+    63                           	psect	idataCOMRAM
+    64  000D60                     __pidataCOMRAM:
+    65                           	opt callstack 0
+    66                           
+    67                           ;initializer for _lcdWidth
+    68  000D60  0140               	dw	320
+    69                           
+    70                           ;initializer for _lcdHeight
+    71  000D62  00F0               	dw	240
+    72                           
+    73                           ;initializer for _sndBuffer
+    74  000D64  01                 	db	low STR_1
+    75  000D65  06                 	db	high STR_1
+    76  0000                     _TRISDbits	set	3989
+    77  0000                     _TRISAbits	set	3986
+    78  0000                     _LATDbits	set	3980
+    79  0000                     _LATAbits	set	3977
+    80  0000                     _ANSELH	set	3967
+    81  0000                     _ANSEL	set	3966
+    82  0000                     _OSCCON	set	4051
+    83  0000                     _SSPBUF	set	4041
+    84  0000                     _SSPCON1bits	set	4038
+    85  0000                     _SSPSTATbits	set	4039
+    86  0000                     _TRISCbits	set	3988
+    87                           
+    88                           	psect	smallconst
+    89  000600                     __psmallconst:
+    90                           	opt callstack 0
+    91  000600  00                 	db	0
+    92  000601                     STR_1:
+    93  000601  48                 	db	72	;'H'
+    94  000602  45                 	db	69	;'E'
+    95  000603  4C                 	db	76	;'L'
+    96  000604  4C                 	db	76	;'L'
+    97  000605  4F                 	db	79	;'O'
+    98  000606  20                 	db	32
+    99  000607  57                 	db	87	;'W'
+   100  000608  4F                 	db	79	;'O'
+   101  000609  52                 	db	82	;'R'
+   102  00060A  4C                 	db	76	;'L'
+   103  00060B  44                 	db	68	;'D'
+   104  00060C  21                 	db	33
+   105  00060D  48                 	db	72	;'H'
+   106  00060E  45                 	db	69	;'E'
+   107  00060F  4C                 	db	76	;'L'
+   108  000610  4C                 	db	76	;'L'
+   109  000611  4F                 	db	79	;'O'
+   110  000612  20                 	db	32
+   111  000613  57                 	db	87	;'W'
+   112  000614  4F                 	db	79	;'O'
+   113  000615  52                 	db	82	;'R'
+   114  000616  4C                 	db	76	;'L'
+   115  000617  44                 	db	68	;'D'
+   116  000618  21                 	db	33
+   117  000619  0D                 	db	13
+   118  00061A  0A                 	db	10
+   119  00061B  00                 	db	0
+   120                           
+   121                           ; #config settings
+   122  00061C  00                 	db	0	; dummy byte at the end
+   123  0000                     
+   124                           	psect	cinit
+   125  000C1A                     __pcinit:
+   126                           	opt callstack 0
+   127  000C1A                     start_initialization:
+   128                           	opt callstack 0
+   129  000C1A                     __initialization:
+   130                           	opt callstack 0
+   131                           
+   132                           ; Initialize objects allocated to COMRAM (6 bytes)
+   133                           ; load TBLPTR registers with __pidataCOMRAM
+   134  000C1A  0E60               	movlw	low __pidataCOMRAM
+   135  000C1C  6EF6               	movwf	tblptrl,c
+   136  000C1E  0E0D               	movlw	high __pidataCOMRAM
+   137  000C20  6EF7               	movwf	tblptrh,c
+   138  000C22  0E00               	movlw	low (__pidataCOMRAM shr (0+16))
+   139  000C24  6EF8               	movwf	tblptru,c
+   140  000C26  EE00  F032         	lfsr	0,__pdataCOMRAM
+   141  000C2A  EE10 F006          	lfsr	1,6
+   142  000C2E                     copy_data0:
+   143  000C2E  0009               	tblrd		*+
+   144  000C30  CFF5 FFEE          	movff	tablat,postinc0
+   145  000C34  50E5               	movf	postdec1,w,c
+   146  000C36  50E1               	movf	fsr1l,w,c
+   147  000C38  E1FA               	bnz	copy_data0
+   148                           
+   149                           ; Clear objects allocated to COMRAM (31 bytes)
+   150  000C3A  EE00  F001         	lfsr	0,__pbssCOMRAM
+   151  000C3E  0E1F               	movlw	31
+   152  000C40                     clear_0:
+   153  000C40  6AEE               	clrf	postinc0,c
+   154  000C42  06E8               	decf	wreg,f,c
+   155  000C44  E1FD               	bnz	clear_0
+   156  000C46                     end_of_initialization:
+   157                           	opt callstack 0
+   158  000C46                     __end_of__initialization:
+   159                           	opt callstack 0
+   160  000C46  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   161  000C48  6EF8               	movwf	tblptru,c
+   162  000C4A  0100               	movlb	0
+   163  000C4C  EF55  F006         	goto	_main	;jump to C main() function
+   164                           
+   165                           	psect	bssCOMRAM
+   166  000001                     __pbssCOMRAM:
+   167                           	opt callstack 0
+   168  000001                     _rcvBuffer:
+   169                           	opt callstack 0
+   170  000001                     	ds	30
+   171  00001F                     _data:
+   172                           	opt callstack 0
+   173  00001F                     	ds	1
+   174                           
+   175                           	psect	dataCOMRAM
+   176  000032                     __pdataCOMRAM:
+   177                           	opt callstack 0
+   178  000032                     _lcdWidth:
+   179                           	opt callstack 0
+   180  000032                     	ds	2
+   181  000034                     _lcdHeight:
+   182                           	opt callstack 0
+   183  000034                     	ds	2
+   184  000036                     _sndBuffer:
+   185                           	opt callstack 0
+   186  000036                     	ds	2
+   187                           
+   188                           	psect	cstackCOMRAM
+   189  000020                     __pcstackCOMRAM:
+   190                           	opt callstack 0
+   191  000020                     ??_LCD_Reset:
+   192  000020                     ?___wmul:
+   193                           	opt callstack 0
+   194  000020                     ___wmul@multiplier:
+   195                           	opt callstack 0
+   196                           
+   197                           ; 2 bytes @ 0x0
+   198  000020                     	ds	1
+   199  000021                     SPI_Tx@data:
+   200                           	opt callstack 0
+   201                           
+   202                           ; 1 bytes @ 0x1
+   203  000021                     	ds	1
+   204  000022                     LCD_TxCmd@cmd:
+   205                           	opt callstack 0
+   206  000022                     LCD_TxData@data:
+   207                           	opt callstack 0
+   208  000022                     ___wmul@multiplicand:
+   209                           	opt callstack 0
+   210                           
+   211                           ; 2 bytes @ 0x2
+   212  000022                     	ds	2
+   213  000024                     LCD_TxCmdData@cmd:
+   214                           	opt callstack 0
+   215  000024                     ___wmul@product:
+   216                           	opt callstack 0
+   217                           
+   218                           ; 2 bytes @ 0x4
+   219  000024                     	ds	2
+   220  000026                     LCD_TxCmdData@data:
+   221                           	opt callstack 0
+   222  000026                     LCD_DrawColorBurst@color:
+   223                           	opt callstack 0
+   224                           
+   225                           ; 2 bytes @ 0x6
+   226  000026                     	ds	2
+   227  000028                     ??_LCD_SetRotation:
+   228  000028                     LCD_SetWindow@x0:
+   229                           	opt callstack 0
+   230  000028                     LCD_DrawColorBurst@size:
+   231                           	opt callstack 0
+   232                           
+   233                           ; 2 bytes @ 0x8
+   234  000028                     	ds	2
+   235  00002A                     LCD_SetRotation@rotation:
+   236                           	opt callstack 0
+   237  00002A                     LCD_SetWindow@y0:
+   238                           	opt callstack 0
+   239  00002A                     LCD_DrawColorBurst@i:
+   240                           	opt callstack 0
+   241                           
+   242                           ; 2 bytes @ 0xA
+   243  00002A                     	ds	1
+   244  00002B                     ??_LCD_Init:
+   245                           
+   246                           ; 1 bytes @ 0xB
+   247  00002B                     	ds	1
+   248  00002C                     LCD_SetWindow@x1:
+   249                           	opt callstack 0
+   250                           
+   251                           ; 2 bytes @ 0xC
+   252  00002C                     	ds	2
+   253  00002E                     LCD_SetWindow@y1:
+   254                           	opt callstack 0
+   255                           
+   256                           ; 2 bytes @ 0xE
+   257  00002E                     	ds	2
+   258  000030                     LCD_FillScreen@color:
+   259                           	opt callstack 0
+   260                           
+   261                           ; 2 bytes @ 0x10
+   262  000030                     	ds	2
+   263  000032                     
+   264                           ; 1 bytes @ 0x12
+   265 ;;
+   266 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   267 ;;
+   268 ;; *************** function _main *****************
+   269 ;; Defined at:
+   270 ;;		line 11 in file "main.c"
+   271 ;; Parameters:    Size  Location     Type
+   272 ;;		None
+   273 ;; Auto vars:     Size  Location     Type
+   274 ;;		None
+   275 ;; Return value:  Size  Location     Type
+   276 ;;                  1    wreg      void 
+   277 ;; Registers used:
+   278 ;;		wreg, status,2, status,0, prodl, prodh, cstack
+   279 ;; Tracked objects:
+   280 ;;		On entry : 0/0
+   281 ;;		On exit  : 0/0
+   282 ;;		Unchanged: 0/0
+   283 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   284 ;;      Params:         0       0       0       0       0       0       0
+   285 ;;      Locals:         0       0       0       0       0       0       0
+   286 ;;      Temps:          0       0       0       0       0       0       0
+   287 ;;      Totals:         0       0       0       0       0       0       0
+   288 ;;Total ram usage:        0 bytes
+   289 ;; Hardware stack levels required when called:    5
+   290 ;; This function calls:
+   291 ;;		_LCD_FillScreen
+   292 ;;		_LCD_Init
+   293 ;;		_LCD_SetRotation
+   294 ;;		_SPI_Init
+   295 ;; This function is called by:
+   296 ;;		Startup code after reset
+   297 ;; This function uses a non-reentrant model
+   298 ;;
+   299                           
+   300                           	psect	text0
+   301  000CAA                     __ptext0:
+   302                           	opt callstack 0
+   303  000CAA                     _main:
+   304                           	opt callstack 26
+   305                           
+   306                           ;main.c: 13:     OSCCON = 0x72;
+   307                           
+   308                           ;incstack = 0
+   309  000CAA  0E72               	movlw	114
+   310  000CAC  6ED3               	movwf	4051,c	;volatile
+   311                           
+   312                           ;main.c: 15:     ANSEL = 0x0;
+   313  000CAE  0E00               	movlw	0
+   314  000CB0  6E7E               	movwf	3966,c	;volatile
+   315                           
+   316                           ;main.c: 16:     ANSELH = 0x0;
+   317  000CB2  0E00               	movlw	0
+   318  000CB4  6E7F               	movwf	3967,c	;volatile
+   319                           
+   320                           ;main.c: 18:     SPI_Init();
+   321  000CB6  EC89  F006         	call	_SPI_Init	;wreg free
+   322                           
+   323                           ;main.c: 19:     LCD_Init();
+   324  000CBA  EC0F  F003         	call	_LCD_Init	;wreg free
+   325                           
+   326                           ;main.c: 20:     LCD_SetRotation(3);
+   327  000CBE  0E03               	movlw	3
+   328  000CC0  EC50  F005         	call	_LCD_SetRotation
+   329                           
+   330                           ;main.c: 21:     LCD_FillScreen(0x07E0);
+   331  000CC4  0E07               	movlw	7
+   332  000CC6  6E31               	movwf	LCD_FillScreen@color+1,c
+   333  000CC8  0EE0               	movlw	224
+   334  000CCA  6E30               	movwf	LCD_FillScreen@color,c
+   335  000CCC  ECE6  F005         	call	_LCD_FillScreen	;wreg free
+   336  000CD0                     l60:
+   337                           
+   338                           ;main.c: 25:     }
+   339  000CD0  D7FF               	goto	l60
+   340  000CD2                     __end_of_main:
+   341                           	opt callstack 0
+   342                           
+   343 ;; *************** function _SPI_Init *****************
+   344 ;; Defined at:
+   345 ;;		line 3 in file "spi_master.c"
+   346 ;; Parameters:    Size  Location     Type
+   347 ;;		None
+   348 ;; Auto vars:     Size  Location     Type
+   349 ;;		None
+   350 ;; Return value:  Size  Location     Type
+   351 ;;                  1    wreg      void 
+   352 ;; Registers used:
+   353 ;;		wreg, status,2
+   354 ;; Tracked objects:
+   355 ;;		On entry : 0/0
+   356 ;;		On exit  : 0/0
+   357 ;;		Unchanged: 0/0
+   358 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   359 ;;      Params:         0       0       0       0       0       0       0
+   360 ;;      Locals:         0       0       0       0       0       0       0
+   361 ;;      Temps:          0       0       0       0       0       0       0
+   362 ;;      Totals:         0       0       0       0       0       0       0
+   363 ;;Total ram usage:        0 bytes
+   364 ;; Hardware stack levels used:    1
+   365 ;; This function calls:
+   366 ;;		Nothing
+   367 ;; This function is called by:
+   368 ;;		_main
+   369 ;; This function uses a non-reentrant model
+   370 ;;
+   371                           
+   372                           	psect	text1
+   373  000D12                     __ptext1:
+   374                           	opt callstack 0
+   375  000D12                     _SPI_Init:
+   376                           	opt callstack 30
+   377                           
+   378                           ;spi_master.c: 4:     TRISCbits.RC3 = 0;
+   379                           
+   380                           ;incstack = 0
+   381  000D12  9694               	bcf	3988,3,c	;volatile
+   382                           
+   383                           ;spi_master.c: 5:     TRISCbits.RC4 = 1;
+   384  000D14  8894               	bsf	3988,4,c	;volatile
+   385                           
+   386                           ;spi_master.c: 6:     TRISCbits.RC5 = 0;
+   387  000D16  9A94               	bcf	3988,5,c	;volatile
+   388                           
+   389                           ;spi_master.c: 8:     SSPSTATbits.SMP = 0;
+   390  000D18  9EC7               	bcf	4039,7,c	;volatile
+   391                           
+   392                           ;spi_master.c: 9:     SSPSTATbits.CKE = 1;
+   393  000D1A  8CC7               	bsf	4039,6,c	;volatile
+   394                           
+   395                           ;spi_master.c: 11:     SSPCON1bits.CKP = 0;
+   396  000D1C  98C6               	bcf	4038,4,c	;volatile
+   397                           
+   398                           ;spi_master.c: 12:     SSPCON1bits.SSPM = 1;
+   399  000D1E  50C6               	movf	4038,w,c	;volatile
+   400  000D20  0BF0               	andlw	-16
+   401  000D22  0901               	iorlw	1
+   402  000D24  6EC6               	movwf	4038,c	;volatile
+   403                           
+   404                           ;spi_master.c: 13:     SSPCON1bits.SSPEN = 1;
+   405  000D26  8AC6               	bsf	4038,5,c	;volatile
+   406  000D28  0012               	return		;funcret
+   407  000D2A                     __end_of_SPI_Init:
+   408                           	opt callstack 0
+   409                           
+   410 ;; *************** function _LCD_Init *****************
+   411 ;; Defined at:
+   412 ;;		line 65 in file "lcd_bd663474.c"
+   413 ;; Parameters:    Size  Location     Type
+   414 ;;		None
+   415 ;; Auto vars:     Size  Location     Type
+   416 ;;		None
+   417 ;; Return value:  Size  Location     Type
+   418 ;;                  1    wreg      void 
+   419 ;; Registers used:
+   420 ;;		wreg, status,2, status,0, cstack
+   421 ;; Tracked objects:
+   422 ;;		On entry : 0/0
+   423 ;;		On exit  : 0/0
+   424 ;;		Unchanged: 0/0
+   425 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   426 ;;      Params:         0       0       0       0       0       0       0
+   427 ;;      Locals:         0       0       0       0       0       0       0
+   428 ;;      Temps:          2       0       0       0       0       0       0
+   429 ;;      Totals:         2       0       0       0       0       0       0
+   430 ;;Total ram usage:        2 bytes
+   431 ;; Hardware stack levels used:    1
+   432 ;; Hardware stack levels required when called:    4
+   433 ;; This function calls:
+   434 ;;		_LCD_Enable
+   435 ;;		_LCD_Reset
+   436 ;;		_LCD_SetRotation
+   437 ;;		_LCD_TxCmdData
+   438 ;; This function is called by:
+   439 ;;		_main
+   440 ;; This function uses a non-reentrant model
+   441 ;;
+   442                           
+   443                           	psect	text2
+   444  00061E                     __ptext2:
+   445                           	opt callstack 0
+   446  00061E                     _LCD_Init:
+   447                           	opt callstack 26
+   448                           
+   449                           ;lcd_bd663474.c: 67:     TRISAbits.RA1 = 0;
+   450                           
+   451                           ;incstack = 0
+   452  00061E  9292               	bcf	3986,1,c	;volatile
+   453                           
+   454                           ;lcd_bd663474.c: 68:     TRISAbits.RA2 = 0;
+   455  000620  9492               	bcf	3986,2,c	;volatile
+   456                           
+   457                           ;lcd_bd663474.c: 69:     TRISDbits.RD0 = 0;
+   458  000622  9095               	bcf	3989,0,c	;volatile
+   459                           
+   460                           ;lcd_bd663474.c: 71:  LCD_Enable();
+   461  000624  ECB3  F006         	call	_LCD_Enable	;wreg free
+   462                           
+   463                           ;lcd_bd663474.c: 72:  LCD_Reset();
+   464  000628  EC3F  F006         	call	_LCD_Reset	;wreg free
+   465                           
+   466                           ;lcd_bd663474.c: 74:  LCD_TxCmdData(0x0000, 0x0001);
+   467  00062C  0E00               	movlw	0
+   468  00062E  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   469  000630  0E00               	movlw	0
+   470  000632  6E24               	movwf	LCD_TxCmdData@cmd,c
+   471  000634  0E00               	movlw	0
+   472  000636  6E27               	movwf	LCD_TxCmdData@data+1,c
+   473  000638  0E01               	movlw	1
+   474  00063A  6E26               	movwf	LCD_TxCmdData@data,c
+   475  00063C  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   476                           
+   477                           ;lcd_bd663474.c: 75:  _delay((unsigned long)((10)*(16000000/4000.0)));
+   478  000640  0E34               	movlw	52
+   479  000642  6E2B               	movwf	??_LCD_Init& (0+255),c
+   480  000644  0EF2               	movlw	242
+   481  000646                     u317:
+   482  000646  2EE8               	decfsz	wreg,f,c
+   483  000648  D7FE               	bra	u317
+   484  00064A  2E2B               	decfsz	??_LCD_Init& (0+255),f,c
+   485  00064C  D7FC               	bra	u317
+   486                           
+   487                           ;lcd_bd663474.c: 78:  LCD_TxCmdData( 0x100, 0x0000 );
+   488  00064E  0E01               	movlw	1
+   489  000650  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   490  000652  0E00               	movlw	0
+   491  000654  6E24               	movwf	LCD_TxCmdData@cmd,c
+   492  000656  0E00               	movlw	0
+   493  000658  6E27               	movwf	LCD_TxCmdData@data+1,c
+   494  00065A  0E00               	movlw	0
+   495  00065C  6E26               	movwf	LCD_TxCmdData@data,c
+   496  00065E  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   497                           
+   498                           ;lcd_bd663474.c: 79:  LCD_TxCmdData( 0x101, 0x0000 );
+   499  000662  0E01               	movlw	1
+   500  000664  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   501  000666  0E01               	movlw	1
+   502  000668  6E24               	movwf	LCD_TxCmdData@cmd,c
+   503  00066A  0E00               	movlw	0
+   504  00066C  6E27               	movwf	LCD_TxCmdData@data+1,c
+   505  00066E  0E00               	movlw	0
+   506  000670  6E26               	movwf	LCD_TxCmdData@data,c
+   507  000672  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   508                           
+   509                           ;lcd_bd663474.c: 80:  LCD_TxCmdData( 0x102, 0x3110 );
+   510  000676  0E01               	movlw	1
+   511  000678  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   512  00067A  0E02               	movlw	2
+   513  00067C  6E24               	movwf	LCD_TxCmdData@cmd,c
+   514  00067E  0E31               	movlw	49
+   515  000680  6E27               	movwf	LCD_TxCmdData@data+1,c
+   516  000682  0E10               	movlw	16
+   517  000684  6E26               	movwf	LCD_TxCmdData@data,c
+   518  000686  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   519                           
+   520                           ;lcd_bd663474.c: 81:  LCD_TxCmdData( 0x103, 0xe200 );
+   521  00068A  0E01               	movlw	1
+   522  00068C  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   523  00068E  0E03               	movlw	3
+   524  000690  6E24               	movwf	LCD_TxCmdData@cmd,c
+   525  000692  0EE2               	movlw	226
+   526  000694  6E27               	movwf	LCD_TxCmdData@data+1,c
+   527  000696  0E00               	movlw	0
+   528  000698  6E26               	movwf	LCD_TxCmdData@data,c
+   529  00069A  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   530                           
+   531                           ;lcd_bd663474.c: 82:  LCD_TxCmdData( 0x110, 0x009d );
+   532  00069E  0E01               	movlw	1
+   533  0006A0  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   534  0006A2  0E10               	movlw	16
+   535  0006A4  6E24               	movwf	LCD_TxCmdData@cmd,c
+   536  0006A6  0E00               	movlw	0
+   537  0006A8  6E27               	movwf	LCD_TxCmdData@data+1,c
+   538  0006AA  0E9D               	movlw	157
+   539  0006AC  6E26               	movwf	LCD_TxCmdData@data,c
+   540  0006AE  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   541                           
+   542                           ;lcd_bd663474.c: 83:  LCD_TxCmdData( 0x111, 0x0022 );
+   543  0006B2  0E01               	movlw	1
+   544  0006B4  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   545  0006B6  0E11               	movlw	17
+   546  0006B8  6E24               	movwf	LCD_TxCmdData@cmd,c
+   547  0006BA  0E00               	movlw	0
+   548  0006BC  6E27               	movwf	LCD_TxCmdData@data+1,c
+   549  0006BE  0E22               	movlw	34
+   550  0006C0  6E26               	movwf	LCD_TxCmdData@data,c
+   551  0006C2  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   552                           
+   553                           ;lcd_bd663474.c: 84:  LCD_TxCmdData( 0x100, 0x0120 );
+   554  0006C6  0E01               	movlw	1
+   555  0006C8  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   556  0006CA  0E00               	movlw	0
+   557  0006CC  6E24               	movwf	LCD_TxCmdData@cmd,c
+   558  0006CE  0E01               	movlw	1
+   559  0006D0  6E27               	movwf	LCD_TxCmdData@data+1,c
+   560  0006D2  0E20               	movlw	32
+   561  0006D4  6E26               	movwf	LCD_TxCmdData@data,c
+   562  0006D6  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   563                           
+   564                           ;lcd_bd663474.c: 85:  _delay((unsigned long)((20)*(16000000/4000.0)));
+   565  0006DA  0E68               	movlw	104
+   566  0006DC  6E2B               	movwf	??_LCD_Init& (0+255),c
+   567  0006DE  0EE4               	movlw	228
+   568  0006E0                     u327:
+   569  0006E0  2EE8               	decfsz	wreg,f,c
+   570  0006E2  D7FE               	bra	u327
+   571  0006E4  2E2B               	decfsz	??_LCD_Init& (0+255),f,c
+   572  0006E6  D7FC               	bra	u327
+   573  0006E8  F000 F000          	nop2	
+   574                           
+   575                           ;lcd_bd663474.c: 86:     LCD_TxCmdData( 0x100, 0x3120 );
+   576  0006EC  0E01               	movlw	1
+   577  0006EE  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   578  0006F0  0E00               	movlw	0
+   579  0006F2  6E24               	movwf	LCD_TxCmdData@cmd,c
+   580  0006F4  0E31               	movlw	49
+   581  0006F6  6E27               	movwf	LCD_TxCmdData@data+1,c
+   582  0006F8  0E20               	movlw	32
+   583  0006FA  6E26               	movwf	LCD_TxCmdData@data,c
+   584  0006FC  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   585                           
+   586                           ;lcd_bd663474.c: 87:  _delay((unsigned long)((80)*(16000000/4000.0)));
+   587  000700  0E02               	movlw	2
+   588  000702  6E2C               	movwf	(??_LCD_Init+1)& (0+255),c
+   589  000704  0EA0               	movlw	160
+   590  000706  6E2B               	movwf	??_LCD_Init& (0+255),c
+   591  000708  0E92               	movlw	146
+   592  00070A                     u337:
+   593  00070A  2EE8               	decfsz	wreg,f,c
+   594  00070C  D7FE               	bra	u337
+   595  00070E  2E2B               	decfsz	??_LCD_Init& (0+255),f,c
+   596  000710  D7FC               	bra	u337
+   597  000712  2E2C               	decfsz	(??_LCD_Init+1)& (0+255),f,c
+   598  000714  D7FA               	bra	u337
+   599  000716  F000 F000          	nop2	
+   600                           
+   601                           ;lcd_bd663474.c: 90:  LCD_TxCmdData( 0x001, 0x0100 );
+   602  00071A  0E00               	movlw	0
+   603  00071C  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   604  00071E  0E01               	movlw	1
+   605  000720  6E24               	movwf	LCD_TxCmdData@cmd,c
+   606  000722  0E01               	movlw	1
+   607  000724  6E27               	movwf	LCD_TxCmdData@data+1,c
+   608  000726  0E00               	movlw	0
+   609  000728  6E26               	movwf	LCD_TxCmdData@data,c
+   610  00072A  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   611                           
+   612                           ;lcd_bd663474.c: 91:  LCD_TxCmdData( 0x002, 0x0000 );
+   613  00072E  0E00               	movlw	0
+   614  000730  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   615  000732  0E02               	movlw	2
+   616  000734  6E24               	movwf	LCD_TxCmdData@cmd,c
+   617  000736  0E00               	movlw	0
+   618  000738  6E27               	movwf	LCD_TxCmdData@data+1,c
+   619  00073A  0E00               	movlw	0
+   620  00073C  6E26               	movwf	LCD_TxCmdData@data,c
+   621  00073E  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   622                           
+   623                           ;lcd_bd663474.c: 92:  LCD_TxCmdData( 0x003, 0x1230 );
+   624  000742  0E00               	movlw	0
+   625  000744  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   626  000746  0E03               	movlw	3
+   627  000748  6E24               	movwf	LCD_TxCmdData@cmd,c
+   628  00074A  0E12               	movlw	18
+   629  00074C  6E27               	movwf	LCD_TxCmdData@data+1,c
+   630  00074E  0E30               	movlw	48
+   631  000750  6E26               	movwf	LCD_TxCmdData@data,c
+   632  000752  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   633                           
+   634                           ;lcd_bd663474.c: 93:  LCD_TxCmdData( 0x006, 0x0000 );
+   635  000756  0E00               	movlw	0
+   636  000758  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   637  00075A  0E06               	movlw	6
+   638  00075C  6E24               	movwf	LCD_TxCmdData@cmd,c
+   639  00075E  0E00               	movlw	0
+   640  000760  6E27               	movwf	LCD_TxCmdData@data+1,c
+   641  000762  0E00               	movlw	0
+   642  000764  6E26               	movwf	LCD_TxCmdData@data,c
+   643  000766  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   644                           
+   645                           ;lcd_bd663474.c: 94:  LCD_TxCmdData( 0x007, 0x0101 );
+   646  00076A  0E00               	movlw	0
+   647  00076C  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   648  00076E  0E07               	movlw	7
+   649  000770  6E24               	movwf	LCD_TxCmdData@cmd,c
+   650  000772  0E01               	movlw	1
+   651  000774  6E27               	movwf	LCD_TxCmdData@data+1,c
+   652  000776  0E01               	movlw	1
+   653  000778  6E26               	movwf	LCD_TxCmdData@data,c
+   654  00077A  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   655                           
+   656                           ;lcd_bd663474.c: 95:  LCD_TxCmdData( 0x008, 0x0808 );
+   657  00077E  0E00               	movlw	0
+   658  000780  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   659  000782  0E08               	movlw	8
+   660  000784  6E24               	movwf	LCD_TxCmdData@cmd,c
+   661  000786  0E08               	movlw	8
+   662  000788  6E27               	movwf	LCD_TxCmdData@data+1,c
+   663  00078A  0E08               	movlw	8
+   664  00078C  6E26               	movwf	LCD_TxCmdData@data,c
+   665  00078E  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   666                           
+   667                           ;lcd_bd663474.c: 96:  LCD_TxCmdData( 0x009, 0x0000 );
+   668  000792  0E00               	movlw	0
+   669  000794  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   670  000796  0E09               	movlw	9
+   671  000798  6E24               	movwf	LCD_TxCmdData@cmd,c
+   672  00079A  0E00               	movlw	0
+   673  00079C  6E27               	movwf	LCD_TxCmdData@data+1,c
+   674  00079E  0E00               	movlw	0
+   675  0007A0  6E26               	movwf	LCD_TxCmdData@data,c
+   676  0007A2  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   677                           
+   678                           ;lcd_bd663474.c: 97:  LCD_TxCmdData( 0x00b, 0x0000 );
+   679  0007A6  0E00               	movlw	0
+   680  0007A8  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   681  0007AA  0E0B               	movlw	11
+   682  0007AC  6E24               	movwf	LCD_TxCmdData@cmd,c
+   683  0007AE  0E00               	movlw	0
+   684  0007B0  6E27               	movwf	LCD_TxCmdData@data+1,c
+   685  0007B2  0E00               	movlw	0
+   686  0007B4  6E26               	movwf	LCD_TxCmdData@data,c
+   687  0007B6  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   688                           
+   689                           ;lcd_bd663474.c: 98:  LCD_TxCmdData( 0x00c, 0x0000 );
+   690  0007BA  0E00               	movlw	0
+   691  0007BC  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   692  0007BE  0E0C               	movlw	12
+   693  0007C0  6E24               	movwf	LCD_TxCmdData@cmd,c
+   694  0007C2  0E00               	movlw	0
+   695  0007C4  6E27               	movwf	LCD_TxCmdData@data+1,c
+   696  0007C6  0E00               	movlw	0
+   697  0007C8  6E26               	movwf	LCD_TxCmdData@data,c
+   698  0007CA  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   699                           
+   700                           ;lcd_bd663474.c: 99:  LCD_TxCmdData( 0x00d, 0x0018 );
+   701  0007CE  0E00               	movlw	0
+   702  0007D0  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   703  0007D2  0E0D               	movlw	13
+   704  0007D4  6E24               	movwf	LCD_TxCmdData@cmd,c
+   705  0007D6  0E00               	movlw	0
+   706  0007D8  6E27               	movwf	LCD_TxCmdData@data+1,c
+   707  0007DA  0E18               	movlw	24
+   708  0007DC  6E26               	movwf	LCD_TxCmdData@data,c
+   709  0007DE  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   710                           
+   711                           ;lcd_bd663474.c: 102:  LCD_TxCmdData( 0x012, 0x0000 );
+   712  0007E2  0E00               	movlw	0
+   713  0007E4  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   714  0007E6  0E12               	movlw	18
+   715  0007E8  6E24               	movwf	LCD_TxCmdData@cmd,c
+   716  0007EA  0E00               	movlw	0
+   717  0007EC  6E27               	movwf	LCD_TxCmdData@data+1,c
+   718  0007EE  0E00               	movlw	0
+   719  0007F0  6E26               	movwf	LCD_TxCmdData@data,c
+   720  0007F2  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   721                           
+   722                           ;lcd_bd663474.c: 103:  LCD_TxCmdData( 0x013, 0x0000 );
+   723  0007F6  0E00               	movlw	0
+   724  0007F8  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   725  0007FA  0E13               	movlw	19
+   726  0007FC  6E24               	movwf	LCD_TxCmdData@cmd,c
+   727  0007FE  0E00               	movlw	0
+   728  000800  6E27               	movwf	LCD_TxCmdData@data+1,c
+   729  000802  0E00               	movlw	0
+   730  000804  6E26               	movwf	LCD_TxCmdData@data,c
+   731  000806  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   732                           
+   733                           ;lcd_bd663474.c: 104:  LCD_TxCmdData( 0x018, 0x0000 );
+   734  00080A  0E00               	movlw	0
+   735  00080C  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   736  00080E  0E18               	movlw	24
+   737  000810  6E24               	movwf	LCD_TxCmdData@cmd,c
+   738  000812  0E00               	movlw	0
+   739  000814  6E27               	movwf	LCD_TxCmdData@data+1,c
+   740  000816  0E00               	movlw	0
+   741  000818  6E26               	movwf	LCD_TxCmdData@data,c
+   742  00081A  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   743                           
+   744                           ;lcd_bd663474.c: 105:  LCD_TxCmdData( 0x019, 0x0000 );
+   745  00081E  0E00               	movlw	0
+   746  000820  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   747  000822  0E19               	movlw	25
+   748  000824  6E24               	movwf	LCD_TxCmdData@cmd,c
+   749  000826  0E00               	movlw	0
+   750  000828  6E27               	movwf	LCD_TxCmdData@data+1,c
+   751  00082A  0E00               	movlw	0
+   752  00082C  6E26               	movwf	LCD_TxCmdData@data,c
+   753  00082E  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   754                           
+   755                           ;lcd_bd663474.c: 106:  LCD_TxCmdData( 0x203, 0x0000 );
+   756  000832  0E02               	movlw	2
+   757  000834  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   758  000836  0E03               	movlw	3
+   759  000838  6E24               	movwf	LCD_TxCmdData@cmd,c
+   760  00083A  0E00               	movlw	0
+   761  00083C  6E27               	movwf	LCD_TxCmdData@data+1,c
+   762  00083E  0E00               	movlw	0
+   763  000840  6E26               	movwf	LCD_TxCmdData@data,c
+   764  000842  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   765                           
+   766                           ;lcd_bd663474.c: 107:  LCD_TxCmdData( 0x204, 0x0000 );
+   767  000846  0E02               	movlw	2
+   768  000848  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   769  00084A  0E04               	movlw	4
+   770  00084C  6E24               	movwf	LCD_TxCmdData@cmd,c
+   771  00084E  0E00               	movlw	0
+   772  000850  6E27               	movwf	LCD_TxCmdData@data+1,c
+   773  000852  0E00               	movlw	0
+   774  000854  6E26               	movwf	LCD_TxCmdData@data,c
+   775  000856  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   776                           
+   777                           ;lcd_bd663474.c: 110:  LCD_TxCmdData( 0x210, 0x0000 );
+   778  00085A  0E02               	movlw	2
+   779  00085C  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   780  00085E  0E10               	movlw	16
+   781  000860  6E24               	movwf	LCD_TxCmdData@cmd,c
+   782  000862  0E00               	movlw	0
+   783  000864  6E27               	movwf	LCD_TxCmdData@data+1,c
+   784  000866  0E00               	movlw	0
+   785  000868  6E26               	movwf	LCD_TxCmdData@data,c
+   786  00086A  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   787                           
+   788                           ;lcd_bd663474.c: 111:  LCD_TxCmdData( 0x211, 0x00ef );
+   789  00086E  0E02               	movlw	2
+   790  000870  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   791  000872  0E11               	movlw	17
+   792  000874  6E24               	movwf	LCD_TxCmdData@cmd,c
+   793  000876  0E00               	movlw	0
+   794  000878  6E27               	movwf	LCD_TxCmdData@data+1,c
+   795  00087A  0EEF               	movlw	239
+   796  00087C  6E26               	movwf	LCD_TxCmdData@data,c
+   797  00087E  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   798                           
+   799                           ;lcd_bd663474.c: 112:  LCD_TxCmdData( 0x212, 0x0000 );
+   800  000882  0E02               	movlw	2
+   801  000884  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   802  000886  0E12               	movlw	18
+   803  000888  6E24               	movwf	LCD_TxCmdData@cmd,c
+   804  00088A  0E00               	movlw	0
+   805  00088C  6E27               	movwf	LCD_TxCmdData@data+1,c
+   806  00088E  0E00               	movlw	0
+   807  000890  6E26               	movwf	LCD_TxCmdData@data,c
+   808  000892  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   809                           
+   810                           ;lcd_bd663474.c: 113:  LCD_TxCmdData( 0x213, 0x013f );
+   811  000896  0E02               	movlw	2
+   812  000898  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   813  00089A  0E13               	movlw	19
+   814  00089C  6E24               	movwf	LCD_TxCmdData@cmd,c
+   815  00089E  0E01               	movlw	1
+   816  0008A0  6E27               	movwf	LCD_TxCmdData@data+1,c
+   817  0008A2  0E3F               	movlw	63
+   818  0008A4  6E26               	movwf	LCD_TxCmdData@data,c
+   819  0008A6  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   820                           
+   821                           ;lcd_bd663474.c: 116:  LCD_TxCmdData( 0x214, 0x0000 );
+   822  0008AA  0E02               	movlw	2
+   823  0008AC  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   824  0008AE  0E14               	movlw	20
+   825  0008B0  6E24               	movwf	LCD_TxCmdData@cmd,c
+   826  0008B2  0E00               	movlw	0
+   827  0008B4  6E27               	movwf	LCD_TxCmdData@data+1,c
+   828  0008B6  0E00               	movlw	0
+   829  0008B8  6E26               	movwf	LCD_TxCmdData@data,c
+   830  0008BA  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   831                           
+   832                           ;lcd_bd663474.c: 117:  LCD_TxCmdData( 0x215, 0x0000 );
+   833  0008BE  0E02               	movlw	2
+   834  0008C0  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   835  0008C2  0E15               	movlw	21
+   836  0008C4  6E24               	movwf	LCD_TxCmdData@cmd,c
+   837  0008C6  0E00               	movlw	0
+   838  0008C8  6E27               	movwf	LCD_TxCmdData@data+1,c
+   839  0008CA  0E00               	movlw	0
+   840  0008CC  6E26               	movwf	LCD_TxCmdData@data,c
+   841  0008CE  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   842                           
+   843                           ;lcd_bd663474.c: 118:  LCD_TxCmdData( 0x216, 0x0000 );
+   844  0008D2  0E02               	movlw	2
+   845  0008D4  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   846  0008D6  0E16               	movlw	22
+   847  0008D8  6E24               	movwf	LCD_TxCmdData@cmd,c
+   848  0008DA  0E00               	movlw	0
+   849  0008DC  6E27               	movwf	LCD_TxCmdData@data+1,c
+   850  0008DE  0E00               	movlw	0
+   851  0008E0  6E26               	movwf	LCD_TxCmdData@data,c
+   852  0008E2  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   853                           
+   854                           ;lcd_bd663474.c: 119:  LCD_TxCmdData( 0x217, 0x0000 );
+   855  0008E6  0E02               	movlw	2
+   856  0008E8  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   857  0008EA  0E17               	movlw	23
+   858  0008EC  6E24               	movwf	LCD_TxCmdData@cmd,c
+   859  0008EE  0E00               	movlw	0
+   860  0008F0  6E27               	movwf	LCD_TxCmdData@data+1,c
+   861  0008F2  0E00               	movlw	0
+   862  0008F4  6E26               	movwf	LCD_TxCmdData@data,c
+   863  0008F6  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   864                           
+   865                           ;lcd_bd663474.c: 122:  LCD_TxCmdData( 0x300, 0x5343);
+   866  0008FA  0E03               	movlw	3
+   867  0008FC  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   868  0008FE  0E00               	movlw	0
+   869  000900  6E24               	movwf	LCD_TxCmdData@cmd,c
+   870  000902  0E53               	movlw	83
+   871  000904  6E27               	movwf	LCD_TxCmdData@data+1,c
+   872  000906  0E43               	movlw	67
+   873  000908  6E26               	movwf	LCD_TxCmdData@data,c
+   874  00090A  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   875                           
+   876                           ;lcd_bd663474.c: 123:  LCD_TxCmdData( 0x301, 0x1021);
+   877  00090E  0E03               	movlw	3
+   878  000910  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   879  000912  0E01               	movlw	1
+   880  000914  6E24               	movwf	LCD_TxCmdData@cmd,c
+   881  000916  0E10               	movlw	16
+   882  000918  6E27               	movwf	LCD_TxCmdData@data+1,c
+   883  00091A  0E21               	movlw	33
+   884  00091C  6E26               	movwf	LCD_TxCmdData@data,c
+   885  00091E  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   886                           
+   887                           ;lcd_bd663474.c: 124:  LCD_TxCmdData( 0x302, 0x0003);
+   888  000922  0E03               	movlw	3
+   889  000924  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   890  000926  0E02               	movlw	2
+   891  000928  6E24               	movwf	LCD_TxCmdData@cmd,c
+   892  00092A  0E00               	movlw	0
+   893  00092C  6E27               	movwf	LCD_TxCmdData@data+1,c
+   894  00092E  0E03               	movlw	3
+   895  000930  6E26               	movwf	LCD_TxCmdData@data,c
+   896  000932  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   897                           
+   898                           ;lcd_bd663474.c: 125:  LCD_TxCmdData( 0x303, 0x0011);
+   899  000936  0E03               	movlw	3
+   900  000938  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   901  00093A  0E03               	movlw	3
+   902  00093C  6E24               	movwf	LCD_TxCmdData@cmd,c
+   903  00093E  0E00               	movlw	0
+   904  000940  6E27               	movwf	LCD_TxCmdData@data+1,c
+   905  000942  0E11               	movlw	17
+   906  000944  6E26               	movwf	LCD_TxCmdData@data,c
+   907  000946  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   908                           
+   909                           ;lcd_bd663474.c: 126:  LCD_TxCmdData( 0x304, 0x050a);
+   910  00094A  0E03               	movlw	3
+   911  00094C  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   912  00094E  0E04               	movlw	4
+   913  000950  6E24               	movwf	LCD_TxCmdData@cmd,c
+   914  000952  0E05               	movlw	5
+   915  000954  6E27               	movwf	LCD_TxCmdData@data+1,c
+   916  000956  0E0A               	movlw	10
+   917  000958  6E26               	movwf	LCD_TxCmdData@data,c
+   918  00095A  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   919                           
+   920                           ;lcd_bd663474.c: 127:  LCD_TxCmdData( 0x305, 0x4342);
+   921  00095E  0E03               	movlw	3
+   922  000960  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   923  000962  0E05               	movlw	5
+   924  000964  6E24               	movwf	LCD_TxCmdData@cmd,c
+   925  000966  0E43               	movlw	67
+   926  000968  6E27               	movwf	LCD_TxCmdData@data+1,c
+   927  00096A  0E42               	movlw	66
+   928  00096C  6E26               	movwf	LCD_TxCmdData@data,c
+   929  00096E  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   930                           
+   931                           ;lcd_bd663474.c: 128:  LCD_TxCmdData( 0x306, 0x1100);
+   932  000972  0E03               	movlw	3
+   933  000974  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   934  000976  0E06               	movlw	6
+   935  000978  6E24               	movwf	LCD_TxCmdData@cmd,c
+   936  00097A  0E11               	movlw	17
+   937  00097C  6E27               	movwf	LCD_TxCmdData@data+1,c
+   938  00097E  0E00               	movlw	0
+   939  000980  6E26               	movwf	LCD_TxCmdData@data,c
+   940  000982  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   941                           
+   942                           ;lcd_bd663474.c: 129:  LCD_TxCmdData( 0x307, 0x0003);
+   943  000986  0E03               	movlw	3
+   944  000988  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   945  00098A  0E07               	movlw	7
+   946  00098C  6E24               	movwf	LCD_TxCmdData@cmd,c
+   947  00098E  0E00               	movlw	0
+   948  000990  6E27               	movwf	LCD_TxCmdData@data+1,c
+   949  000992  0E03               	movlw	3
+   950  000994  6E26               	movwf	LCD_TxCmdData@data,c
+   951  000996  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   952                           
+   953                           ;lcd_bd663474.c: 130:  LCD_TxCmdData( 0x308, 0x1201);
+   954  00099A  0E03               	movlw	3
+   955  00099C  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   956  00099E  0E08               	movlw	8
+   957  0009A0  6E24               	movwf	LCD_TxCmdData@cmd,c
+   958  0009A2  0E12               	movlw	18
+   959  0009A4  6E27               	movwf	LCD_TxCmdData@data+1,c
+   960  0009A6  0E01               	movlw	1
+   961  0009A8  6E26               	movwf	LCD_TxCmdData@data,c
+   962  0009AA  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   963                           
+   964                           ;lcd_bd663474.c: 131:  LCD_TxCmdData( 0x309, 0x050a);
+   965  0009AE  0E03               	movlw	3
+   966  0009B0  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   967  0009B2  0E09               	movlw	9
+   968  0009B4  6E24               	movwf	LCD_TxCmdData@cmd,c
+   969  0009B6  0E05               	movlw	5
+   970  0009B8  6E27               	movwf	LCD_TxCmdData@data+1,c
+   971  0009BA  0E0A               	movlw	10
+   972  0009BC  6E26               	movwf	LCD_TxCmdData@data,c
+   973  0009BE  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   974                           
+   975                           ;lcd_bd663474.c: 134:  LCD_TxCmdData( 0x400, 0x4027 );
+   976  0009C2  0E04               	movlw	4
+   977  0009C4  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   978  0009C6  0E00               	movlw	0
+   979  0009C8  6E24               	movwf	LCD_TxCmdData@cmd,c
+   980  0009CA  0E40               	movlw	64
+   981  0009CC  6E27               	movwf	LCD_TxCmdData@data+1,c
+   982  0009CE  0E27               	movlw	39
+   983  0009D0  6E26               	movwf	LCD_TxCmdData@data,c
+   984  0009D2  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   985                           
+   986                           ;lcd_bd663474.c: 135:  LCD_TxCmdData( 0x401, 0x0000 );
+   987  0009D6  0E04               	movlw	4
+   988  0009D8  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+   989  0009DA  0E01               	movlw	1
+   990  0009DC  6E24               	movwf	LCD_TxCmdData@cmd,c
+   991  0009DE  0E00               	movlw	0
+   992  0009E0  6E27               	movwf	LCD_TxCmdData@data+1,c
+   993  0009E2  0E00               	movlw	0
+   994  0009E4  6E26               	movwf	LCD_TxCmdData@data,c
+   995  0009E6  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+   996                           
+   997                           ;lcd_bd663474.c: 136:  LCD_TxCmdData( 0x402, 0x0000 );
+   998  0009EA  0E04               	movlw	4
+   999  0009EC  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1000  0009EE  0E02               	movlw	2
+  1001  0009F0  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1002  0009F2  0E00               	movlw	0
+  1003  0009F4  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1004  0009F6  0E00               	movlw	0
+  1005  0009F8  6E26               	movwf	LCD_TxCmdData@data,c
+  1006  0009FA  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1007                           
+  1008                           ;lcd_bd663474.c: 137:  LCD_TxCmdData( 0x403, 0x013f );
+  1009  0009FE  0E04               	movlw	4
+  1010  000A00  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1011  000A02  0E03               	movlw	3
+  1012  000A04  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1013  000A06  0E01               	movlw	1
+  1014  000A08  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1015  000A0A  0E3F               	movlw	63
+  1016  000A0C  6E26               	movwf	LCD_TxCmdData@data,c
+  1017  000A0E  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1018                           
+  1019                           ;lcd_bd663474.c: 138:  LCD_TxCmdData( 0x404, 0x0000 );
+  1020  000A12  0E04               	movlw	4
+  1021  000A14  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1022  000A16  0E04               	movlw	4
+  1023  000A18  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1024  000A1A  0E00               	movlw	0
+  1025  000A1C  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1026  000A1E  0E00               	movlw	0
+  1027  000A20  6E26               	movwf	LCD_TxCmdData@data,c
+  1028  000A22  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1029                           
+  1030                           ;lcd_bd663474.c: 141:  LCD_TxCmdData( 0x200, 0x0000 );
+  1031  000A26  0E02               	movlw	2
+  1032  000A28  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1033  000A2A  0E00               	movlw	0
+  1034  000A2C  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1035  000A2E  0E00               	movlw	0
+  1036  000A30  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1037  000A32  0E00               	movlw	0
+  1038  000A34  6E26               	movwf	LCD_TxCmdData@data,c
+  1039  000A36  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1040                           
+  1041                           ;lcd_bd663474.c: 142:  LCD_TxCmdData( 0x201, 0x0000 );
+  1042  000A3A  0E02               	movlw	2
+  1043  000A3C  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1044  000A3E  0E01               	movlw	1
+  1045  000A40  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1046  000A42  0E00               	movlw	0
+  1047  000A44  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1048  000A46  0E00               	movlw	0
+  1049  000A48  6E26               	movwf	LCD_TxCmdData@data,c
+  1050  000A4A  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1051                           
+  1052                           ;lcd_bd663474.c: 144:  LCD_TxCmdData( 0x100, 0x7120 );
+  1053  000A4E  0E01               	movlw	1
+  1054  000A50  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1055  000A52  0E00               	movlw	0
+  1056  000A54  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1057  000A56  0E71               	movlw	113
+  1058  000A58  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1059  000A5A  0E20               	movlw	32
+  1060  000A5C  6E26               	movwf	LCD_TxCmdData@data,c
+  1061  000A5E  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1062                           
+  1063                           ;lcd_bd663474.c: 145:  LCD_TxCmdData( 0x007, 0x0103 );
+  1064  000A62  0E00               	movlw	0
+  1065  000A64  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1066  000A66  0E07               	movlw	7
+  1067  000A68  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1068  000A6A  0E01               	movlw	1
+  1069  000A6C  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1070  000A6E  0E03               	movlw	3
+  1071  000A70  6E26               	movwf	LCD_TxCmdData@data,c
+  1072  000A72  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1073                           
+  1074                           ;lcd_bd663474.c: 146:  _delay((unsigned long)((10)*(16000000/4000.0)));
+  1075  000A76  0E34               	movlw	52
+  1076  000A78  6E2B               	movwf	??_LCD_Init& (0+255),c
+  1077  000A7A  0EF2               	movlw	242
+  1078  000A7C                     u347:
+  1079  000A7C  2EE8               	decfsz	wreg,f,c
+  1080  000A7E  D7FE               	bra	u347
+  1081  000A80  2E2B               	decfsz	??_LCD_Init& (0+255),f,c
+  1082  000A82  D7FC               	bra	u347
+  1083                           
+  1084                           ;lcd_bd663474.c: 147:  LCD_TxCmdData( 0x007, 0x0113 );
+  1085  000A84  0E00               	movlw	0
+  1086  000A86  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1087  000A88  0E07               	movlw	7
+  1088  000A8A  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1089  000A8C  0E01               	movlw	1
+  1090  000A8E  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1091  000A90  0E13               	movlw	19
+  1092  000A92  6E26               	movwf	LCD_TxCmdData@data,c
+  1093  000A94  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1094                           
+  1095                           ;lcd_bd663474.c: 149:  LCD_SetRotation(0);
+  1096  000A98  0E00               	movlw	0
+  1097  000A9A  EC50  F005         	call	_LCD_SetRotation
+  1098  000A9E  0012               	return		;funcret
+  1099  000AA0                     __end_of_LCD_Init:
+  1100                           	opt callstack 0
+  1101                           
+  1102 ;; *************** function _LCD_SetRotation *****************
+  1103 ;; Defined at:
+  1104 ;;		line 152 in file "lcd_bd663474.c"
+  1105 ;; Parameters:    Size  Location     Type
+  1106 ;;  rotation        1    wreg     unsigned char 
+  1107 ;; Auto vars:     Size  Location     Type
+  1108 ;;  rotation        1   10[COMRAM] unsigned char 
+  1109 ;; Return value:  Size  Location     Type
+  1110 ;;                  1    wreg      void 
+  1111 ;; Registers used:
+  1112 ;;		wreg, status,2, status,0, cstack
+  1113 ;; Tracked objects:
+  1114 ;;		On entry : 0/0
+  1115 ;;		On exit  : 0/0
+  1116 ;;		Unchanged: 0/0
+  1117 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1118 ;;      Params:         0       0       0       0       0       0       0
+  1119 ;;      Locals:         1       0       0       0       0       0       0
+  1120 ;;      Temps:          2       0       0       0       0       0       0
+  1121 ;;      Totals:         3       0       0       0       0       0       0
+  1122 ;;Total ram usage:        3 bytes
+  1123 ;; Hardware stack levels used:    1
+  1124 ;; Hardware stack levels required when called:    3
+  1125 ;; This function calls:
+  1126 ;;		_LCD_TxCmdData
+  1127 ;; This function is called by:
+  1128 ;;		_main
+  1129 ;;		_LCD_Init
+  1130 ;; This function uses a non-reentrant model
+  1131 ;;
+  1132                           
+  1133                           	psect	text3
+  1134  000AA0                     __ptext3:
+  1135                           	opt callstack 0
+  1136  000AA0                     _LCD_SetRotation:
+  1137                           	opt callstack 27
+  1138                           
+  1139                           ;incstack = 0
+  1140                           ;LCD_SetRotation@rotation stored from wreg
+  1141  000AA0  6E2A               	movwf	LCD_SetRotation@rotation,c
+  1142                           
+  1143                           ;lcd_bd663474.c: 152: void LCD_SetRotation(uint8_t rotation);lcd_bd663474.c: 153: {;lcd_
+      +                          bd663474.c: 154:  switch(rotation)
+  1144  000AA2  D03C               	goto	l1155
+  1145  000AA4                     l1129:
+  1146                           
+  1147                           ;lcd_bd663474.c: 157:   LCD_TxCmdData(0x003, 0x10A0);
+  1148  000AA4  0E00               	movlw	0
+  1149  000AA6  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1150  000AA8  0E03               	movlw	3
+  1151  000AAA  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1152  000AAC  0E10               	movlw	16
+  1153  000AAE  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1154  000AB0  0EA0               	movlw	160
+  1155  000AB2  6E26               	movwf	LCD_TxCmdData@data,c
+  1156  000AB4  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1157  000AB8                     l1131:
+  1158                           
+  1159                           ;lcd_bd663474.c: 158:   lcdWidth = 240;
+  1160  000AB8  0E00               	movlw	0
+  1161  000ABA  6E33               	movwf	_lcdWidth+1,c	;volatile
+  1162  000ABC  0EF0               	movlw	240
+  1163  000ABE  6E32               	movwf	_lcdWidth,c	;volatile
+  1164                           
+  1165                           ;lcd_bd663474.c: 159:   lcdHeight = 320;
+  1166  000AC0  0E01               	movlw	1
+  1167  000AC2  6E35               	movwf	_lcdHeight+1,c	;volatile
+  1168  000AC4  0E40               	movlw	64
+  1169  000AC6  6E34               	movwf	_lcdHeight,c	;volatile
+  1170                           
+  1171                           ;lcd_bd663474.c: 160:   break;
+  1172  000AC8  0012               	return	
+  1173  000ACA                     l1135:
+  1174                           
+  1175                           ;lcd_bd663474.c: 162:   LCD_TxCmdData(0x003, 0x1098);
+  1176  000ACA  0E00               	movlw	0
+  1177  000ACC  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1178  000ACE  0E03               	movlw	3
+  1179  000AD0  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1180  000AD2  0E10               	movlw	16
+  1181  000AD4  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1182  000AD6  0E98               	movlw	152
+  1183  000AD8  6E26               	movwf	LCD_TxCmdData@data,c
+  1184  000ADA  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1185  000ADE                     l1137:
+  1186                           
+  1187                           ;lcd_bd663474.c: 163:   lcdWidth = 320;
+  1188  000ADE  0E01               	movlw	1
+  1189  000AE0  6E33               	movwf	_lcdWidth+1,c	;volatile
+  1190  000AE2  0E40               	movlw	64
+  1191  000AE4  6E32               	movwf	_lcdWidth,c	;volatile
+  1192                           
+  1193                           ;lcd_bd663474.c: 164:   lcdHeight = 240;
+  1194  000AE6  0E00               	movlw	0
+  1195  000AE8  6E35               	movwf	_lcdHeight+1,c	;volatile
+  1196  000AEA  0EF0               	movlw	240
+  1197  000AEC  6E34               	movwf	_lcdHeight,c	;volatile
+  1198                           
+  1199                           ;lcd_bd663474.c: 165:   break;
+  1200  000AEE  0012               	return	
+  1201  000AF0                     l1141:
+  1202                           
+  1203                           ;lcd_bd663474.c: 167:   LCD_TxCmdData(0x003, 0x1080);
+  1204  000AF0  0E00               	movlw	0
+  1205  000AF2  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1206  000AF4  0E03               	movlw	3
+  1207  000AF6  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1208  000AF8  0E10               	movlw	16
+  1209  000AFA  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1210  000AFC  0E80               	movlw	128
+  1211  000AFE  6E26               	movwf	LCD_TxCmdData@data,c
+  1212  000B00  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1213  000B04  D7D9               	goto	l1131
+  1214  000B06                     l1147:
+  1215                           
+  1216                           ;lcd_bd663474.c: 172:   LCD_TxCmdData(0x003, 0x10A8);
+  1217  000B06  0E00               	movlw	0
+  1218  000B08  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1219  000B0A  0E03               	movlw	3
+  1220  000B0C  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1221  000B0E  0E10               	movlw	16
+  1222  000B10  6E27               	movwf	LCD_TxCmdData@data+1,c
+  1223  000B12  0EA8               	movlw	168
+  1224  000B14  6E26               	movwf	LCD_TxCmdData@data,c
+  1225  000B16  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1226  000B1A  D7E1               	goto	l1137
+  1227  000B1C                     l1155:
+  1228  000B1C  502A               	movf	LCD_SetRotation@rotation,w,c
+  1229  000B1E  6E28               	movwf	??_LCD_SetRotation& (0+255),c
+  1230  000B20  6A29               	clrf	(??_LCD_SetRotation+1)& (0+255),c
+  1231                           
+  1232                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1233                           ; Switch size 1, requested type "simple"
+  1234                           ; Number of cases is 1, Range of values is 0 to 0
+  1235                           ; switch strategies available:
+  1236                           ; Name         Instructions Cycles
+  1237                           ; simple_byte            4     3 (average)
+  1238                           ;	Chosen strategy is simple_byte
+  1239  000B22  5029               	movf	??_LCD_SetRotation+1,w,c
+  1240  000B24  0A00               	xorlw	0	; case 0
+  1241  000B26  A4D8               	btfss	status,2,c
+  1242  000B28  0012               	return	
+  1243                           
+  1244                           ; Switch size 1, requested type "simple"
+  1245                           ; Number of cases is 4, Range of values is 0 to 3
+  1246                           ; switch strategies available:
+  1247                           ; Name         Instructions Cycles
+  1248                           ; simple_byte           13     7 (average)
+  1249                           ;	Chosen strategy is simple_byte
+  1250  000B2A  5028               	movf	??_LCD_SetRotation,w,c
+  1251  000B2C  0A00               	xorlw	0	; case 0
+  1252  000B2E  B4D8               	btfsc	status,2,c
+  1253  000B30  D7B9               	goto	l1129
+  1254  000B32  0A01               	xorlw	1	; case 1
+  1255  000B34  B4D8               	btfsc	status,2,c
+  1256  000B36  D7C9               	goto	l1135
+  1257  000B38  0A03               	xorlw	3	; case 2
+  1258  000B3A  B4D8               	btfsc	status,2,c
+  1259  000B3C  D7D9               	goto	l1141
+  1260  000B3E  0A01               	xorlw	1	; case 3
+  1261  000B40  A4D8               	btfss	status,2,c
+  1262  000B42  0012               	return	
+  1263  000B44  D7E0               	goto	l1147
+  1264  000B46                     __end_of_LCD_SetRotation:
+  1265                           	opt callstack 0
+  1266                           
+  1267 ;; *************** function _LCD_Reset *****************
+  1268 ;; Defined at:
+  1269 ;;		line 50 in file "lcd_bd663474.c"
+  1270 ;; Parameters:    Size  Location     Type
+  1271 ;;		None
+  1272 ;; Auto vars:     Size  Location     Type
+  1273 ;;		None
+  1274 ;; Return value:  Size  Location     Type
+  1275 ;;                  1    wreg      void 
+  1276 ;; Registers used:
+  1277 ;;		wreg
+  1278 ;; Tracked objects:
+  1279 ;;		On entry : 0/0
+  1280 ;;		On exit  : 0/0
+  1281 ;;		Unchanged: 0/0
+  1282 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1283 ;;      Params:         0       0       0       0       0       0       0
+  1284 ;;      Locals:         0       0       0       0       0       0       0
+  1285 ;;      Temps:          1       0       0       0       0       0       0
+  1286 ;;      Totals:         1       0       0       0       0       0       0
+  1287 ;;Total ram usage:        1 bytes
+  1288 ;; Hardware stack levels used:    1
+  1289 ;; This function calls:
+  1290 ;;		Nothing
+  1291 ;; This function is called by:
+  1292 ;;		_LCD_Init
+  1293 ;; This function uses a non-reentrant model
+  1294 ;;
+  1295                           
+  1296                           	psect	text4
+  1297  000C7E                     __ptext4:
+  1298                           	opt callstack 0
+  1299  000C7E                     _LCD_Reset:
+  1300                           	opt callstack 29
+  1301                           
+  1302                           ;lcd_bd663474.c: 52:  LATDbits.LATD0 = 0;
+  1303                           
+  1304                           ;incstack = 0
+  1305  000C7E  908C               	bcf	3980,0,c	;volatile
+  1306                           
+  1307                           ;lcd_bd663474.c: 53:  _delay((unsigned long)((1)*(16000000/4000.0)));
+  1308  000C80  0E06               	movlw	6
+  1309  000C82  6E20               	movwf	??_LCD_Reset& (0+255),c
+  1310  000C84  0E30               	movlw	48
+  1311  000C86                     u357:
+  1312  000C86  2EE8               	decfsz	wreg,f,c
+  1313  000C88  D7FE               	bra	u357
+  1314  000C8A  2E20               	decfsz	??_LCD_Reset& (0+255),f,c
+  1315  000C8C  D7FC               	bra	u357
+  1316  000C8E  F000 F000          	nop2	
+  1317                           
+  1318                           ;lcd_bd663474.c: 54:     LATDbits.LATD0 = 1;
+  1319  000C92  808C               	bsf	3980,0,c	;volatile
+  1320                           
+  1321                           ;lcd_bd663474.c: 55:  _delay((unsigned long)((1)*(16000000/4000.0)));
+  1322  000C94  0E06               	movlw	6
+  1323  000C96  6E20               	movwf	??_LCD_Reset& (0+255),c
+  1324  000C98  0E30               	movlw	48
+  1325  000C9A                     u367:
+  1326  000C9A  2EE8               	decfsz	wreg,f,c
+  1327  000C9C  D7FE               	bra	u367
+  1328  000C9E  2E20               	decfsz	??_LCD_Reset& (0+255),f,c
+  1329  000CA0  D7FC               	bra	u367
+  1330  000CA2  F000 F000          	nop2	
+  1331                           
+  1332                           ;lcd_bd663474.c: 57:     LATAbits.LATA1 = 1;
+  1333  000CA6  8289               	bsf	3977,1,c	;volatile
+  1334  000CA8  0012               	return		;funcret
+  1335  000CAA                     __end_of_LCD_Reset:
+  1336                           	opt callstack 0
+  1337                           
+  1338 ;; *************** function _LCD_Enable *****************
+  1339 ;; Defined at:
+  1340 ;;		line 60 in file "lcd_bd663474.c"
+  1341 ;; Parameters:    Size  Location     Type
+  1342 ;;		None
+  1343 ;; Auto vars:     Size  Location     Type
+  1344 ;;		None
+  1345 ;; Return value:  Size  Location     Type
+  1346 ;;                  1    wreg      void 
+  1347 ;; Registers used:
+  1348 ;;		None
+  1349 ;; Tracked objects:
+  1350 ;;		On entry : 0/0
+  1351 ;;		On exit  : 0/0
+  1352 ;;		Unchanged: 0/0
+  1353 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1354 ;;      Params:         0       0       0       0       0       0       0
+  1355 ;;      Locals:         0       0       0       0       0       0       0
+  1356 ;;      Temps:          0       0       0       0       0       0       0
+  1357 ;;      Totals:         0       0       0       0       0       0       0
+  1358 ;;Total ram usage:        0 bytes
+  1359 ;; Hardware stack levels used:    1
+  1360 ;; This function calls:
+  1361 ;;		Nothing
+  1362 ;; This function is called by:
+  1363 ;;		_LCD_Init
+  1364 ;; This function uses a non-reentrant model
+  1365 ;;
+  1366                           
+  1367                           	psect	text5
+  1368  000D66                     __ptext5:
+  1369                           	opt callstack 0
+  1370  000D66                     _LCD_Enable:
+  1371                           	opt callstack 29
+  1372                           
+  1373                           ;lcd_bd663474.c: 62:  LATDbits.LATD0 = 1;
+  1374                           
+  1375                           ;incstack = 0
+  1376  000D66  808C               	bsf	3980,0,c	;volatile
+  1377  000D68  0012               	return		;funcret
+  1378  000D6A                     __end_of_LCD_Enable:
+  1379                           	opt callstack 0
+  1380                           
+  1381 ;; *************** function _LCD_FillScreen *****************
+  1382 ;; Defined at:
+  1383 ;;		line 199 in file "lcd_bd663474.c"
+  1384 ;; Parameters:    Size  Location     Type
+  1385 ;;  color           2   16[COMRAM] unsigned short 
+  1386 ;; Auto vars:     Size  Location     Type
+  1387 ;;		None
+  1388 ;; Return value:  Size  Location     Type
+  1389 ;;                  1    wreg      void 
+  1390 ;; Registers used:
+  1391 ;;		wreg, status,2, status,0, prodl, prodh, cstack
+  1392 ;; Tracked objects:
+  1393 ;;		On entry : 0/0
+  1394 ;;		On exit  : 0/0
+  1395 ;;		Unchanged: 0/0
+  1396 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1397 ;;      Params:         2       0       0       0       0       0       0
+  1398 ;;      Locals:         0       0       0       0       0       0       0
+  1399 ;;      Temps:          0       0       0       0       0       0       0
+  1400 ;;      Totals:         2       0       0       0       0       0       0
+  1401 ;;Total ram usage:        2 bytes
+  1402 ;; Hardware stack levels used:    1
+  1403 ;; Hardware stack levels required when called:    4
+  1404 ;; This function calls:
+  1405 ;;		_LCD_DrawColorBurst
+  1406 ;;		_LCD_SetWindow
+  1407 ;;		___wmul
+  1408 ;; This function is called by:
+  1409 ;;		_main
+  1410 ;; This function uses a non-reentrant model
+  1411 ;;
+  1412                           
+  1413                           	psect	text6
+  1414  000BCC                     __ptext6:
+  1415                           	opt callstack 0
+  1416  000BCC                     _LCD_FillScreen:
+  1417                           	opt callstack 26
+  1418                           
+  1419                           ;lcd_bd663474.c: 199: void LCD_FillScreen(uint16_t color);lcd_bd663474.c: 200: {;lcd_bd6
+      +                          63474.c: 201:  LCD_SetWindow(0, 0, lcdWidth, lcdHeight);
+  1420                           
+  1421                           ;incstack = 0
+  1422  000BCC  0E00               	movlw	0
+  1423  000BCE  6E29               	movwf	LCD_SetWindow@x0+1,c
+  1424  000BD0  0E00               	movlw	0
+  1425  000BD2  6E28               	movwf	LCD_SetWindow@x0,c
+  1426  000BD4  0E00               	movlw	0
+  1427  000BD6  6E2B               	movwf	LCD_SetWindow@y0+1,c
+  1428  000BD8  0E00               	movlw	0
+  1429  000BDA  6E2A               	movwf	LCD_SetWindow@y0,c
+  1430  000BDC  C032  F02C         	movff	_lcdWidth,LCD_SetWindow@x1	;volatile
+  1431  000BE0  C033  F02D         	movff	_lcdWidth+1,LCD_SetWindow@x1+1	;volatile
+  1432  000BE4  C034  F02E         	movff	_lcdHeight,LCD_SetWindow@y1	;volatile
+  1433  000BE8  C035  F02F         	movff	_lcdHeight+1,LCD_SetWindow@y1+1	;volatile
+  1434  000BEC  ECA3  F005         	call	_LCD_SetWindow	;wreg free
+  1435                           
+  1436                           ;lcd_bd663474.c: 202:  LCD_DrawColorBurst(color, lcdWidth*lcdHeight);
+  1437  000BF0  C030  F026         	movff	LCD_FillScreen@color,LCD_DrawColorBurst@color
+  1438  000BF4  C031  F027         	movff	LCD_FillScreen@color+1,LCD_DrawColorBurst@color+1
+  1439  000BF8  C032  F020         	movff	_lcdWidth,___wmul@multiplier	;volatile
+  1440  000BFC  C033  F021         	movff	_lcdWidth+1,___wmul@multiplier+1	;volatile
+  1441  000C00  C034  F022         	movff	_lcdHeight,___wmul@multiplicand	;volatile
+  1442  000C04  C035  F023         	movff	_lcdHeight+1,___wmul@multiplicand+1	;volatile
+  1443  000C08  EC69  F006         	call	___wmul	;wreg free
+  1444  000C0C  C020  F028         	movff	?___wmul,LCD_DrawColorBurst@size
+  1445  000C10  C021  F029         	movff	?___wmul+1,LCD_DrawColorBurst@size+1
+  1446  000C14  EC28  F006         	call	_LCD_DrawColorBurst	;wreg free
+  1447  000C18  0012               	return		;funcret
+  1448  000C1A                     __end_of_LCD_FillScreen:
+  1449                           	opt callstack 0
+  1450                           
+  1451 ;; *************** function ___wmul *****************
+  1452 ;; Defined at:
+  1453 ;;		line 15 in file "D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c"
+  1454 ;; Parameters:    Size  Location     Type
+  1455 ;;  multiplier      2    0[COMRAM] unsigned int 
+  1456 ;;  multiplicand    2    2[COMRAM] unsigned int 
+  1457 ;; Auto vars:     Size  Location     Type
+  1458 ;;  product         2    4[COMRAM] unsigned int 
+  1459 ;; Return value:  Size  Location     Type
+  1460 ;;                  2    0[COMRAM] unsigned int 
+  1461 ;; Registers used:
+  1462 ;;		wreg, status,2, status,0, prodl, prodh
+  1463 ;; Tracked objects:
+  1464 ;;		On entry : 0/0
+  1465 ;;		On exit  : 0/0
+  1466 ;;		Unchanged: 0/0
+  1467 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1468 ;;      Params:         4       0       0       0       0       0       0
+  1469 ;;      Locals:         2       0       0       0       0       0       0
+  1470 ;;      Temps:          0       0       0       0       0       0       0
+  1471 ;;      Totals:         6       0       0       0       0       0       0
+  1472 ;;Total ram usage:        6 bytes
+  1473 ;; Hardware stack levels used:    1
+  1474 ;; This function calls:
+  1475 ;;		Nothing
+  1476 ;; This function is called by:
+  1477 ;;		_LCD_FillScreen
+  1478 ;;		_LCD_DrawRectangle
+  1479 ;; This function uses a non-reentrant model
+  1480 ;;
+  1481                           
+  1482                           	psect	text7
+  1483  000CD2                     __ptext7:
+  1484                           	opt callstack 0
+  1485  000CD2                     ___wmul:
+  1486                           	opt callstack 29
+  1487                           
+  1488                           ;incstack = 0
+  1489  000CD2  5020               	movf	___wmul@multiplier,w,c
+  1490  000CD4  0222               	mulwf	___wmul@multiplicand,c
+  1491  000CD6  CFF3 F024          	movff	prodl,___wmul@product
+  1492  000CDA  CFF4 F025          	movff	prodh,___wmul@product+1
+  1493  000CDE  5020               	movf	___wmul@multiplier,w,c
+  1494  000CE0  0223               	mulwf	___wmul@multiplicand+1,c
+  1495  000CE2  50F3               	movf	prodl,w,c
+  1496  000CE4  2625               	addwf	___wmul@product+1,f,c
+  1497  000CE6  5021               	movf	___wmul@multiplier+1,w,c
+  1498  000CE8  0222               	mulwf	___wmul@multiplicand,c
+  1499  000CEA  50F3               	movf	prodl,w,c
+  1500  000CEC  2625               	addwf	___wmul@product+1,f,c
+  1501  000CEE  C024  F020         	movff	___wmul@product,?___wmul
+  1502  000CF2  C025  F021         	movff	___wmul@product+1,?___wmul+1
+  1503  000CF6  0012               	return		;funcret
+  1504  000CF8                     __end_of___wmul:
+  1505                           	opt callstack 0
+  1506                           
+  1507 ;; *************** function _LCD_SetWindow *****************
+  1508 ;; Defined at:
+  1509 ;;		line 39 in file "lcd_bd663474.c"
+  1510 ;; Parameters:    Size  Location     Type
+  1511 ;;  x0              2    8[COMRAM] unsigned short 
+  1512 ;;  y0              2   10[COMRAM] unsigned short 
+  1513 ;;  x1              2   12[COMRAM] unsigned short 
+  1514 ;;  y1              2   14[COMRAM] unsigned short 
+  1515 ;; Auto vars:     Size  Location     Type
+  1516 ;;		None
+  1517 ;; Return value:  Size  Location     Type
+  1518 ;;                  1    wreg      void 
+  1519 ;; Registers used:
+  1520 ;;		wreg, status,2, cstack
+  1521 ;; Tracked objects:
+  1522 ;;		On entry : 0/0
+  1523 ;;		On exit  : 0/0
+  1524 ;;		Unchanged: 0/0
+  1525 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1526 ;;      Params:         8       0       0       0       0       0       0
+  1527 ;;      Locals:         0       0       0       0       0       0       0
+  1528 ;;      Temps:          0       0       0       0       0       0       0
+  1529 ;;      Totals:         8       0       0       0       0       0       0
+  1530 ;;Total ram usage:        8 bytes
+  1531 ;; Hardware stack levels used:    1
+  1532 ;; Hardware stack levels required when called:    3
+  1533 ;; This function calls:
+  1534 ;;		_LCD_TxCmd
+  1535 ;;		_LCD_TxCmdData
+  1536 ;; This function is called by:
+  1537 ;;		_LCD_FillScreen
+  1538 ;;		_LCD_DrawPixel
+  1539 ;;		_LCD_DrawRectangle
+  1540 ;;		_LCD_DrawHLine
+  1541 ;;		_LCD_DrawVLine
+  1542 ;; This function uses a non-reentrant model
+  1543 ;;
+  1544                           
+  1545                           	psect	text8
+  1546  000B46                     __ptext8:
+  1547                           	opt callstack 0
+  1548  000B46                     _LCD_SetWindow:
+  1549                           	opt callstack 26
+  1550                           
+  1551                           ;lcd_bd663474.c: 39: void LCD_SetWindow(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t 
+      +                          y1);lcd_bd663474.c: 40: {;lcd_bd663474.c: 41:  LCD_TxCmdData(0x210, x0);
+  1552                           
+  1553                           ;incstack = 0
+  1554  000B46  0E02               	movlw	2
+  1555  000B48  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1556  000B4A  0E10               	movlw	16
+  1557  000B4C  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1558  000B4E  C028  F026         	movff	LCD_SetWindow@x0,LCD_TxCmdData@data
+  1559  000B52  C029  F027         	movff	LCD_SetWindow@x0+1,LCD_TxCmdData@data+1
+  1560  000B56  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1561                           
+  1562                           ;lcd_bd663474.c: 42:     LCD_TxCmdData(0x211, x1);
+  1563  000B5A  0E02               	movlw	2
+  1564  000B5C  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1565  000B5E  0E11               	movlw	17
+  1566  000B60  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1567  000B62  C02C  F026         	movff	LCD_SetWindow@x1,LCD_TxCmdData@data
+  1568  000B66  C02D  F027         	movff	LCD_SetWindow@x1+1,LCD_TxCmdData@data+1
+  1569  000B6A  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1570                           
+  1571                           ;lcd_bd663474.c: 43:     LCD_TxCmdData(0x212, y0);
+  1572  000B6E  0E02               	movlw	2
+  1573  000B70  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1574  000B72  0E12               	movlw	18
+  1575  000B74  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1576  000B76  C02A  F026         	movff	LCD_SetWindow@y0,LCD_TxCmdData@data
+  1577  000B7A  C02B  F027         	movff	LCD_SetWindow@y0+1,LCD_TxCmdData@data+1
+  1578  000B7E  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1579                           
+  1580                           ;lcd_bd663474.c: 44:     LCD_TxCmdData(0x213, y1);
+  1581  000B82  0E02               	movlw	2
+  1582  000B84  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1583  000B86  0E13               	movlw	19
+  1584  000B88  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1585  000B8A  C02E  F026         	movff	LCD_SetWindow@y1,LCD_TxCmdData@data
+  1586  000B8E  C02F  F027         	movff	LCD_SetWindow@y1+1,LCD_TxCmdData@data+1
+  1587  000B92  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1588                           
+  1589                           ;lcd_bd663474.c: 45:     LCD_TxCmdData(0x200, x0);
+  1590  000B96  0E02               	movlw	2
+  1591  000B98  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1592  000B9A  0E00               	movlw	0
+  1593  000B9C  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1594  000B9E  C028  F026         	movff	LCD_SetWindow@x0,LCD_TxCmdData@data
+  1595  000BA2  C029  F027         	movff	LCD_SetWindow@x0+1,LCD_TxCmdData@data+1
+  1596  000BA6  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1597                           
+  1598                           ;lcd_bd663474.c: 46:     LCD_TxCmdData(0x201, y0);
+  1599  000BAA  0E02               	movlw	2
+  1600  000BAC  6E25               	movwf	LCD_TxCmdData@cmd+1,c
+  1601  000BAE  0E01               	movlw	1
+  1602  000BB0  6E24               	movwf	LCD_TxCmdData@cmd,c
+  1603  000BB2  C02A  F026         	movff	LCD_SetWindow@y0,LCD_TxCmdData@data
+  1604  000BB6  C02B  F027         	movff	LCD_SetWindow@y0+1,LCD_TxCmdData@data+1
+  1605  000BBA  EC7C  F006         	call	_LCD_TxCmdData	;wreg free
+  1606                           
+  1607                           ;lcd_bd663474.c: 47:  LCD_TxCmd(0x202);
+  1608  000BBE  0E02               	movlw	2
+  1609  000BC0  6E23               	movwf	LCD_TxCmd@cmd+1,c
+  1610  000BC2  0E02               	movlw	2
+  1611  000BC4  6E22               	movwf	LCD_TxCmd@cmd,c
+  1612  000BC6  EC95  F006         	call	_LCD_TxCmd	;wreg free
+  1613  000BCA  0012               	return		;funcret
+  1614  000BCC                     __end_of_LCD_SetWindow:
+  1615                           	opt callstack 0
+  1616                           
+  1617 ;; *************** function _LCD_TxCmdData *****************
+  1618 ;; Defined at:
+  1619 ;;		line 25 in file "lcd_bd663474.c"
+  1620 ;; Parameters:    Size  Location     Type
+  1621 ;;  cmd             2    4[COMRAM] unsigned short 
+  1622 ;;  data            2    6[COMRAM] unsigned short 
+  1623 ;; Auto vars:     Size  Location     Type
+  1624 ;;		None
+  1625 ;; Return value:  Size  Location     Type
+  1626 ;;                  1    wreg      void 
+  1627 ;; Registers used:
+  1628 ;;		wreg, status,2, cstack
+  1629 ;; Tracked objects:
+  1630 ;;		On entry : 0/0
+  1631 ;;		On exit  : 0/0
+  1632 ;;		Unchanged: 0/0
+  1633 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1634 ;;      Params:         4       0       0       0       0       0       0
+  1635 ;;      Locals:         0       0       0       0       0       0       0
+  1636 ;;      Temps:          0       0       0       0       0       0       0
+  1637 ;;      Totals:         4       0       0       0       0       0       0
+  1638 ;;Total ram usage:        4 bytes
+  1639 ;; Hardware stack levels used:    1
+  1640 ;; Hardware stack levels required when called:    2
+  1641 ;; This function calls:
+  1642 ;;		_LCD_TxCmd
+  1643 ;;		_LCD_TxData
+  1644 ;; This function is called by:
+  1645 ;;		_LCD_SetWindow
+  1646 ;;		_LCD_Init
+  1647 ;;		_LCD_SetRotation
+  1648 ;; This function uses a non-reentrant model
+  1649 ;;
+  1650                           
+  1651                           	psect	text9
+  1652  000CF8                     __ptext9:
+  1653                           	opt callstack 0
+  1654  000CF8                     _LCD_TxCmdData:
+  1655                           	opt callstack 27
+  1656                           
+  1657                           ;lcd_bd663474.c: 25: static void LCD_TxCmdData(uint16_t cmd, uint16_t data);lcd_bd663474
+      +                          .c: 26: {;lcd_bd663474.c: 27:     LCD_TxCmd(cmd);
+  1658                           
+  1659                           ;incstack = 0
+  1660  000CF8  C024  F022         	movff	LCD_TxCmdData@cmd,LCD_TxCmd@cmd
+  1661  000CFC  C025  F023         	movff	LCD_TxCmdData@cmd+1,LCD_TxCmd@cmd+1
+  1662  000D00  EC95  F006         	call	_LCD_TxCmd	;wreg free
+  1663                           
+  1664                           ;lcd_bd663474.c: 28:     LCD_TxData(data);
+  1665  000D04  C026  F022         	movff	LCD_TxCmdData@data,LCD_TxData@data
+  1666  000D08  C027  F023         	movff	LCD_TxCmdData@data+1,LCD_TxData@data+1
+  1667  000D0C  EC9F  F006         	call	_LCD_TxData	;wreg free
+  1668  000D10  0012               	return		;funcret
+  1669  000D12                     __end_of_LCD_TxCmdData:
+  1670                           	opt callstack 0
+  1671                           
+  1672 ;; *************** function _LCD_TxCmd *****************
+  1673 ;; Defined at:
+  1674 ;;		line 7 in file "lcd_bd663474.c"
+  1675 ;; Parameters:    Size  Location     Type
+  1676 ;;  cmd             2    2[COMRAM] unsigned short 
+  1677 ;; Auto vars:     Size  Location     Type
+  1678 ;;		None
+  1679 ;; Return value:  Size  Location     Type
+  1680 ;;                  1    wreg      void 
+  1681 ;; Registers used:
+  1682 ;;		wreg, status,2, cstack
+  1683 ;; Tracked objects:
+  1684 ;;		On entry : 0/0
+  1685 ;;		On exit  : 0/0
+  1686 ;;		Unchanged: 0/0
+  1687 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1688 ;;      Params:         2       0       0       0       0       0       0
+  1689 ;;      Locals:         0       0       0       0       0       0       0
+  1690 ;;      Temps:          0       0       0       0       0       0       0
+  1691 ;;      Totals:         2       0       0       0       0       0       0
+  1692 ;;Total ram usage:        2 bytes
+  1693 ;; Hardware stack levels used:    1
+  1694 ;; Hardware stack levels required when called:    1
+  1695 ;; This function calls:
+  1696 ;;		_SPI_Tx
+  1697 ;; This function is called by:
+  1698 ;;		_LCD_TxCmdData
+  1699 ;;		_LCD_SetWindow
+  1700 ;; This function uses a non-reentrant model
+  1701 ;;
+  1702                           
+  1703                           	psect	text10
+  1704  000D2A                     __ptext10:
+  1705                           	opt callstack 0
+  1706  000D2A                     _LCD_TxCmd:
+  1707                           	opt callstack 27
+  1708                           
+  1709                           ;lcd_bd663474.c: 7: static void LCD_TxCmd(uint16_t cmd);lcd_bd663474.c: 8: {;lcd_bd66347
+      +                          4.c: 9:     LATAbits.LATA2 = 0;
+  1710                           
+  1711                           ;incstack = 0
+  1712  000D2A  9489               	bcf	3977,2,c	;volatile
+  1713                           
+  1714                           ;lcd_bd663474.c: 10:     LATAbits.LATA1 = 0;
+  1715  000D2C  9289               	bcf	3977,1,c	;volatile
+  1716                           
+  1717                           ;lcd_bd663474.c: 11:  SPI_Tx((uint8_t)(cmd >> 8));
+  1718  000D2E  5023               	movf	LCD_TxCmd@cmd+1,w,c
+  1719  000D30  ECA9  F006         	call	_SPI_Tx
+  1720                           
+  1721                           ;lcd_bd663474.c: 12:     SPI_Tx((uint8_t)(cmd & 0xFF));
+  1722  000D34  5022               	movf	LCD_TxCmd@cmd,w,c
+  1723  000D36  ECA9  F006         	call	_SPI_Tx
+  1724                           
+  1725                           ;lcd_bd663474.c: 13:  LATAbits.LATA1 = 1;
+  1726  000D3A  8289               	bsf	3977,1,c	;volatile
+  1727  000D3C  0012               	return		;funcret
+  1728  000D3E                     __end_of_LCD_TxCmd:
+  1729                           	opt callstack 0
+  1730                           
+  1731 ;; *************** function _LCD_DrawColorBurst *****************
+  1732 ;; Defined at:
+  1733 ;;		line 186 in file "lcd_bd663474.c"
+  1734 ;; Parameters:    Size  Location     Type
+  1735 ;;  color           2    6[COMRAM] unsigned short 
+  1736 ;;  size            2    8[COMRAM] unsigned short 
+  1737 ;; Auto vars:     Size  Location     Type
+  1738 ;;  i               2   10[COMRAM] unsigned short 
+  1739 ;; Return value:  Size  Location     Type
+  1740 ;;                  1    wreg      void 
+  1741 ;; Registers used:
+  1742 ;;		wreg, status,2, status,0, cstack
+  1743 ;; Tracked objects:
+  1744 ;;		On entry : 0/0
+  1745 ;;		On exit  : 0/0
+  1746 ;;		Unchanged: 0/0
+  1747 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1748 ;;      Params:         4       0       0       0       0       0       0
+  1749 ;;      Locals:         2       0       0       0       0       0       0
+  1750 ;;      Temps:          0       0       0       0       0       0       0
+  1751 ;;      Totals:         6       0       0       0       0       0       0
+  1752 ;;Total ram usage:        6 bytes
+  1753 ;; Hardware stack levels used:    1
+  1754 ;; Hardware stack levels required when called:    2
+  1755 ;; This function calls:
+  1756 ;;		_LCD_TxData
+  1757 ;; This function is called by:
+  1758 ;;		_LCD_FillScreen
+  1759 ;;		_LCD_DrawRectangle
+  1760 ;;		_LCD_DrawHLine
+  1761 ;;		_LCD_DrawVLine
+  1762 ;; This function uses a non-reentrant model
+  1763 ;;
+  1764                           
+  1765                           	psect	text11
+  1766  000C50                     __ptext11:
+  1767                           	opt callstack 0
+  1768  000C50                     _LCD_DrawColorBurst:
+  1769                           	opt callstack 27
+  1770                           
+  1771                           ;lcd_bd663474.c: 186: void LCD_DrawColorBurst(uint16_t color, uint16_t size);lcd_bd66347
+      +                          4.c: 187: {;lcd_bd663474.c: 188:     LATAbits.LATA2 = 1;
+  1772                           
+  1773                           ;incstack = 0
+  1774  000C50  8489               	bsf	3977,2,c	;volatile
+  1775                           
+  1776                           ;lcd_bd663474.c: 189:     LATAbits.LATA1 = 0;
+  1777  000C52  9289               	bcf	3977,1,c	;volatile
+  1778                           
+  1779                           ;lcd_bd663474.c: 191:  for(uint16_t i = 0; i < size; i++)
+  1780  000C54  0E00               	movlw	0
+  1781  000C56  6E2B               	movwf	LCD_DrawColorBurst@i+1,c
+  1782  000C58  0E00               	movlw	0
+  1783  000C5A  6E2A               	movwf	LCD_DrawColorBurst@i,c
+  1784  000C5C  D008               	goto	l1171
+  1785  000C5E                     l1167:
+  1786                           
+  1787                           ;lcd_bd663474.c: 192:     {;lcd_bd663474.c: 193:         LCD_TxData(color);
+  1788  000C5E  C026  F022         	movff	LCD_DrawColorBurst@color,LCD_TxData@data
+  1789  000C62  C027  F023         	movff	LCD_DrawColorBurst@color+1,LCD_TxData@data+1
+  1790  000C66  EC9F  F006         	call	_LCD_TxData	;wreg free
+  1791                           
+  1792                           ;lcd_bd663474.c: 194:     }
+  1793  000C6A  4A2A               	infsnz	LCD_DrawColorBurst@i,f,c
+  1794  000C6C  2A2B               	incf	LCD_DrawColorBurst@i+1,f,c
+  1795  000C6E                     l1171:
+  1796  000C6E  5028               	movf	LCD_DrawColorBurst@size,w,c
+  1797  000C70  5C2A               	subwf	LCD_DrawColorBurst@i,w,c
+  1798  000C72  5029               	movf	LCD_DrawColorBurst@size+1,w,c
+  1799  000C74  582B               	subwfb	LCD_DrawColorBurst@i+1,w,c
+  1800  000C76  A0D8               	btfss	status,0,c
+  1801  000C78  D7F2               	goto	l1167
+  1802                           
+  1803                           ;lcd_bd663474.c: 196:     LATAbits.LATA1 = 1;
+  1804  000C7A  8289               	bsf	3977,1,c	;volatile
+  1805  000C7C  0012               	return		;funcret
+  1806  000C7E                     __end_of_LCD_DrawColorBurst:
+  1807                           	opt callstack 0
+  1808                           
+  1809 ;; *************** function _LCD_TxData *****************
+  1810 ;; Defined at:
+  1811 ;;		line 16 in file "lcd_bd663474.c"
+  1812 ;; Parameters:    Size  Location     Type
+  1813 ;;  data            2    2[COMRAM] unsigned short 
+  1814 ;; Auto vars:     Size  Location     Type
+  1815 ;;		None
+  1816 ;; Return value:  Size  Location     Type
+  1817 ;;                  1    wreg      void 
+  1818 ;; Registers used:
+  1819 ;;		wreg, status,2, cstack
+  1820 ;; Tracked objects:
+  1821 ;;		On entry : 0/0
+  1822 ;;		On exit  : 0/0
+  1823 ;;		Unchanged: 0/0
+  1824 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1825 ;;      Params:         2       0       0       0       0       0       0
+  1826 ;;      Locals:         0       0       0       0       0       0       0
+  1827 ;;      Temps:          0       0       0       0       0       0       0
+  1828 ;;      Totals:         2       0       0       0       0       0       0
+  1829 ;;Total ram usage:        2 bytes
+  1830 ;; Hardware stack levels used:    1
+  1831 ;; Hardware stack levels required when called:    1
+  1832 ;; This function calls:
+  1833 ;;		_SPI_Tx
+  1834 ;; This function is called by:
+  1835 ;;		_LCD_TxCmdData
+  1836 ;;		_LCD_DrawColorBurst
+  1837 ;;		_LCD_DrawColor
+  1838 ;; This function uses a non-reentrant model
+  1839 ;;
+  1840                           
+  1841                           	psect	text12
+  1842  000D3E                     __ptext12:
+  1843                           	opt callstack 0
+  1844  000D3E                     _LCD_TxData:
+  1845                           	opt callstack 27
+  1846                           
+  1847                           ;lcd_bd663474.c: 16: static void LCD_TxData(uint16_t data);lcd_bd663474.c: 17: {;lcd_bd6
+      +                          63474.c: 18:     LATAbits.LATA2 = 1;
+  1848                           
+  1849                           ;incstack = 0
+  1850  000D3E  8489               	bsf	3977,2,c	;volatile
+  1851                           
+  1852                           ;lcd_bd663474.c: 19:     LATAbits.LATA1 = 0;
+  1853  000D40  9289               	bcf	3977,1,c	;volatile
+  1854                           
+  1855                           ;lcd_bd663474.c: 20:  SPI_Tx((uint8_t)(data >> 8));
+  1856  000D42  5023               	movf	LCD_TxData@data+1,w,c
+  1857  000D44  ECA9  F006         	call	_SPI_Tx
+  1858                           
+  1859                           ;lcd_bd663474.c: 21:     SPI_Tx((uint8_t)(data & 0xFF));
+  1860  000D48  5022               	movf	LCD_TxData@data,w,c
+  1861  000D4A  ECA9  F006         	call	_SPI_Tx
+  1862                           
+  1863                           ;lcd_bd663474.c: 22:  LATAbits.LATA1 = 1;
+  1864  000D4E  8289               	bsf	3977,1,c	;volatile
+  1865  000D50  0012               	return		;funcret
+  1866  000D52                     __end_of_LCD_TxData:
+  1867                           	opt callstack 0
+  1868                           
+  1869 ;; *************** function _SPI_Tx *****************
+  1870 ;; Defined at:
+  1871 ;;		line 22 in file "spi_master.c"
+  1872 ;; Parameters:    Size  Location     Type
+  1873 ;;  data            1    wreg     unsigned char 
+  1874 ;; Auto vars:     Size  Location     Type
+  1875 ;;  data            1    1[COMRAM] unsigned char 
+  1876 ;;  dummy           1    0        unsigned char 
+  1877 ;; Return value:  Size  Location     Type
+  1878 ;;                  1    wreg      void 
+  1879 ;; Registers used:
+  1880 ;;		wreg
+  1881 ;; Tracked objects:
+  1882 ;;		On entry : 0/0
+  1883 ;;		On exit  : 0/0
+  1884 ;;		Unchanged: 0/0
+  1885 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1886 ;;      Params:         0       0       0       0       0       0       0
+  1887 ;;      Locals:         2       0       0       0       0       0       0
+  1888 ;;      Temps:          0       0       0       0       0       0       0
+  1889 ;;      Totals:         2       0       0       0       0       0       0
+  1890 ;;Total ram usage:        2 bytes
+  1891 ;; Hardware stack levels used:    1
+  1892 ;; This function calls:
+  1893 ;;		Nothing
+  1894 ;; This function is called by:
+  1895 ;;		_LCD_TxCmd
+  1896 ;;		_LCD_TxData
+  1897 ;;		_SPI_TxBuffer
+  1898 ;; This function uses a non-reentrant model
+  1899 ;;
+  1900                           
+  1901                           	psect	text13
+  1902  000D52                     __ptext13:
+  1903                           	opt callstack 0
+  1904  000D52                     _SPI_Tx:
+  1905                           	opt callstack 27
+  1906                           
+  1907                           ;incstack = 0
+  1908                           ;SPI_Tx@data stored from wreg
+  1909  000D52  6E21               	movwf	SPI_Tx@data,c
+  1910                           
+  1911                           ;spi_master.c: 23:     uint8_t dummy;;spi_master.c: 24:     SSPBUF = data;
+  1912  000D54  C021  FFC9         	movff	SPI_Tx@data,4041	;volatile
+  1913  000D58                     l20:
+  1914  000D58  A0C7               	btfss	4039,0,c	;volatile
+  1915  000D5A  D7FE               	goto	l20
+  1916  000D5C  50C9               	movf	4041,w,c	;volatile
+  1917  000D5E  0012               	return		;funcret
+  1918  000D60                     __end_of_SPI_Tx:
+  1919                           	opt callstack 0
+  1920                           
+  1921                           	psect	rparam
+  1922  0000                     tosu	equ	0xFFF
+  1923                           tosh	equ	0xFFE
+  1924                           tosl	equ	0xFFD
+  1925                           stkptr	equ	0xFFC
+  1926                           pclatu	equ	0xFFB
+  1927                           pclath	equ	0xFFA
+  1928                           pcl	equ	0xFF9
+  1929                           tblptru	equ	0xFF8
+  1930                           tblptrh	equ	0xFF7
+  1931                           tblptrl	equ	0xFF6
+  1932                           tablat	equ	0xFF5
+  1933                           prodh	equ	0xFF4
+  1934                           prodl	equ	0xFF3
+  1935                           indf0	equ	0xFEF
+  1936                           postinc0	equ	0xFEE
+  1937                           postdec0	equ	0xFED
+  1938                           preinc0	equ	0xFEC
+  1939                           plusw0	equ	0xFEB
+  1940                           fsr0h	equ	0xFEA
+  1941                           fsr0l	equ	0xFE9
+  1942                           wreg	equ	0xFE8
+  1943                           indf1	equ	0xFE7
+  1944                           postinc1	equ	0xFE6
+  1945                           postdec1	equ	0xFE5
+  1946                           preinc1	equ	0xFE4
+  1947                           plusw1	equ	0xFE3
+  1948                           fsr1h	equ	0xFE2
+  1949                           fsr1l	equ	0xFE1
+  1950                           bsr	equ	0xFE0
+  1951                           indf2	equ	0xFDF
+  1952                           postinc2	equ	0xFDE
+  1953                           postdec2	equ	0xFDD
+  1954                           preinc2	equ	0xFDC
+  1955                           plusw2	equ	0xFDB
+  1956                           fsr2h	equ	0xFDA
+  1957                           fsr2l	equ	0xFD9
+  1958                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     27
+    Constant    0
+    Data        6
+    BSS         31
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     18      55
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    sndBuffer	PTR unsigned char  size(2) Largest target is 27
+		 -> STR_1(CODE[27]), 
+
+
+Critical Paths under _main in COMRAM
+
+    _main->_LCD_FillScreen
+    _LCD_Init->_LCD_SetRotation
+    _LCD_SetRotation->_LCD_TxCmdData
+    _LCD_FillScreen->_LCD_SetWindow
+    _LCD_SetWindow->_LCD_TxCmdData
+    _LCD_TxCmdData->_LCD_TxCmd
+    _LCD_TxCmdData->_LCD_TxData
+    _LCD_TxCmd->_SPI_Tx
+    _LCD_DrawColorBurst->___wmul
+    _LCD_TxData->_SPI_Tx
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0   43903
+                     _LCD_FillScreen
+                           _LCD_Init
+                    _LCD_SetRotation
+                           _SPI_Init
+ ---------------------------------------------------------------------------------
+ (1) _SPI_Init                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _LCD_Init                                             2     2      0   20258
+                                             11 COMRAM     2     2      0
+                         _LCD_Enable
+                          _LCD_Reset
+                    _LCD_SetRotation
+                      _LCD_TxCmdData
+ ---------------------------------------------------------------------------------
+ (1) _LCD_SetRotation                                      3     3      0   10140
+                                              8 COMRAM     3     3      0
+                      _LCD_TxCmdData
+ ---------------------------------------------------------------------------------
+ (2) _LCD_Reset                                            1     1      0       0
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (2) _LCD_Enable                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _LCD_FillScreen                                       2     0      2   13505
+                                             16 COMRAM     2     0      2
+                 _LCD_DrawColorBurst
+                      _LCD_SetWindow
+                             ___wmul
+ ---------------------------------------------------------------------------------
+ (2) ___wmul                                               6     2      4     463
+                                              0 COMRAM     6     2      4
+ ---------------------------------------------------------------------------------
+ (2) _LCD_SetWindow                                        8     0      8   11981
+                                              8 COMRAM     8     0      8
+                          _LCD_TxCmd
+                      _LCD_TxCmdData
+ ---------------------------------------------------------------------------------
+ (2) _LCD_TxCmdData                                        4     0      4   10118
+                                              4 COMRAM     4     0      4
+                          _LCD_TxCmd
+                         _LCD_TxData
+ ---------------------------------------------------------------------------------
+ (3) _LCD_TxCmd                                            2     0      2     211
+                                              2 COMRAM     2     0      2
+                             _SPI_Tx
+ ---------------------------------------------------------------------------------
+ (2) _LCD_DrawColorBurst                                   6     2      4     963
+                                              6 COMRAM     6     2      4
+                         _LCD_TxData
+                             ___wmul (ARG)
+ ---------------------------------------------------------------------------------
+ (3) _LCD_TxData                                           2     0      2     287
+                                              2 COMRAM     2     0      2
+                             _SPI_Tx
+ ---------------------------------------------------------------------------------
+ (4) _SPI_Tx                                               2     2      0      15
+                                              0 COMRAM     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _LCD_FillScreen
+     _LCD_DrawColorBurst
+       _LCD_TxData
+         _SPI_Tx
+       ___wmul (ARG)
+     _LCD_SetWindow
+       _LCD_TxCmd
+         _SPI_Tx
+       _LCD_TxCmdData
+         _LCD_TxCmd
+           _SPI_Tx
+         _LCD_TxData
+           _SPI_Tx
+     ___wmul
+   _LCD_Init
+     _LCD_Enable
+     _LCD_Reset
+     _LCD_SetRotation
+       _LCD_TxCmdData
+         _LCD_TxCmd
+           _SPI_Tx
+         _LCD_TxData
+           _SPI_Tx
+     _LCD_TxCmdData
+       _LCD_TxCmd
+         _SPI_Tx
+       _LCD_TxData
+         _SPI_Tx
+   _LCD_SetRotation
+     _LCD_TxCmdData
+       _LCD_TxCmd
+         _SPI_Tx
+       _LCD_TxData
+         _SPI_Tx
+   _SPI_Init
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             5FF      0       0      17        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK5           100      0       0      16        0.0%
+BANK5              100      0       0      14        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F     12      37       1       57.9%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      37      15        0.0%
+DATA                 0      0      37       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
+Symbol Table                                                                                   Wed Sep 18 07:16:07 2019
+
+                ?_LCD_Enable 0020       __end_of_LCD_FillScreen 0C1A                  _SSPSTATbits 000FC7  
+                ?_LCD_TxData 0022                           l20 0D58                           l60 0CD0  
+        ___wmul@multiplicand 0022                 __CFG_CP0$OFF 000000                 __CFG_CP1$OFF 000000  
+               __CFG_CP2$OFF 000000                 __CFG_CP3$OFF 000000                _LCD_TxCmdData 0CF8  
+               __CFG_CPB$OFF 000000                          u317 0646                          u327 06E0  
+                        u337 070A                 __CFG_CPD$OFF 000000                          u347 0A7C  
+                        u357 0C86                          u367 0C9A                _LCD_SetWindow 0B46  
+               __CFG_BORV$18 000000                          wreg 000FE8                 __CFG_LVP$OFF 000000  
+                       l1131 0AB8                         l1141 0AF0                         l1135 0ACA  
+                       l1137 0ADE                         l1129 0AA4                         l1171 0C6E  
+                       l1147 0B06                         l1155 0B1C                         l1167 0C5E  
+                       STR_1 0601                         _data 001F                         _main 0CAA  
+                       fsr1l 000FE1           __size_of_LCD_TxCmd 0014           __size_of_LCD_Reset 002C  
+                       prodh 000FF4                         prodl 000FF3                         start 0000  
+              __CFG_IESO$OFF 000000                __CFG_MCLRE$ON 000000                 ___param_bank 000000  
+            ?_LCD_FillScreen 0030             __end_of_LCD_Init 0AA0               ?_LCD_TxCmdData 0024  
+                      ?_main 0020               ?_LCD_SetWindow 0028                        _ANSEL 000F7E  
+            _LCD_SetRotation 0AA0                __CFG_PWRT$OFF 000000                __CFG_WRT0$OFF 000000  
+              __CFG_WRT1$OFF 000000                __CFG_WRT2$OFF 000000                __CFG_WRT3$OFF 000000  
+             __CFG_EBTR0$OFF 000000               __CFG_FCMEN$OFF 000000               __CFG_EBTR1$OFF 000000  
+             __CFG_EBTR2$OFF 000000               __CFG_EBTR3$OFF 000000                __CFG_WRTB$OFF 000000  
+              __CFG_WRTC$OFF 000000                __CFG_WRTD$OFF 000000               __CFG_EBTRB$OFF 000000  
+        __size_of_LCD_Enable 0004             __end_of_SPI_Init 0D2A               __CFG_BOREN$OFF 000000  
+                      tablat 000FF5          __size_of_LCD_TxData 0014                        status 000FD8  
+             __CFG_HFOFST$ON 000000               __CFG_PBADEN$ON 000000              __initialization 0C1A  
+               __end_of_main 0CD2          LCD_DrawColorBurst@i 002A                       ??_main 0032  
+               LCD_TxCmd@cmd 0022                __activetblptr 000002            __end_of_LCD_TxCmd 0D3E  
+          __end_of_LCD_Reset 0CAA                       _ANSELH 000F7F               __CFG_WDTEN$OFF 000000  
+                     _OSCCON 000FD3                       _SSPBUF 000FC9                       _SPI_Tx 0D52  
+             __CFG_XINST$OFF 000000                       ___wmul 0CD2               __CFG_STVREN$ON 000000  
+            ??_LCD_TxCmdData 0028       LCD_DrawColorBurst@size 0028      __end_of_LCD_SetRotation 0B46  
+            ??_LCD_SetWindow 0030                       clear_0 0C40           _LCD_DrawColorBurst 0C50  
+               __pdataCOMRAM 0032                 __mediumconst 0000                       tblptrh 000FF7  
+        ?_LCD_DrawColorBurst 0026                       tblptrl 000FF6                       tblptru 000FF8  
+                 __accesstop 0060      __end_of__initialization 0C46                    ?_LCD_Init 0020  
+              ___rparam_used 000001         ??_LCD_DrawColorBurst 002A               __pcstackCOMRAM 0020  
+               ??_LCD_Enable 0020              LCD_SetWindow@x0 0028              LCD_SetWindow@x1 002C  
+            LCD_SetWindow@y0 002A              LCD_SetWindow@y1 002E                 ??_LCD_TxData 0024  
+                  ?_SPI_Init 0020           __end_of_LCD_Enable 0D6A                   ??_LCD_Init 002B  
+         __end_of_LCD_TxData 0D52                      ?_SPI_Tx 0020             ??_LCD_FillScreen 0032  
+                    ?___wmul 0020             ?_LCD_SetRotation 0020                   ??_SPI_Init 0020  
+            __size_of_SPI_Tx 000E                      __Hparam 0000                      __Lparam 0000  
+            __size_of___wmul 0026                 __psmallconst 0600                      __pcinit 0C1A  
+                    __ramtop 0600      LCD_SetRotation@rotation 002A                      __ptext0 0CAA  
+                    __ptext1 0D12                      __ptext2 061E                      __ptext3 0AA0  
+                    __ptext4 0C7E                      __ptext5 0D66                      __ptext6 0BCC  
+                    __ptext7 0CD2                      __ptext8 0B46                      __ptext9 0CF8  
+    LCD_DrawColorBurst@color 0026                    _LCD_TxCmd 0D2A                    _LCD_Reset 0C7E  
+       end_of_initialization 0C46                __Lmediumconst 0000                      postdec1 000FE5  
+                    postinc0 000FEE             LCD_TxCmdData@cmd 0024                    _TRISAbits 000F92  
+                  _TRISCbits 000F94                    _TRISDbits 000F95                   ?_LCD_TxCmd 0022  
+                 ?_LCD_Reset 0020               __end_of_SPI_Tx 0D60            __size_of_LCD_Init 0482  
+             __end_of___wmul 0CF8                __pidataCOMRAM 0D60        __end_of_LCD_TxCmdData 0D12  
+      __end_of_LCD_SetWindow 0BCC            __size_of_SPI_Init 0018          start_initialization 0C1A  
+                   ??_SPI_Tx 0020  __size_of_LCD_DrawColorBurst 002E                     ??___wmul 0024  
+           __CFG_LPT1OSC$OFF 000000               LCD_TxData@data 0022                  __pbssCOMRAM 0001  
+                ??_LCD_TxCmd 0024                  ??_LCD_Reset 0020            __CFG_CCP2MX$PORTC 000000  
+                  _lcdHeight 0034                  __smallconst 0600     __size_of_LCD_SetRotation 00A6  
+                  _rcvBuffer 0001                     _LCD_Init 061E               ___wmul@product 0024  
+                   _LATAbits 000F89                     _LATDbits 000F8C                    _sndBuffer 0036  
+           __CFG_WDTPS$32768 000000      __size_of_LCD_FillScreen 004E                     _SPI_Init 0D12  
+          ___wmul@multiplier 0020                    copy_data0 0C2E                   SPI_Tx@data 0021  
+                   __Hrparam 0000                     __Lrparam 0000                     __ptext10 0D2A  
+                   __ptext11 0C50                     __ptext12 0D3E                     __ptext13 0D52  
+                   _lcdWidth 0032            ??_LCD_SetRotation 0028                __size_of_main 0028  
+                 _LCD_Enable 0D66          LCD_FillScreen@color 0030                   _LCD_TxData 0D3E  
+     __size_of_LCD_TxCmdData 001A   __end_of_LCD_DrawColorBurst 0C7E       __size_of_LCD_SetWindow 0086  
+             _LCD_FillScreen 0BCC                  _SSPCON1bits 000FC6            __CFG_FOSC$INTIO67 000000  
+          LCD_TxCmdData@data 0026  
