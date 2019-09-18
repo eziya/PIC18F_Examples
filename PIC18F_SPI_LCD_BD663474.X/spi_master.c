@@ -9,7 +9,7 @@ void SPI_Init(void) {
     SSPSTATbits.CKE = 1; //idle to active
 
     SSPCON1bits.CKP = 0; //clock low when idle
-    SSPCON1bits.SSPM = 1; //master mode, Fosc / 4 = 4MHz
+    SSPCON1bits.SSPM = 0; //master mode, Fosc / 4 = 4MHz
     SSPCON1bits.SSPEN = 1; //enable SPI
 }
 

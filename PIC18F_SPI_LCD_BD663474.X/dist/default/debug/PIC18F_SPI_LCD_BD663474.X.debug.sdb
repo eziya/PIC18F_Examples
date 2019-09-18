@@ -29,25 +29,27 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"7 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\lcd_bd663474.c
+"9 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\lcd_bd663474.c
 [v _LCD_TxCmd LCD_TxCmd `(v  1 s 1 LCD_TxCmd ]
-"17
+"19
 [v _LCD_TxData LCD_TxData `(v  1 s 1 LCD_TxData ]
-"23
+"25
 [v _LCD_WriteReg LCD_WriteReg `(v  1 s 1 LCD_WriteReg ]
-"38
+"40
 [v _LCD_Reset LCD_Reset `(v  1 e 1 0 ]
-"49
+"51
 [v _LCD_Enable LCD_Enable `(v  1 e 1 0 ]
-"54
+"56
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
 "176
+[v _lcd_clear_screen lcd_clear_screen `(v  1 e 1 0 ]
+"197
 [v _LCD_SetWindow LCD_SetWindow `(v  1 e 1 0 ]
-"187
+"208
 [v _LCD_DrawColor LCD_DrawColor `(v  1 e 1 0 ]
-"194
+"215
 [v _LCD_DrawColorBurst LCD_DrawColorBurst `(v  1 e 1 0 ]
-"205
+"228
 [v _LCD_FillScreen LCD_FillScreen `(v  1 e 1 0 ]
 "11 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -248,9 +250,9 @@
 "6429
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 "4 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\lcd_bd663474.c
-[v _lcdWidth lcdWidth `VEus  1 e 2 0 ]
-"5
 [v _lcdHeight lcdHeight `VEus  1 e 2 0 ]
+"5
+[v _lcdWidth lcdWidth `VEus  1 e 2 0 ]
 "7 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\main.c
 [v _data data `VEuc  1 e 1 0 ]
 "11
@@ -263,69 +265,78 @@
 {
 "14
 } 0
-"54 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\lcd_bd663474.c
+"56 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\lcd_bd663474.c
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
 {
-"145
+"146
 } 0
-"38
+"176
+[v _lcd_clear_screen lcd_clear_screen `(v  1 e 1 0 ]
+{
+"190
+[v lcd_clear_screen@i_511 i `ul  1 a 4 8 ]
+"176
+[v lcd_clear_screen@color_background color_background `us  1 p 2 6 ]
+"195
+} 0
+"40
 [v _LCD_Reset LCD_Reset `(v  1 e 1 0 ]
 {
-"47
+"49
 } 0
-"205
+"228
 [v _LCD_FillScreen LCD_FillScreen `(v  1 e 1 0 ]
 {
-[v LCD_FillScreen@color color `us  1 p 2 22 ]
-"209
+[v LCD_FillScreen@color color `us  1 p 2 16 ]
+"232
 } 0
-"15 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul32.c
-[v ___lmul __lmul `(ul  1 e 4 0 ]
+"15 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
-[v ___lmul@product product `ul  1 a 4 8 ]
+[v ___wmul@product product `ui  1 a 2 4 ]
 "15
-[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
-[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
-"129
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
 } 0
-"176 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\lcd_bd663474.c
+"197 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\lcd_bd663474.c
 [v _LCD_SetWindow LCD_SetWindow `(v  1 e 1 0 ]
 {
 [v LCD_SetWindow@x0 x0 `us  1 p 2 6 ]
 [v LCD_SetWindow@y0 y0 `us  1 p 2 8 ]
 [v LCD_SetWindow@x1 x1 `us  1 p 2 10 ]
 [v LCD_SetWindow@y1 y1 `us  1 p 2 12 ]
-"185
+"206
 } 0
-"23
+"25
 [v _LCD_WriteReg LCD_WriteReg `(v  1 s 1 LCD_WriteReg ]
 {
 [v LCD_WriteReg@reg reg `us  1 p 2 2 ]
 [v LCD_WriteReg@data data `us  1 p 2 4 ]
-"36
+"38
 } 0
-"7
+"9
 [v _LCD_TxCmd LCD_TxCmd `(v  1 s 1 LCD_TxCmd ]
 {
 [v LCD_TxCmd@cmd cmd `us  1 p 2 2 ]
-"15
+"17
 } 0
-"194
+"215
 [v _LCD_DrawColorBurst LCD_DrawColorBurst `(v  1 e 1 0 ]
 {
-"198
-[v LCD_DrawColorBurst@i i `ul  1 a 4 18 ]
-"194
-[v LCD_DrawColorBurst@color color `us  1 p 2 12 ]
-[v LCD_DrawColorBurst@size size `ul  1 p 4 14 ]
-"203
+"220
+[v LCD_DrawColorBurst@i i `ul  1 a 4 12 ]
+"215
+[v LCD_DrawColorBurst@color color `us  1 p 2 6 ]
+[v LCD_DrawColorBurst@size size `ul  1 p 4 8 ]
+"226
 } 0
-"17
+"19
 [v _LCD_TxData LCD_TxData `(v  1 s 1 LCD_TxData ]
 {
 [v LCD_TxData@data data `us  1 p 2 2 ]
-"21
+"23
 } 0
 "22 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\spi_master.c
 [v _SPI_Tx SPI_Tx `(v  1 e 1 0 ]
@@ -336,8 +347,8 @@
 [v SPI_Tx@data data `uc  1 a 1 1 ]
 "27
 } 0
-"49 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\lcd_bd663474.c
+"51 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_SPI_LCD_BD663474.X\lcd_bd663474.c
 [v _LCD_Enable LCD_Enable `(v  1 e 1 0 ]
 {
-"52
+"54
 } 0

@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "lcd_bd663474.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,84 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 1 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\string.h" 1 3
-
-
-
-# 1 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\musl_xc8.h" 1 3
-# 4 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\string.h" 2 3
-
-
-
-
-
-
-# 1 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\features.h" 1 3
-# 10 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\string.h" 2 3
-# 25 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\string.h" 3
-# 1 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\bits/alltypes.h" 1 3
-# 127 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 176 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 212 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
-# 419 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 1 "main.c" 2
-
-
+# 1 "lcd_bd663474.c" 2
+# 1 "./lcd_bd663474.h" 1
+# 11 "./lcd_bd663474.h"
 # 1 "./main.h" 1
 # 21 "./main.h"
 #pragma config FOSC = INTIO67
@@ -158,10 +83,29 @@ extern double __fpnormalize(double);
 
 
 # 1 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\stdlib.h" 1 3
+
+
+
+# 1 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\musl_xc8.h" 1 3
+# 4 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\stdlib.h" 2 3
+
+
+
+
+
+
+# 1 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\features.h" 1 3
+# 10 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\stdlib.h" 2 3
 # 21 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\stdlib.h" 3
 # 1 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\bits/alltypes.h" 1 3
 # 22 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
+# 127 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 176 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 212 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\bits/alltypes.h" 3
+typedef __uint24 uint24_t;
 # 21 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\stdlib.h" 2 3
 
 
@@ -5153,18 +5097,7 @@ typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 155 "D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99\\stdint.h" 2 3
 # 82 "./main.h" 2
-# 3 "main.c" 2
-
-# 1 "./spi_master.h" 1
-# 13 "./spi_master.h"
-void SPI_Init(void);
-uint8_t SPI_Rx();
-void SPI_Tx(uint8_t data);
-void SPI_RxBuffer(uint8_t *buffer, uint8_t length);
-void SPI_TxBuffer(uint8_t *buffer, uint8_t length);
-# 4 "main.c" 2
-
-# 1 "./lcd_bd663474.h" 1
+# 11 "./lcd_bd663474.h" 2
 # 53 "./lcd_bd663474.h"
 void LCD_SetWindow(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
 void LCD_Reset(void);
@@ -5178,28 +5111,296 @@ void LCD_DrawPixel(uint16_t x,uint16_t y,uint16_t color);
 void LCD_DrawRectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t color);
 void LCD_DrawHLine(uint16_t x, uint16_t y, uint16_t width, uint16_t color);
 void LCD_DrawVLine(uint16_t x, uint16_t y, uint16_t height, uint16_t color);
-# 5 "main.c" 2
+# 1 "lcd_bd663474.c" 2
+
+# 1 "./spi_master.h" 1
+# 13 "./spi_master.h"
+void SPI_Init(void);
+uint8_t SPI_Rx();
+void SPI_Tx(uint8_t data);
+void SPI_RxBuffer(uint8_t *buffer, uint8_t length);
+void SPI_TxBuffer(uint8_t *buffer, uint8_t length);
+# 2 "lcd_bd663474.c" 2
 
 
-volatile uint8_t data = 0;
-char *sndBuffer = "HELLO WORLD!HELLO WORLD!\r\n";
-char rcvBuffer[30];
+volatile uint16_t lcdHeight = 240;
+volatile uint16_t lcdWidth = 320;
 
-void main(void) {
+void lcd_clear_screen(uint16_t color_background);
 
-    OSCCON = 0x72;
+static void LCD_TxCmd(uint16_t cmd)
+{
+    LATAbits.LATA2 = 0;
+    LATAbits.LATA1 = 0;
+ SPI_Tx((uint8_t)(cmd >> 8));
+    SPI_Tx((uint8_t)(cmd));
+ LATAbits.LATA1 = 1;
+    LATAbits.LATA2 = 1;
+}
 
-    ANSEL = 0x0;
-    ANSELH = 0x0;
+static void LCD_TxData(uint16_t data)
+{
+ SPI_Tx((uint8_t)(data >> 8));
+    SPI_Tx((uint8_t)(data));
+}
 
-    SPI_Init();
-    LCD_Init();
+static void LCD_WriteReg(uint16_t reg, uint16_t data)
+{
+    LATAbits.LATA2 = 0;
+    LATAbits.LATA1 = 0;
+ SPI_Tx((uint8_t)(reg >> 8));
+    SPI_Tx((uint8_t)(reg));
+    LATAbits.LATA1 = 1;
+
+    LATAbits.LATA2 = 1;
+    LATAbits.LATA1 = 0;
+ SPI_Tx((uint8_t)(data >> 8));
+    SPI_Tx((uint8_t)(data));
+ LATAbits.LATA1 = 1;
+}
+
+void LCD_Reset(void)
+{
+ LATDbits.LATD0 = 0;
+ _delay((unsigned long)((10)*(16000000/4000.0)));
+    LATDbits.LATD0 = 1;
+ _delay((unsigned long)((10)*(16000000/4000.0)));
+
+    LATAbits.LATA2 = 1;
+    LATAbits.LATA1 = 1;
+}
+
+void LCD_Enable(void)
+{
+ LATDbits.LATD0 = 1;
+}
+
+void LCD_Init(void)
+{
+    TRISAbits.RA1 = 0;
+    TRISAbits.RA2 = 0;
+    TRISDbits.RD0 = 0;
+    TRISAbits.RA4 = 0;
+    LATAbits.LATA4 = 1;
+
+ LCD_Enable();
+ LCD_Reset();
+
+ LCD_WriteReg(0x000, 0x0001);
+ _delay((unsigned long)((10)*(16000000/4000.0)));
 
 
+ LCD_WriteReg( 0x100, 0x0000 );
+ LCD_WriteReg( 0x101, 0x0000 );
+ LCD_WriteReg( 0x102, 0x3110 );
+ LCD_WriteReg( 0x103, 0xe200 );
+ LCD_WriteReg( 0x110, 0x009d );
+ LCD_WriteReg( 0x111, 0x0022 );
+ LCD_WriteReg( 0x100, 0x0120 );
+ _delay((unsigned long)((20)*(16000000/4000.0)));
+    LCD_WriteReg( 0x100, 0x3120 );
+ _delay((unsigned long)((80)*(16000000/4000.0)));
 
 
-    while (1) {
+ LCD_WriteReg( 0x001, 0x0100 );
+ LCD_WriteReg( 0x002, 0x0000 );
+ LCD_WriteReg( 0x003, 0x1230 );
+ LCD_WriteReg( 0x006, 0x0000 );
+ LCD_WriteReg( 0x007, 0x0101 );
+ LCD_WriteReg( 0x008, 0x0808 );
+ LCD_WriteReg( 0x009, 0x0000 );
+ LCD_WriteReg( 0x00b, 0x0000 );
+ LCD_WriteReg( 0x00c, 0x0000 );
+ LCD_WriteReg( 0x00d, 0x0018 );
+
+
+ LCD_WriteReg( 0x012, 0x0000 );
+ LCD_WriteReg( 0x013, 0x0000 );
+ LCD_WriteReg( 0x018, 0x0000 );
+ LCD_WriteReg( 0x019, 0x0000 );
+ LCD_WriteReg( 0x203, 0x0000 );
+ LCD_WriteReg( 0x204, 0x0000 );
+
+
+ LCD_WriteReg( 0x210, 0x0000 );
+ LCD_WriteReg( 0x211, 0x00ef );
+ LCD_WriteReg( 0x212, 0x0000 );
+ LCD_WriteReg( 0x213, 0x013f );
+
+
+ LCD_WriteReg( 0x214, 0x0000 );
+ LCD_WriteReg( 0x215, 0x0000 );
+ LCD_WriteReg( 0x216, 0x0000 );
+ LCD_WriteReg( 0x217, 0x0000 );
+
+
+ LCD_WriteReg( 0x300, 0x5343);
+ LCD_WriteReg( 0x301, 0x1021);
+ LCD_WriteReg( 0x302, 0x0003);
+ LCD_WriteReg( 0x303, 0x0011);
+ LCD_WriteReg( 0x304, 0x050a);
+ LCD_WriteReg( 0x305, 0x4342);
+ LCD_WriteReg( 0x306, 0x1100);
+ LCD_WriteReg( 0x307, 0x0003);
+ LCD_WriteReg( 0x308, 0x1201);
+ LCD_WriteReg( 0x309, 0x050a);
+
+
+ LCD_WriteReg( 0x400, 0x4027 );
+ LCD_WriteReg( 0x401, 0x0000 );
+ LCD_WriteReg( 0x402, 0x0000 );
+ LCD_WriteReg( 0x403, 0x013f );
+ LCD_WriteReg( 0x404, 0x0000 );
+
+
+ LCD_WriteReg( 0x200, 0x0000 );
+ LCD_WriteReg( 0x201, 0x0000 );
+
+ LCD_WriteReg( 0x100, 0x7120 );
+ LCD_WriteReg( 0x007, 0x0103 );
+ _delay((unsigned long)((10)*(16000000/4000.0)));
+
+ LCD_WriteReg( 0x007, 0x0113 );
+
+
+    lcd_clear_screen(0x07E0);
+    LCD_FillScreen(0xF800);
+}
+
+void LCD_SetRotation(uint8_t rotation)
+{
+ switch(rotation)
+ {
+ case 0:
+  LCD_WriteReg(0x003, 0x10A0);
+  lcdWidth = 240;
+  lcdHeight = 320;
+  break;
+ case 1:
+  LCD_WriteReg(0x003, 0x1098);
+  lcdWidth = 320;
+  lcdHeight = 240;
+  break;
+ case 2:
+  LCD_WriteReg(0x003, 0x1080);
+  lcdWidth = 240;
+  lcdHeight = 320;
+  break;
+ case 3:
+  LCD_WriteReg(0x003, 0x10A8);
+  lcdWidth = 320;
+  lcdHeight = 240;
+  break;
+ default:
+  break;
+ }
+}
+void lcd_clear_screen(uint16_t color_background)
+{
+ unsigned int i,j;
+
+ LCD_WriteReg(0x210,0x00);
+ LCD_WriteReg(0x211,0xEF);
+    LCD_WriteReg(0x212,0x0000);
+ LCD_WriteReg(0x213,0x013F);
+
+ LCD_WriteReg(0x200,0x0000);
+ LCD_WriteReg(0x201,0x0000);
+ LCD_TxCmd(0x202);
+
+    LATAbits.LATA1 = 0;
+ for(uint32_t i = 0; i < (320 * 240); i++)
+    {
+        LCD_TxData(color_background);
+    }
+ LATAbits.LATA1 = 1;
+}
+
+void LCD_SetWindow(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1)
+{
+ LCD_WriteReg(0x210, x0);
+    LCD_WriteReg(0x211, x1);
+    LCD_WriteReg(0x212, y0);
+    LCD_WriteReg(0x213, y1);
+    LCD_WriteReg(0x200, x0);
+    LCD_WriteReg(0x201, y0);
+ LCD_TxCmd(0x202);
+}
+
+void LCD_DrawColor(uint16_t color)
+{
+    LATAbits.LATA1 = 0;
+    LCD_TxData(color);
+    LATAbits.LATA1 = 1;
+}
+
+void LCD_DrawColorBurst(uint16_t color, uint32_t size)
+{
+    LATAbits.LATA2 = 1;
+    LATAbits.LATA1 = 0;
+
+ for(uint32_t i = 0; i < size; i++)
+    {
+        LCD_TxData(color);
     }
 
-    return;
+    LATAbits.LATA1 = 1;
+}
+
+void LCD_FillScreen(uint16_t color)
+{
+ LCD_SetWindow(0, 0, lcdHeight, lcdWidth);
+ LCD_DrawColorBurst(color, lcdWidth*lcdHeight);
+}
+
+void LCD_DrawPixel(uint16_t x,uint16_t y,uint16_t color)
+{
+ if((x >=lcdWidth) || (y >=lcdHeight)) return;
+
+ LCD_SetWindow(x, y, x, y);
+    LCD_DrawColor(color);
+}
+
+void LCD_DrawRectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t color)
+{
+ if((x >=lcdWidth) || (y >=lcdHeight)) return;
+
+ if((x+width-1)>=lcdWidth)
+ {
+  width=lcdWidth-x;
+ }
+
+ if((y+height-1)>=lcdHeight)
+ {
+  height=lcdHeight-y;
+ }
+
+ LCD_SetWindow(x, y, x+width-1, y+height-1);
+ LCD_DrawColorBurst(color, height*width);
+}
+
+void LCD_DrawHLine(uint16_t x, uint16_t y, uint16_t width, uint16_t color)
+{
+ if((x >=lcdWidth) || (y >=lcdHeight)) return;
+
+ if((x+width-1)>=lcdWidth)
+ {
+  width=lcdWidth-x;
+ }
+
+ LCD_SetWindow(x, y, x+width-1, y);
+ LCD_DrawColorBurst(color, width);
+}
+
+void LCD_DrawVLine(uint16_t x, uint16_t y, uint16_t height, uint16_t color)
+{
+ if((x >=lcdWidth) || (y >=lcdHeight)) return;
+
+ if((y+height-1)>=lcdHeight)
+ {
+  height=lcdHeight-y;
+ }
+
+ LCD_SetWindow(x, y, x, y+height-1);
+ LCD_DrawColorBurst(color, height);
 }

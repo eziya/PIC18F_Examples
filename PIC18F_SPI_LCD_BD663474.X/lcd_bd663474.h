@@ -10,17 +10,19 @@
 
 #include "main.h"
     
-#define LCD_SCREEN_HEIGHT 	240
-#define LCD_SCREEN_WIDTH 	320
+#define LCD_SCREEN_HEIGHT 	320
+#define LCD_SCREEN_WIDTH 	240
 
 /* PIN Configuration */
 #define HSPI_INSTANCE			&hspi1
 #define LCD_CS_TRIS             TRISAbits.RA1
 #define LCD_CS                  LATAbits.LATA1
-#define LCD_DC_TRIS             TRISAbits.RA2
-#define LCD_DC                  LATAbits.LATA2
+#define LCD_RS_TRIS             TRISAbits.RA2
+#define LCD_RS                  LATAbits.LATA2
 #define LCD_RST_TRIS            TRISDbits.RD0
 #define LCD_RST                 LATDbits.LATD0
+#define LCD_TC_TRIS             TRISAbits.RA4
+#define LCD_TC                  LATAbits.LATA4
 
 #define BURST_MAX_SIZE 			500
 #define BLACK      				0x0000
@@ -54,7 +56,7 @@ void LCD_Enable(void);
 void LCD_Init(void);
 void LCD_SetRotation(uint8_t rotation);
 void LCD_DrawColor(uint16_t color);
-void LCD_DrawColorBurst(uint16_t color, uint16_t size);
+void LCD_DrawColorBurst(uint16_t color, uint32_t size);
 void LCD_FillScreen(uint16_t color);
 void LCD_DrawPixel(uint16_t x,uint16_t y,uint16_t color);
 void LCD_DrawRectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t color);

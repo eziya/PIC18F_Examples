@@ -17,8 +17,8 @@ void main(void) {
 
     SPI_Init(); //init spi
     LCD_Init();    
-    LCD_SetRotation(SCREEN_HORIZONTAL_2);
-    LCD_FillScreen(GREEN);
+    //LCD_SetRotation(SCREEN_VERTICAL_1);
+    //LCD_FillScreen(GREEN);
     
     
     while (1) {
