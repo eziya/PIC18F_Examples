@@ -5,8 +5,14 @@
         <group>
             <file>file:/F:/Workspace/GitHub/PIC18F_Examples/PIC18F_SPI_LCD_BD663474.X/lcd_bd663474.h</file>
             <file>file:/F:/Workspace/GitHub/PIC18F_Examples/PIC18F_SPI_LCD_BD663474.X/spi_master.c</file>
+            <file>file:/F:/Workspace/GitHub/PIC18F_Examples/PIC18F_SPI_LCD_BD663474.X/main.h</file>
+            <file>file:/F:/Workspace/GitHub/PIC18F_Examples/PIC18F_SPI_LCD_BD663474.X/lcd_gfx.c</file>
+            <file>file:/F:/Workspace/GitHub/PIC18F_Examples/PIC18F_SPI_LCD_BD663474.X/fonts.c</file>
             <file>file:/F:/Workspace/GitHub/PIC18F_Examples/PIC18F_SPI_LCD_BD663474.X/main.c</file>
             <file>file:/F:/Workspace/GitHub/PIC18F_Examples/PIC18F_SPI_LCD_BD663474.X/lcd_bd663474.c</file>
+            <file>file:/F:/Workspace/GitHub/PIC18F_Examples/PIC18F_SPI_LCD_BD663474.X/lcd_gfx.h</file>
+            <file>file:/F:/Workspace/GitHub/PIC18F_Examples/PIC18F_SPI_LCD_BD663474.X/fonts.h</file>
+            <file>file:/F:/Workspace/GitHub/PIC18F_Examples/PIC18F_SPI_LCD_BD663474.X/bitmap.h</file>
             <file>file:/F:/Workspace/GitHub/PIC18F_Examples/PIC18F_SPI_LCD_BD663474.X/spi_master.h</file>
         </group>
     </open-files>

@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=spi_master.c main.c lcd_bd663474.c
+SOURCEFILES_QUOTED_IF_SPACED=spi_master.c main.c lcd_bd663474.c lcd_gfx.c fonts.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/spi_master.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/lcd_bd663474.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/spi_master.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/lcd_bd663474.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/spi_master.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/lcd_bd663474.p1 ${OBJECTDIR}/lcd_gfx.p1 ${OBJECTDIR}/fonts.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/spi_master.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/lcd_bd663474.p1.d ${OBJECTDIR}/lcd_gfx.p1.d ${OBJECTDIR}/fonts.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/spi_master.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/lcd_bd663474.p1
+OBJECTFILES=${OBJECTDIR}/spi_master.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/lcd_bd663474.p1 ${OBJECTDIR}/lcd_gfx.p1 ${OBJECTDIR}/fonts.p1
 
 # Source Files
-SOURCEFILES=spi_master.c main.c lcd_bd663474.c
+SOURCEFILES=spi_master.c main.c lcd_bd663474.c lcd_gfx.c fonts.c
 
 
 CFLAGS=
@@ -117,6 +117,22 @@ ${OBJECTDIR}/lcd_bd663474.p1: lcd_bd663474.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/lcd_bd663474.d ${OBJECTDIR}/lcd_bd663474.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/lcd_bd663474.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/lcd_gfx.p1: lcd_gfx.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/lcd_gfx.p1.d 
+	@${RM} ${OBJECTDIR}/lcd_gfx.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99" -I"D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/lcd_gfx.p1 lcd_gfx.c 
+	@-${MV} ${OBJECTDIR}/lcd_gfx.d ${OBJECTDIR}/lcd_gfx.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/lcd_gfx.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/fonts.p1: fonts.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/fonts.p1.d 
+	@${RM} ${OBJECTDIR}/fonts.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99" -I"D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/fonts.p1 fonts.c 
+	@-${MV} ${OBJECTDIR}/fonts.d ${OBJECTDIR}/fonts.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/fonts.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/spi_master.p1: spi_master.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -141,6 +157,22 @@ ${OBJECTDIR}/lcd_bd663474.p1: lcd_bd663474.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99" -I"D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/lcd_bd663474.p1 lcd_bd663474.c 
 	@-${MV} ${OBJECTDIR}/lcd_bd663474.d ${OBJECTDIR}/lcd_bd663474.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/lcd_bd663474.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/lcd_gfx.p1: lcd_gfx.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/lcd_gfx.p1.d 
+	@${RM} ${OBJECTDIR}/lcd_gfx.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99" -I"D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/lcd_gfx.p1 lcd_gfx.c 
+	@-${MV} ${OBJECTDIR}/lcd_gfx.d ${OBJECTDIR}/lcd_gfx.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/lcd_gfx.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/fonts.p1: fonts.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/fonts.p1.d 
+	@${RM} ${OBJECTDIR}/fonts.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/c99" -I"D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include/" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/fonts.p1 fonts.c 
+	@-${MV} ${OBJECTDIR}/fonts.d ${OBJECTDIR}/fonts.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/fonts.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

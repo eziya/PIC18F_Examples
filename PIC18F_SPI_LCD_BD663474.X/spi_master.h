@@ -10,6 +10,7 @@
 
 #include "main.h"
 
+/* functions */
 void SPI_Init(void);
 uint8_t SPI_Rx();
 void SPI_Tx(uint8_t data);

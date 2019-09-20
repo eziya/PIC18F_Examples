@@ -7,6 +7,9 @@
       <itemPath>spi_master.h</itemPath>
       <itemPath>main.h</itemPath>
       <itemPath>lcd_bd663474.h</itemPath>
+      <itemPath>lcd_gfx.h</itemPath>
+      <itemPath>fonts.h</itemPath>
+      <itemPath>bitmap.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -18,6 +21,8 @@
       <itemPath>spi_master.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>lcd_bd663474.c</itemPath>
+      <itemPath>lcd_gfx.c</itemPath>
+      <itemPath>fonts.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

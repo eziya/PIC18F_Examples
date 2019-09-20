@@ -9,22 +9,21 @@
 #define	LCD_BD663474_H
 
 #include "main.h"
-    
-#define LCD_SCREEN_HEIGHT 	320
-#define LCD_SCREEN_WIDTH 	240
 
-/* PIN Configuration */
-#define HSPI_INSTANCE			&hspi1
-#define LCD_CS_TRIS             TRISAbits.RA1
+#define LCD_SCREEN_HEIGHT       320
+#define LCD_SCREEN_WIDTH        240
+
+/* PIN configuration */
+#define LCD_CS_TRIS             TRISAbits.RA1  //chip(slave) select
 #define LCD_CS                  LATAbits.LATA1
-#define LCD_RS_TRIS             TRISAbits.RA2
+#define LCD_RS_TRIS             TRISAbits.RA2  //data command select
 #define LCD_RS                  LATAbits.LATA2
-#define LCD_RST_TRIS            TRISDbits.RD0
+#define LCD_RST_TRIS            TRISDbits.RD0  //reset
 #define LCD_RST                 LATDbits.LATD0
-#define LCD_TC_TRIS             TRISAbits.RA4
+#define LCD_TC_TRIS             TRISAbits.RA4  //touch screen select pin
 #define LCD_TC                  LATAbits.LATA4
 
-#define BURST_MAX_SIZE 			500
+/* colors */
 #define BLACK      				0x0000
 #define NAVY        			0x000F
 #define DARKGREEN   			0x03E0
@@ -45,11 +44,16 @@
 #define GREENYELLOW 			0xAFE5
 #define PINK        			0xF81F
 
+/* orientation */
 #define SCREEN_VERTICAL_1		0
 #define SCREEN_HORIZONTAL_1		1
 #define SCREEN_VERTICAL_2		2
 #define SCREEN_HORIZONTAL_2		3
 
+/* functions */
+void LCD_TxCmd(uint16_t cmd);
+void LCD_TxData(uint16_t data);
+void LCD_WriteReg(uint16_t reg, uint16_t data);
 void LCD_SetWindow(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
 void LCD_Reset(void);
 void LCD_Enable(void);
@@ -58,7 +62,7 @@ void LCD_SetRotation(uint8_t rotation);
 void LCD_DrawColor(uint16_t color);
 void LCD_DrawColorBurst(uint16_t color, uint32_t size);
 void LCD_FillScreen(uint16_t color);
-void LCD_DrawPixel(uint16_t x,uint16_t y,uint16_t color);
+void LCD_DrawPixel(uint16_t x, uint16_t y, uint16_t color);
 void LCD_DrawRectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t color);
 void LCD_DrawHLine(uint16_t x, uint16_t y, uint16_t width, uint16_t color);
 void LCD_DrawVLine(uint16_t x, uint16_t y, uint16_t height, uint16_t color);

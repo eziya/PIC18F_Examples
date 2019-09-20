@@ -81,7 +81,7 @@ extern "C" {
 #include <stdio.h>
 #include <stdint.h>
 
-#define _XTAL_FREQ  16000000
+#define _XTAL_FREQ  32000000
 
 
 #ifdef	__cplusplus
