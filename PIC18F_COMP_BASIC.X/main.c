@@ -1,6 +1,6 @@
 #include "main.h"
 
-void initVref(void);
+void initCVref(void);
 void initComparator(void);
 
 void main(void) {
@@ -11,7 +11,7 @@ void main(void) {
     ANSELH = 0x0;
 
     //CVref = 2.06v
-    initVref();
+    initCVref();
     
     //compare1 configuration
     initComparator();
@@ -23,7 +23,7 @@ void main(void) {
     return;
 }
 
-void initVref(void)
+void initCVref(void)
 {
     //CVref = (Vdd/32)* (8 + CVR)
     //CVref = 3.3/32 * 20 = 2.06V
