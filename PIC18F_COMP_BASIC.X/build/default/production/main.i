@@ -5125,6 +5125,7 @@ void initVref(void)
 {
 
 
+
     CVRCONbits.CVREN = 1;
     CVRCONbits.CVROE = 1;
     CVRCONbits.CVRR = 0;
@@ -5137,7 +5138,6 @@ void initComparator(void)
     TRISAbits.RA4 = 0;
 
     CM1CON0bits.C1ON = 1;
-    CM1CON0bits.C1OUT = 1;
     CM1CON0bits.C1OE = 1;
     CM1CON0bits.C1POL = 1;
     CM1CON0bits.C1SP = 1;

@@ -14,8 +14,8 @@ __Lirdata 0 0 CODE 0
 __HRAM 0 0 ABS 0
 _ANSEL F7E 0 ABS 0
 __LRAM 1 0 ABS 0
-_initVref 7FC2 0 CODE 0
-_initComparator 7FD4 0 CODE 0
+_initVref 7FC4 0 CODE 0
+_initComparator 7FD6 0 CODE 0
 __CFG_WDTPS$32768 0 0 ABS 0
 __Hconfig 30000E 0 CONFIG 0
 __Lconfig 300000 0 CONFIG 0
@@ -88,7 +88,7 @@ __end_of_main 8000 0 CODE 0
 __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
-end_of_initialization 7FBC 0 CODE 0
+end_of_initialization 7FBE 0 CODE 0
 _TRISAbits F92 0 ABS 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
@@ -117,15 +117,15 @@ __Ltext1 0 0 ABS 0
 __ptext0 7FEA 0 CODE 0
 __Htext2 0 0 ABS 0
 __Ltext2 0 0 ABS 0
-__ptext1 7FC2 0 CODE 0
-__ptext2 7FD4 0 CODE 0
+__ptext1 7FC4 0 CODE 0
+__ptext2 7FD6 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 __CFG_BORV$18 0 0 ABS 0
 __CFG_HFOFST$ON 0 0 ABS 0
-__end_of__initialization 7FBC 0 CODE 0
+__end_of__initialization 7FBE 0 CODE 0
 ___rparam_used 1 0 ABS 0
-__end_of_initVref 7FD4 0 CODE 0
+__end_of_initVref 7FD6 0 CODE 0
 __Hidata 0 0 CODE 0
 __Lidata 0 0 CODE 0
 __Hrdata 0 0 COMRAM 1
@@ -151,7 +151,7 @@ __Hnvbit 0 0 COMRAM 1
 __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 __Lcinit 0 0 ABS 0
-__pcinit 7FBC 0 CODE 0
+__pcinit 7FBE 0 CODE 0
 __CFG_EBTRB$OFF 0 0 ABS 0
 __ramtop 600 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
@@ -188,10 +188,10 @@ __CFG_WRTC$OFF 0 0 ABS 0
 __CFG_WRTD$OFF 0 0 ABS 0
 __CFG_CPB$OFF 0 0 ABS 0
 __CFG_CPD$OFF 0 0 ABS 0
-start_initialization 7FBC 0 CODE 0
+start_initialization 7FBE 0 CODE 0
 __CFG_IESO$OFF 0 0 ABS 0
 __CFG_MCLRE$ON 0 0 ABS 0
-__initialization 7FBC 0 CODE 0
+__initialization 7FBE 0 CODE 0
 __CFG_LPT1OSC$OFF 0 0 ABS 0
 __activetblptr 0 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
@@ -200,19 +200,19 @@ reset_vec 0 3 CODE 0 0
 config 300000 30000D CONFIG 300000 0
 idloc 200000 200007 IDLOC 200000 0
 text0 7FEA 7FFF CODE 7FEA 0
-text2 7FD4 7FE9 CODE 7FD4 0
-text1 7FC2 7FD3 CODE 7FC2 0
-cinit 7FBC 7FC1 CODE 7FBC 0
+text2 7FD6 7FE9 CODE 7FD6 0
+text1 7FC4 7FD5 CODE 7FC4 0
+cinit 7FBE 7FC3 CODE 7FBE 0
 %locals
 dist/default/production\PIC18F_COMP_BASIC.X.production.o
 D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include\pic18f45k20.h
-C:\Users\KIKI\AppData\Local\Temp\sfuo.
-490 7FBC 0 CODE 0
-492 7FBC 0 CODE 0
-495 7FBC 0 CODE 0
-501 7FBC 0 CODE 0
-503 7FBC 0 CODE 0
-504 7FBE 0 CODE 0
+C:\Users\KIKI\AppData\Local\Temp\sgig.
+490 7FBE 0 CODE 0
+492 7FBE 0 CODE 0
+495 7FBE 0 CODE 0
+501 7FBE 0 CODE 0
+503 7FBE 0 CODE 0
+504 7FC0 0 CODE 0
 main.c
 6 7FEA 0 CODE 0
 8 7FEA 0 CODE 0
@@ -223,17 +223,16 @@ main.c
 20 7FFE 0 CODE 0
 21 7FFE 0 CODE 0
 main.c
-26 7FC2 0 CODE 0
-30 7FC2 0 CODE 0
+26 7FC4 0 CODE 0
 31 7FC4 0 CODE 0
 32 7FC6 0 CODE 0
 33 7FC8 0 CODE 0
 34 7FCA 0 CODE 0
-35 7FD2 0 CODE 0
+35 7FCC 0 CODE 0
+36 7FD4 0 CODE 0
 main.c
-37 7FD4 0 CODE 0
-39 7FD4 0 CODE 0
-41 7FD6 0 CODE 0
+38 7FD6 0 CODE 0
+40 7FD6 0 CODE 0
 42 7FD8 0 CODE 0
 43 7FDA 0 CODE 0
 44 7FDC 0 CODE 0

@@ -628,42 +628,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _initVref ]
 [f ]
-"30
-[; ;main.c: 30:     CVRCONbits.CVREN = 1;
-[e = . . _CVRCONbits 0 4 -> -> 1 `i `uc ]
 "31
-[; ;main.c: 31:     CVRCONbits.CVROE = 1;
-[e = . . _CVRCONbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 31:     CVRCONbits.CVREN = 1;
+[e = . . _CVRCONbits 0 4 -> -> 1 `i `uc ]
 "32
-[; ;main.c: 32:     CVRCONbits.CVRR = 0;
-[e = . . _CVRCONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 32:     CVRCONbits.CVROE = 1;
+[e = . . _CVRCONbits 0 3 -> -> 1 `i `uc ]
 "33
-[; ;main.c: 33:     CVRCONbits.CVRSS = 0;
-[e = . . _CVRCONbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 33:     CVRCONbits.CVRR = 0;
+[e = . . _CVRCONbits 0 2 -> -> 0 `i `uc ]
 "34
-[; ;main.c: 34:     CVRCONbits.CVR = 12;
-[e = . . _CVRCONbits 0 0 -> -> 12 `i `uc ]
+[; ;main.c: 34:     CVRCONbits.CVRSS = 0;
+[e = . . _CVRCONbits 0 1 -> -> 0 `i `uc ]
 "35
-[; ;main.c: 35: }
+[; ;main.c: 35:     CVRCONbits.CVR = 12;
+[e = . . _CVRCONbits 0 0 -> -> 12 `i `uc ]
+"36
+[; ;main.c: 36: }
 [e :UE 307 ]
 }
-"37
-[; ;main.c: 37: void initComparator(void)
-[v _initComparator `(v ~T0 @X0 1 ef ]
 "38
-[; ;main.c: 38: {
+[; ;main.c: 38: void initComparator(void)
+[v _initComparator `(v ~T0 @X0 1 ef ]
+"39
+[; ;main.c: 39: {
 {
 [e :U _initComparator ]
 [f ]
-"39
-[; ;main.c: 39:     TRISAbits.RA4 = 0;
+"40
+[; ;main.c: 40:     TRISAbits.RA4 = 0;
 [e = . . _TRISAbits 1 4 -> -> 0 `i `uc ]
-"41
-[; ;main.c: 41:     CM1CON0bits.C1ON = 1;
-[e = . . _CM1CON0bits 0 6 -> -> 1 `i `uc ]
 "42
-[; ;main.c: 42:     CM1CON0bits.C1OUT = 1;
-[e = . . _CM1CON0bits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 42:     CM1CON0bits.C1ON = 1;
+[e = . . _CM1CON0bits 0 6 -> -> 1 `i `uc ]
 "43
 [; ;main.c: 43:     CM1CON0bits.C1OE = 1;
 [e = . . _CM1CON0bits 0 4 -> -> 1 `i `uc ]
