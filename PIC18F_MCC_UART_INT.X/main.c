@@ -1,27 +1,22 @@
 /**
-  Generated Pin Manager File
+  Generated Main Source File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    pin_manager.c
+    main.c
 
   Summary:
-    This is the Pin Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
   Description:
-    This header file provides implementations for pin APIs for all pins selected in the GUI.
+    This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
         Device            :  PIC18F45K20
-        Driver Version    :  2.11
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 2.05 and above
-        MPLAB             :  MPLAB X 5.20
-
-    Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
- */
+        Driver Version    :  2.00
+*/
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -44,47 +39,54 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
+*/
+
+#include "mcc_generated_files/mcc.h"
+
+extern volatile uint8_t eusartRxCount;
+bool uartFlag = false;
+
+/*
+                         Main application
  */
+void main(void)
+{
+    // Initialize the device
+    SYSTEM_Initialize();
 
-#include "pin_manager.h"
+    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
+    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
+    // Use the following macros to:
 
-void PIN_MANAGER_Initialize(void) {
-    /**
-    LATx registers
-     */
-    LATE = 0x00;
-    LATD = 0xFF;
-    LATA = 0x00;
-    LATB = 0x00;
-    LATC = 0x00;
+    // Enable the Global Interrupts
+    INTERRUPT_GlobalInterruptEnable();
 
-    /**
-    TRISx registers
-     */
-    TRISE = 0x07;
-    TRISA = 0xFF;
-    TRISB = 0x00;
-    TRISC = 0xFF;
-    TRISD = 0x00;
+    // Disable the Global Interrupts
+    //INTERRUPT_GlobalInterruptDisable();
 
-    /**
-    ANSELx registers
-     */
-    ANSEL = 0x00;
-    ANSELH = 0x00;
+    // Enable the Peripheral Interrupts
+    INTERRUPT_PeripheralInterruptEnable();
 
-    /**
-    WPUx registers
-     */
-    WPUB = 0x00;
-    INTCON2bits.nRBPU = 1;
-}
-
-void PIN_MANAGER_IOC(void) {
-    // Clear global Interrupt-On-Change flag
-    INTCONbits.RBIF = 0;
+    // Disable the Peripheral Interrupts
+    //INTERRUPT_PeripheralInterruptDisable();
+    
+    while (1)
+    {
+        // Add your application code
+        if(uartFlag)
+        {
+            uartFlag = false;
+            printf("### %s CRLF Received...\r\n", "PIC18F");
+            LED0_Toggle();
+            
+            while(eusartRxCount > 0)
+            {                
+                EUSART_Write(EUSART_Read());
+            }
+        }
+    }
 }
 
 /**
  End of File
- */
+*/

@@ -1,27 +1,25 @@
 /**
-  Generated Pin Manager File
+  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Source File
 
-  Company:
+  @Company:
     Microchip Technology Inc.
 
-  File Name:
-    pin_manager.c
+  @File Name:
+    mcc.c
 
-  Summary:
-    This is the Pin Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+  @Summary:
+    This is the mcc.c file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
-  Description:
-    This header file provides implementations for pin APIs for all pins selected in the GUI.
+  @Description:
+    This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
         Device            :  PIC18F45K20
-        Driver Version    :  2.11
+        Driver Version    :  2.00
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.05 and above
+        Compiler          :  XC8 2.05 and above or later
         MPLAB             :  MPLAB X 5.20
-
-    Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
- */
+*/
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -44,47 +42,28 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
- */
+*/
 
-#include "pin_manager.h"
+#include "mcc.h"
 
-void PIN_MANAGER_Initialize(void) {
-    /**
-    LATx registers
-     */
-    LATE = 0x00;
-    LATD = 0xFF;
-    LATA = 0x00;
-    LATB = 0x00;
-    LATC = 0x00;
 
-    /**
-    TRISx registers
-     */
-    TRISE = 0x07;
-    TRISA = 0xFF;
-    TRISB = 0x00;
-    TRISC = 0xFF;
-    TRISD = 0x00;
+void SYSTEM_Initialize(void)
+{
 
-    /**
-    ANSELx registers
-     */
-    ANSEL = 0x00;
-    ANSELH = 0x00;
-
-    /**
-    WPUx registers
-     */
-    WPUB = 0x00;
-    INTCON2bits.nRBPU = 1;
+    PIN_MANAGER_Initialize();
+    OSCILLATOR_Initialize();
+    EUSART_Initialize();
 }
 
-void PIN_MANAGER_IOC(void) {
-    // Clear global Interrupt-On-Change flag
-    INTCONbits.RBIF = 0;
+void OSCILLATOR_Initialize(void)
+{
+    // SCS FOSC; OSTS intosc; IRCF 16MHz_HFINTOSC; IDLEN disabled; 
+    OSCCON = 0x70;
+    // INTSRC disabled; PLLEN disabled; TUN 0; 
+    OSCTUNE = 0x00;
 }
+
 
 /**
  End of File
- */
+*/

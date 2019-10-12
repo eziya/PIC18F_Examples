@@ -1,27 +1,25 @@
 /**
-  Generated Pin Manager File
+  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Header File
 
-  Company:
+  @Company:
     Microchip Technology Inc.
 
-  File Name:
-    pin_manager.c
+  @File Name:
+    mcc.h
 
-  Summary:
-    This is the Pin Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+  @Summary:
+    This is the mcc.h file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
-  Description:
-    This header file provides implementations for pin APIs for all pins selected in the GUI.
+  @Description:
+    This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
         Device            :  PIC18F45K20
-        Driver Version    :  2.11
+        Driver Version    :  2.00
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.05 and above
+        Compiler          :  XC8 2.05 and above or later
         MPLAB             :  MPLAB X 5.20
-
-    Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
- */
+*/
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -44,47 +42,46 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
- */
+*/
 
+#ifndef MCC_H
+#define	MCC_H
+#include <xc.h>
+#include "device_config.h"
 #include "pin_manager.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include "eusart.h"
 
-void PIN_MANAGER_Initialize(void) {
-    /**
-    LATx registers
-     */
-    LATE = 0x00;
-    LATD = 0xFF;
-    LATA = 0x00;
-    LATB = 0x00;
-    LATC = 0x00;
 
-    /**
-    TRISx registers
-     */
-    TRISE = 0x07;
-    TRISA = 0xFF;
-    TRISB = 0x00;
-    TRISC = 0xFF;
-    TRISD = 0x00;
-
-    /**
-    ANSELx registers
-     */
-    ANSEL = 0x00;
-    ANSELH = 0x00;
-
-    /**
-    WPUx registers
-     */
-    WPUB = 0x00;
-    INTCON2bits.nRBPU = 1;
-}
-
-void PIN_MANAGER_IOC(void) {
-    // Clear global Interrupt-On-Change flag
-    INTCONbits.RBIF = 0;
-}
 
 /**
- End of File
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Initializes the device to the default states configured in the
+ *                  MCC GUI
+ * @Example
+    SYSTEM_Initialize(void);
  */
+void SYSTEM_Initialize(void);
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Initializes the oscillator to the default states configured in the
+ *                  MCC GUI
+ * @Example
+    OSCILLATOR_Initialize(void);
+ */
+void OSCILLATOR_Initialize(void);
+
+#endif	/* MCC_H */
+/**
+ End of File
+*/
