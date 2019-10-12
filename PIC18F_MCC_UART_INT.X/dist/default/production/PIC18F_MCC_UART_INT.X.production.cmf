@@ -1,0 +1,799 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+cinit CODE 0 A9E A9E 46 1
+text0 CODE 0 A4E A4E 50 1
+text1 CODE 0 BCA BCA 28 1
+text2 CODE 0 9FC 9FC 52 1
+text3 CODE 0 762 762 13C 1
+text4 CODE 0 624 624 13E 1
+text5 CODE 0 AE4 AE4 42 1
+text6 CODE 0 936 936 6C 1
+text7 CODE 0 C10 C10 A 1
+text8 CODE 0 C04 C04 C 1
+text9 CODE 0 BF2 BF2 12 1
+nvCOMRAM COMRAM 1 4A 4A 8 1
+text10 CODE 0 B62 B62 34 1
+text11 CODE 0 C1A C1A A 1
+text12 CODE 0 C60 C60 4 1
+text13 CODE 0 9A2 9A2 5A 1
+text14 CODE 0 C24 C24 A 1
+text15 CODE 0 C2E C2E A 1
+text16 CODE 0 C38 C38 A 1
+text17 CODE 0 C42 C42 A 1
+text18 CODE 0 B26 B26 3C 1
+text20 CODE 0 89E 89E 98 1
+text21 CODE 0 C54 C54 6 1
+text22 CODE 0 C64 C64 2 1
+text23 CODE 0 C5A C5A 6 1
+text24 CODE 0 B96 B96 34 1
+idataCOMRAM CODE 0 C4C C4C 7 1
+cstackCOMRAM COMRAM 1 1 1 3C 1
+cstackBANK0 BANK0 1 C0 C0 4 1
+temp COMRAM 1 59 59 1 1
+bssBANK0 BANK0 1 60 60 60 1
+intcode CODE 0 8 8 48 1
+smallconst SMALLCONST 0 600 600 24 1
+dataCOMRAM COMRAM 1 52 52 7 1
+bssCOMRAM COMRAM 1 3D 3D D 1
+$C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 50 50 4 1
+reset_vec CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 E 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM C4-5FF 1
+SFR F60-FFF 1
+BANK0 C4-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+CONST 4-7 1
+CONST 54-5FF 1
+CONST C53-C53 1
+CONST C66-7FFF 1
+STACK C4-5FF 1
+SMALLCONST C53-C53 1
+SMALLCONST C66-7FFF 1
+CODE 4-7 1
+CODE 54-5FF 1
+CODE C53-C53 1
+CODE C66-7FFF 1
+BIGRAM 5A-5F 1
+BIGRAM C4-5FF 1
+COMRAM 5A-5F 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST C53-C53 1
+MEDIUMCONST C66-7FFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+8 intcode CODE >157:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+8 intcode CODE >58:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/interrupt_manager.c
+1A intcode CODE >61:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/interrupt_manager.c
+1C intcode CODE >63:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/interrupt_manager.c
+24 intcode CODE >65:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/interrupt_manager.c
+3C intcode CODE >76:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/interrupt_manager.c
+B96 text24 CODE >204:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B96 text24 CODE >206:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+BAA text24 CODE >209:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+BBC text24 CODE >210:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+BC2 text24 CODE >212:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+BC6 text24 CODE >214:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+BC8 text24 CODE >215:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C5A text23 CODE >227:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C5A text23 CODE >228:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C5E text23 CODE >229:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C64 text22 CODE >217:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C54 text21 CODE >219:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C54 text21 CODE >222:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C56 text21 CODE >223:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C58 text21 CODE >225:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+89E text20 CODE >179:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+89E text20 CODE >182:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+8AE text20 CODE >184:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+8B2 text20 CODE >185:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+8C2 text20 CODE >186:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+8DA text20 CODE >189:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+8DE text20 CODE >190:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+8EE text20 CODE >191:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+906 text20 CODE >194:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+918 text20 CODE >195:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+930 text20 CODE >197:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+934 text20 CODE >201:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B26 text18 CODE >137:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B26 text18 CODE >141:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B2C text18 CODE >145:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B3C text18 CODE >147:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B4E text18 CODE >148:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B54 text18 CODE >150:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B58 text18 CODE >152:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B5A text18 CODE >153:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B5C text18 CODE >154:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B5E text18 CODE >156:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+B60 text18 CODE >157:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C42 text17 CODE >239:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C42 text17 CODE >240:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C4A text17 CODE >241:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C38 text16 CODE >231:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C38 text16 CODE >232:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C40 text16 CODE >233:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C2E text15 CODE >235:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C2E text15 CODE >236:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C36 text15 CODE >237:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C24 text14 CODE >244:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C24 text14 CODE >245:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C2C text14 CODE >246:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9A2 text13 CODE >83:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9A2 text13 CODE >86:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9A4 text13 CODE >87:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9B0 text13 CODE >90:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9B2 text13 CODE >91:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9B4 text13 CODE >93:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9B6 text13 CODE >95:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9B8 text13 CODE >96:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9BA text13 CODE >97:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9BE text13 CODE >99:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9C0 text13 CODE >100:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9C2 text13 CODE >101:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9C4 text13 CODE >103:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9D0 text13 CODE >104:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9DC text13 CODE >105:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9E8 text13 CODE >107:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9EC text13 CODE >110:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9F0 text13 CODE >111:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9F4 text13 CODE >112:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9F8 text13 CODE >115:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+9FA text13 CODE >116:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C60 text12 CODE >52:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/interrupt_manager.c
+C60 text12 CODE >55:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/interrupt_manager.c
+C62 text12 CODE >56:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/interrupt_manager.c
+C1A text11 CODE >59:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+C1A text11 CODE >62:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+C1E text11 CODE >64:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+C22 text11 CODE >65:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+B62 text10 CODE >55:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B62 text10 CODE >60:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B66 text10 CODE >61:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B6A text10 CODE >62:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B6E text10 CODE >63:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B72 text10 CODE >64:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B76 text10 CODE >69:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B7A text10 CODE >70:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B7C text10 CODE >71:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B80 text10 CODE >72:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B84 text10 CODE >73:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B86 text10 CODE >78:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B8A text10 CODE >79:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B8E text10 CODE >84:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B92 text10 CODE >85:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+B94 text10 CODE >94:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+BF2 text9 CODE >50:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+BF2 text9 CODE >53:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+BF6 text9 CODE >54:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+BFA text9 CODE >55:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+BFE text9 CODE >56:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+C02 text9 CODE >57:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+C04 text8 CODE >159:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C06 text8 CODE >161:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C0A text8 CODE >165:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C0E text8 CODE >166:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C10 text7 CODE >173:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C12 text7 CODE >175:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+C18 text7 CODE >176:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+936 text6 CODE >8:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+936 text6 CODE >12:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+946 text6 CODE >13:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+94C text6 CODE >14:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+94E text6 CODE >15:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+98E text6 CODE >17:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+9A0 text6 CODE >21:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+AE4 text5 CODE >12:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+AE4 text5 CODE >14:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+AEC text5 CODE >16:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+AEE text5 CODE >17:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+AF2 text5 CODE >16:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+B18 text5 CODE >25:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+B24 text5 CODE >26:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+624 text4 CODE >546:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+624 text4 CODE >548:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+636 text4 CODE >552:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+63E text4 CODE >553:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+646 text4 CODE >554:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+64E text4 CODE >558:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+662 text4 CODE >559:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+66A text4 CODE >560:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+68A text4 CODE >561:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+692 text4 CODE >562:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+69A text4 CODE >565:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+6A0 text4 CODE >567:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+6B4 text4 CODE >568:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+6B8 text4 CODE >566:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+6CC text4 CODE >573:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+6D4 text4 CODE >574:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+6D6 text4 CODE >575:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+70A text4 CODE >576:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+70E text4 CODE >577:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+712 text4 CODE >574:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+726 text4 CODE >581:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+72C text4 CODE >583:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+740 text4 CODE >584:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+744 text4 CODE >582:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+758 text4 CODE >588:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+760 text4 CODE >589:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+762 text3 CODE >670:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+762 text3 CODE >680:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+77C text3 CODE >681:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+78A text3 CODE >683:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+79A text3 CODE >684:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+79E text3 CODE >1149:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+7B8 text3 CODE >1151:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+7C6 text3 CODE >1152:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+7EE text3 CODE >1154:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+80C text3 CODE >1350:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+826 text3 CODE >1351:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+834 text3 CODE >1352:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+848 text3 CODE >1353:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+852 text3 CODE >1357:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+860 text3 CODE >1358:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+86A text3 CODE >1362:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+88E text3 CODE >1363:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+9FC text2 CODE >1368:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+9FC text2 CODE >1373:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+A04 text2 CODE >1374:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+A0C text2 CODE >1375:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+A0E text2 CODE >1376:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+A32 text2 CODE >1375:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+A44 text2 CODE >1378:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+A4C text2 CODE >1382:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+BCA text1 CODE >5:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
+BCA text1 CODE >9:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
+BD4 text1 CODE >10:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
+BF0 text1 CODE >13:D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
+A4E text0 CODE >52:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+A4E text0 CODE >55:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+A52 text0 CODE >62:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+A54 text0 CODE >68:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+A56 text0 CODE >76:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+A5C text0 CODE >78:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+A60 text0 CODE >79:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+A74 text0 CODE >80:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+A8E text0 CODE >84:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+A96 text0 CODE >82:F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+A9E cinit CODE >1815:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+A9E cinit CODE >1817:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+A9E cinit CODE >1820:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+A9E cinit CODE >1871:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AA0 cinit CODE >1872:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AA2 cinit CODE >1873:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AA4 cinit CODE >1874:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AA6 cinit CODE >1875:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AA8 cinit CODE >1876:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AAA cinit CODE >1877:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AAE cinit CODE >1878:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AB2 cinit CODE >1879:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AB2 cinit CODE >1880:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AB4 cinit CODE >1881:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AB8 cinit CODE >1882:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+ABA cinit CODE >1883:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+ABC cinit CODE >1884:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+ABE cinit CODE >1888:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AC2 cinit CODE >1889:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AC4 cinit CODE >1890:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AC4 cinit CODE >1891:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AC6 cinit CODE >1892:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AC8 cinit CODE >1893:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+ACA cinit CODE >1896:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+ACE cinit CODE >1897:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AD0 cinit CODE >1898:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AD0 cinit CODE >1899:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AD2 cinit CODE >1900:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AD4 cinit CODE >1901:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AD6 cinit CODE >1907:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AD6 cinit CODE >1909:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AD8 cinit CODE >1910:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+ADA cinit CODE >1912:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+ADC cinit CODE >1913:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+ADE cinit CODE >1914:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+AE0 cinit CODE >1915:C:\Users\KIKI\AppData\Local\Temp\s5ks.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_EUSART_Read B26 0 CODE 0 text18 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hspace_0 30000E 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hspace_1 C4 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hspace_2 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+stoa@F1131 52 0 COMRAM 1 dataCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_INTERRUPT_Initialize C64 0 CODE 0 text12 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_RxDefaultInterruptHandler 50 0 COMRAM 1 nvCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+?_vfprintf 30 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lsmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_LATA F89 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_LATB F8A 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_LATC F8B 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_LATD F8C 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_LATE F8D 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_WPUB F7C 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+_main A4E 0 CODE 0 text0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_nout 3D 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_prec 41 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_stoa 624 0 CODE 0 text4 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+btemp 59 0 COMRAM 1 temp dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+start 50 0 CODE 0 init C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+_EUSART_Write C04 0 CODE 0 text8 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_main 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_stoa 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_SetFramingErrorHandler C42 0 CODE 0 text16 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_DEBUG$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_SetOverrunErrorHandler C38 0 CODE 0 text15 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_Initialize 9FC 0 CODE 0 text13 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hpowerup 50 0 CODE 0 powerup dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+stoa@i 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+stoa@l 24 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+stoa@p 22 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+stoa@s 12 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+stoa@w 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_vfpfcnvrt 89E 0 CODE 0 text3 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+ttemp5 5A 0 COMRAM 1 temp dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+ttemp6 5D 0 COMRAM 1 temp dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+ttemp7 61 0 COMRAM 1 temp dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_vfpfcnvrt 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__accesstop 60 0 ABS 0 - C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+intlevel0 0 0 CODE 0 text C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+intlevel1 0 0 CODE 0 text C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+intlevel2 0 0 CODE 0 text C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+intlevel3 0 0 CODE 0 text C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+wtemp8 5A 0 COMRAM 1 temp dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_DefaultFramingErrorHandler C64 0 CODE 0 text22 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_DefaultOverrunErrorHandler C54 0 CODE 0 text21 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_Write 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_vfpfcnvrt 762 0 CODE 0 text3 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__pidataCOMRAM C4C 0 CODE 0 idataCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_FOSC$INTIO67 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_ANSELH F7F 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_INTERRUPT_InterruptManager 50 0 CODE 0 intcode dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+EUSART_SetRxInterruptHandler@interruptHandler 5 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_Write C10 0 CODE 0 text8 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_BAUDCONbits FB8 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+?_printf 38 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hintcodelo 50 0 CODE 0 intcodelo dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+?_strlen 5 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_Initialize 9A2 0 CODE 0 text13 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_fputc 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_putch 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_INTCON2bits FF1 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lintcodelo 50 0 CODE 0 intcodelo dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_PIN_MANAGER_Initialize B62 0 CODE 0 text10 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+start_initialization A9E 0 CODE 0 cinit dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_PBADEN$ON 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_SetErrorHandler C42 0 CODE 0 text17 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_OSCCON FD3 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_TRISCbits F94 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+EUSART_SetOverrunErrorHandler@interruptHandler 5 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_eusartRxBuffer A0 0 BANK0 1 bssBANK0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_DefaultErrorHandler C60 0 CODE 0 text23 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_RxDataHandler B96 0 CODE 0 text24 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+___rparam_used 1 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_SetFramingErrorHandler 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_SetOverrunErrorHandler 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_SYSTEM_Initialize C04 0 CODE 0 text9 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__pcstackBANK0 C0 0 BANK0 1 cstackBANK0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_DefaultFramingErrorHandler C66 0 CODE 0 text22 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_DefaultOverrunErrorHandler C5A 0 CODE 0 text21 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_printf BF2 0 CODE 0 text1 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_uartFlag 49 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+fputc@fp 9 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_Read B62 0 CODE 0 text18 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hcinit 0 0 ABS 0 cinit dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hconst 0 0 CONST 0 const dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_strlen B26 0 CODE 0 text5 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hidata 0 0 CODE 0 idata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hstack 0 0 STACK 2 stack dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext0 0 0 ABS 0 text0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext1 0 0 ABS 0 text1 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext2 0 0 ABS 0 text2 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext3 0 0 ABS 0 text3 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext4 0 0 ABS 0 text4 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext5 0 0 ABS 0 text5 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext6 0 0 ABS 0 text6 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext7 0 0 ABS 0 text7 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext8 0 0 ABS 0 text8 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext9 0 0 ABS 0 text9 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hbigram 0 0 ABS 0 bigram dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+__Hcomram 0 0 ABS 0 comram dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hconfig 30000E 0 CONFIG 0 config dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lcinit 0 0 ABS 0 cinit dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lconst 0 0 CONST 0 const dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lidata 0 0 CODE 0 idata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+EUSART_SetErrorHandler@interruptHandler 5 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lstack 0 0 STACK 2 stack dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext0 0 0 ABS 0 text0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext1 0 0 ABS 0 text1 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext2 0 0 ABS 0 text2 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext3 0 0 ABS 0 text3 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext4 0 0 ABS 0 text4 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext5 0 0 ABS 0 text5 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext6 0 0 ABS 0 text6 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext7 0 0 ABS 0 text7 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext8 0 0 ABS 0 text8 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext9 0 0 ABS 0 text9 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_INTCONbits FF2 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_INTERRUPT_Initialize C60 0 CODE 0 text12 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Habs1 0 0 ABS 0 abs1 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hdata 0 0 ABS 0 data dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hinit 54 0 CODE 0 init dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htemp 5A 0 COMRAM 1 temp dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext 0 0 ABS 0 text dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Labs1 0 0 ABS 0 abs1 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ldata 0 0 ABS 0 data dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Linit 50 0 CODE 0 init dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltemp 59 0 COMRAM 1 temp dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext 0 0 ABS 0 text dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+int$flags 59 0 COMRAM 1 temp dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hintret 0 0 ABS 0 intret dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hirdata 0 0 CODE 0 irdata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__S0 30000E 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__S1 C4 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__S2 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__pnvCOMRAM 4A 0 COMRAM 1 nvCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_Receive_ISR 936 0 CODE 0 text20 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_SYSTEM_Initialize BF2 0 CODE 0 text9 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_CCP2MX$PORTC 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lintentry 0 0 ABS 0 intentry dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+EUSART_Read@readValue 5 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hramtop 600 0 RAM 0 ramtop dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+strlen@a 7 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+strlen@s 5 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__activetblptr 2 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext10 0 0 ABS 0 text10 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext11 0 0 ABS 0 text11 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext12 0 0 ABS 0 text12 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext13 0 0 ABS 0 text13 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext14 0 0 ABS 0 text14 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext15 0 0 ABS 0 text15 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext16 0 0 ABS 0 text16 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext17 0 0 ABS 0 text17 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext18 0 0 ABS 0 text18 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext20 0 0 ABS 0 text20 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext21 0 0 ABS 0 text21 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext22 0 0 ABS 0 text22 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext23 0 0 ABS 0 text23 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext24 0 0 ABS 0 text24 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Htext25 0 0 ABS 0 text25 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+vfpfcnvrt@fmt 28 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_INTERRUPT_InterruptManager 8 0 CODE 0 intcode dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_RCSTAbits FAB 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_PIE1bits F9D 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+EUSART_SetFramingErrorHandler@interruptHandler 5 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_HFOFST$ON 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+stoa@nuls 15 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext10 B62 0 CODE 0 text10 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext11 C1A 0 CODE 0 text11 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext12 C60 0 CODE 0 text12 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext13 9A2 0 CODE 0 text13 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext14 C24 0 CODE 0 text14 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext15 C2E 0 CODE 0 text15 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext16 C38 0 CODE 0 text16 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext17 C42 0 CODE 0 text17 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext18 B26 0 CODE 0 text18 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext20 89E 0 CODE 0 text20 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext21 C54 0 CODE 0 text21 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext22 C64 0 CODE 0 text22 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext23 C5A 0 CODE 0 text23 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext24 B96 0 CODE 0 text24 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext25 0 0 CODE 0 text25 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_DefaultErrorHandler 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_Receive_ISR 89E 0 CODE 0 text20 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_PIN_MANAGER_Initialize B96 0 CODE 0 text10 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lbigram 0 0 ABS 0 bigram dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_BORV$18 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_SetErrorHandler C4C 0 CODE 0 text17 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+?_stoa 10 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lcomram 0 0 ABS 0 comram dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lconfig 300000 0 CONFIG 0 config dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_printf BCA 0 CODE 0 text1 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_LATBbits F8A 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_strlen AE4 0 CODE 0 text5 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_Read 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_FramingErrorHandler 4E 0 COMRAM 1 nvCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_OverrunErrorHandler 4C 0 COMRAM 1 nvCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_vfprintf 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+stackhi 5FF 0 ABS 0 - C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+stacklo C4 0 ABS 0 - C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+_EUSART_SetRxInterruptHandler C24 0 CODE 0 text14 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+stoa@cp 20 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+stoa@fp 10 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lintcode 8 0 CODE 0 intcode dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_OSCTUNE F9B 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lintret 0 0 ABS 0 intret dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lirdata 0 0 CODE 0 irdata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_ErrorHandler 4A 0 COMRAM 1 nvCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+?_vfpfcnvrt 26 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lspace_0 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lspace_1 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lspace_2 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__pbssCOMRAM 3D 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_PIR1bits F9E 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_DefaultErrorHandler C5A 0 CODE 0 text23 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+printf@ap C2 0 BANK0 1 cstackBANK0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_SetFramingErrorHandler C38 0 CODE 0 text16 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_EUSART_SetOverrunErrorHandler C2E 0 CODE 0 text15 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+end_of_initialization AD6 0 CODE 0 cinit dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hintentry 0 0 ABS 0 intentry dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_RCONbits FD0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_printf 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+fputc@c 7 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+vfprintf@fmt 32 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lramtop 600 0 RAM 0 ramtop dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_strlen 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__pcinit A9E 0 CODE 0 cinit dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+vfpfcnvrt@ap 2A 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+vfpfcnvrt@cp 2E 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+vfpfcnvrt@fp 26 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext0 A4E 0 CODE 0 text0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext1 BCA 0 CODE 0 text1 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext2 9FC 0 CODE 0 text2 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext3 762 0 CODE 0 text3 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext4 624 0 CODE 0 text4 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext5 AE4 0 CODE 0 text5 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext6 936 0 CODE 0 text6 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext7 C10 0 CODE 0 text7 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext8 C04 0 CODE 0 text8 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ptext9 BF2 0 CODE 0 text9 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+vfprintf@ap 34 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+vfprintf@fp 30 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+vfprintf@cfmt 36 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext10 0 0 ABS 0 text10 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext11 0 0 ABS 0 text11 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext12 0 0 ABS 0 text12 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext13 0 0 ABS 0 text13 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext14 0 0 ABS 0 text14 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext15 0 0 ABS 0 text15 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext16 0 0 ABS 0 text16 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext17 0 0 ABS 0 text17 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext18 0 0 ABS 0 text18 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext20 0 0 ABS 0 text20 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext21 0 0 ABS 0 text21 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext22 0 0 ABS 0 text22 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext23 0 0 ABS 0 text23 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext24 0 0 ABS 0 text24 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Ltext25 0 0 ABS 0 text25 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\KIKI\AppData\Local\Temp\s5ks.o
+_vfprintf 9FC 0 CODE 0 text2 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lpowerup 50 0 CODE 0 powerup dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__psmallconst 600 0 SMALLCONST 0 smallconst dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_DefaultFramingErrorHandler 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_DefaultOverrunErrorHandler 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_vfprintf A4E 0 CODE 0 text2 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_eusartRxStatusBuffer 80 0 BANK0 1 bssBANK0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+___param_bank 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+EUSART_Write@txData 5 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of__initialization AD6 0 CODE 0 cinit dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_WRT3$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_eusartRxCount 46 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_RxDataHandler 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_TXSTAbits FAC 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+putch@txData 6 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_main A9E 0 CODE 0 text0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_stoa 762 0 CODE 0 text4 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__pintcode 8 0 CODE 0 intcode dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+printf@fmt 38 0 COMRAM 1 cstackCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_ANSEL F7E 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_RxDataHandler BCA 0 CODE 0 text24 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_fputc 9A2 0 CODE 0 text6 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_RCREG FAE 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_SPBRG FAF 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_TRISA F92 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_TRISB F93 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_TRISC F94 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_TRISD F95 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_TRISE F96 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_TXREG FAD 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_putch C1A 0 CODE 0 text7 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__HRAM 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hbss 0 0 RAM 1 bss dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hram 0 0 ABS 0 ram dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hsfr 0 0 ABS 0 sfr dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__LRAM 1 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lbss 0 0 RAM 1 bss dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lram 0 0 ABS 0 ram dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lsfr 0 0 ABS 0 sfr dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_flags 43 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_fputc 936 0 CODE 0 text6 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_putch C10 0 CODE 0 text7 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_width 3F 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_eusartRxLastError 45 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_SetErrorHandler 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_OSCILLATOR_Initialize C24 0 CODE 0 text11 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__initialization A9E 0 CODE 0 cinit dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__pbssBANK0 60 0 BANK0 1 bssBANK0 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__pdataCOMRAM 52 0 COMRAM 1 dataCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_eusartRxHead 48 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_eusartRxTail 47 0 COMRAM 1 bssCOMRAM dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_Receive_ISR 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hsmallconst 624 0 SMALLCONST 0 smallconst dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_EUSART_SetRxInterruptHandler 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__Hintcode 50 0 CODE 0 intcode dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__size_of_INTERRUPT_Initialize 0 0 ABS 0 - dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+__end_of_EUSART_SetRxInterruptHandler C2E 0 CODE 0 text14 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+_OSCILLATOR_Initialize C1A 0 CODE 0 text11 dist/default/production\PIC18F_MCC_UART_INT.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+idloc 0 200000 200000 8 1
+text4 0 624 624 62F 1
+text21 0 C54 C54 12 1
+cstackCOMRAM 1 1 1 59 1
+reset_vec 0 0 0 4 1
+bssBANK0 1 60 60 64 1
+intcode 0 8 8 4C 1
+smallconst 0 600 600 24 1
+config 0 300000 300000 E 1

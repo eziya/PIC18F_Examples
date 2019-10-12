@@ -1,0 +1,551 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F45K20 ]
+[d frameptr 4065 ]
+"546 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _stoa stoa `(i  1 s 2 stoa ]
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+"1368
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"4 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"8 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"5 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+"10 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"12 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"15 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"52 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"83 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"137
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"159
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"173
+[v _putch putch `(v  1 e 1 0 ]
+"179
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+"204
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+"217
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"219
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"227
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"231
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"235
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"239
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"244
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+"52 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"58
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+"50 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"59
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"55 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"345 D:/Program Files (x86)/Microchip/xc8/v2.05/pic/include\pic18f45k20.h
+[v _WPUB WPUB `VEuc  1 e 1 @3964 ]
+"446
+[v _ANSEL ANSEL `VEuc  1 e 1 @3966 ]
+"508
+[v _ANSELH ANSELH `VEuc  1 e 1 @3967 ]
+"1532
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"1644
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+[s S487 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"1671
+[s S496 . 1 `uc 1 LB0 1 0 :1:0 
+`uc 1 LB1 1 0 :1:1 
+`uc 1 LB2 1 0 :1:2 
+`uc 1 LB3 1 0 :1:3 
+`uc 1 LB4 1 0 :1:4 
+`uc 1 LB5 1 0 :1:5 
+`uc 1 LB6 1 0 :1:6 
+`uc 1 LB7 1 0 :1:7 
+]
+[u S505 . 1 `S487 1 . 1 0 `S496 1 . 1 0 ]
+[v _LATBbits LATBbits `VES505  1 e 1 @3978 ]
+"1756
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"1868
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"1980
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"2032
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"2254
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"2476
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+[s S76 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"2508
+[s S85 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S94 . 1 `S76 1 . 1 0 `S85 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES94  1 e 1 @3988 ]
+"2698
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"2920
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"3072
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+[s S36 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 PSPIE 1 0 :1:7 
+]
+"3164
+[s S45 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+]
+[u S49 . 1 `S36 1 . 1 0 `S45 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES49  1 e 1 @3997 ]
+[s S295 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"3241
+[s S304 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S308 . 1 `S295 1 . 1 0 `S304 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES308  1 e 1 @3998 ]
+[s S211 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3796
+[s S220 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S223 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S226 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S229 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S232 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S234 . 1 `S211 1 . 1 0 `S220 1 . 1 0 `S223 1 . 1 0 `S226 1 . 1 0 `S229 1 . 1 0 `S232 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES234  1 e 1 @4011 ]
+[s S116 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"4004
+[s S125 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S134 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S137 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S139 . 1 `S116 1 . 1 0 `S125 1 . 1 0 `S134 1 . 1 0 `S137 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES139  1 e 1 @4012 ]
+"4221
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"4233
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"4245
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+[s S168 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 CKTXP 1 0 :1:4 
+`uc 1 DTRXP 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"4689
+[s S177 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SCKP 1 0 :1:4 
+]
+[s S180 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 RXCKP 1 0 :1:5 
+]
+[s S183 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 W4E 1 0 :1:1 
+]
+[u S186 . 1 `S168 1 . 1 0 `S177 1 . 1 0 `S180 1 . 1 0 `S183 1 . 1 0 ]
+[v _BAUDCONbits BAUDCONbits `VES186  1 e 1 @4024 ]
+[s S554 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"6041
+[s S556 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S559 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S562 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S565 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S568 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S577 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+]
+[u S583 . 1 `S554 1 . 1 0 `S556 1 . 1 0 `S559 1 . 1 0 `S562 1 . 1 0 `S565 1 . 1 0 `S568 1 . 1 0 `S577 1 . 1 0 ]
+[v _RCONbits RCONbits `VES583  1 e 1 @4048 ]
+"6429
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+[s S728 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"6972
+[s S731 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S740 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S743 . 1 `S728 1 . 1 0 `S731 1 . 1 0 `S740 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES743  1 e 1 @4081 ]
+[s S433 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"7049
+[s S442 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S451 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S455 . 1 `S433 1 . 1 0 `S442 1 . 1 0 `S451 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES455  1 e 1 @4082 ]
+"55 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _flags flags `i  1 s 2 flags ]
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"69
+[v _nout nout `i  1 s 2 nout ]
+"47 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+[v _uartFlag uartFlag `a  1 e 1 0 ]
+"63 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+[v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
+"64
+[v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
+"65
+[v _eusartRxBuffer eusartRxBuffer `VE[32]uc  1 e 32 0 ]
+[s S24 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"66
+[u S29 . 1 `S24 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[32]S29  1 e 32 0 ]
+"67
+[v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
+"68
+[v _eusartRxLastError eusartRxLastError `VES29  1 e 1 0 ]
+"73
+[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"75
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"76
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"77
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
+"52 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"88
+} 0
+"5 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"8
+[v printf@ap ap `[1]*.39v  1 a 2 2 ]
+"5
+[v printf@fmt fmt `*.25Cuc  1 p 2 55 ]
+"13
+} 0
+"1368 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1371
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 53 ]
+[s S808 _IO_FILE 0 ]
+"1368
+[v vfprintf@fp fp `*.2S808  1 p 2 47 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 49 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 51 ]
+"1382
+} 0
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+"672
+[v vfpfcnvrt@cp cp `*.35uc  1 a 2 45 ]
+[s S808 _IO_FILE 0 ]
+"670
+[v vfpfcnvrt@fp fp `*.2S808  1 p 2 37 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 39 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 41 ]
+"1365
+} 0
+"546
+[v _stoa stoa `(i  1 s 2 stoa ]
+{
+"548
+[v stoa@nuls nuls `[7]uc  1 a 7 20 ]
+"549
+[v stoa@l l `i  1 a 2 35 ]
+[v stoa@p p `i  1 a 2 33 ]
+"548
+[v stoa@cp cp `*.35uc  1 a 2 31 ]
+"549
+[v stoa@w w `i  1 a 2 29 ]
+[v stoa@i i `i  1 a 2 27 ]
+[s S808 _IO_FILE 0 ]
+"546
+[v stoa@fp fp `*.2S808  1 p 2 15 ]
+[v stoa@s s `*.35uc  1 p 2 17 ]
+"548
+[v stoa@F1131 F1131 `[7]uc  1 s 7 F1131 ]
+"589
+} 0
+"12 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"14
+[v strlen@a a `*.35Cuc  1 a 2 6 ]
+"12
+[v strlen@s s `*.35Cuc  1 p 2 4 ]
+"26
+} 0
+"8 D:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 6 ]
+[s S1310 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1310  1 p 2 8 ]
+"21
+} 0
+"173 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 wreg ]
+"175
+[v putch@txData txData `uc  1 a 1 5 ]
+"176
+} 0
+"159
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 4 ]
+"166
+} 0
+"50 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"57
+} 0
+"55 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"94
+} 0
+"59 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"65
+} 0
+"52 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"56
+} 0
+"83 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"116
+} 0
+"244
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 4 ]
+"246
+} 0
+"235
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 4 ]
+"237
+} 0
+"231
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 4 ]
+"233
+} 0
+"239
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 4 ]
+"241
+} 0
+"137
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+{
+"139
+[v EUSART_Read@readValue readValue `uc  1 a 1 4 ]
+"157
+} 0
+"58 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+{
+"76
+} 0
+"179 F:\Workspace\GitHub\PIC18F_Examples\PIC18F_MCC_UART_INT.X\mcc_generated_files/eusart.c
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+{
+"201
+} 0
+"219
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+{
+"225
+} 0
+"217
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+{
+} 0
+"227
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+{
+"229
+} 0
+"204
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+{
+"215
+} 0

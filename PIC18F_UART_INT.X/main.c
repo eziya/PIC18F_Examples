@@ -54,9 +54,9 @@ void UART_config(void) {
 
     TXSTAbits.SYNC = 0; //async mode    
 
-    BAUDCONbits.BRG16 = 0; //high speed
+    BAUDCONbits.BRG16 = 1; //16bit generator
     TXSTAbits.BRGH = 1; //high speed    
-    SPBRG = _XTAL_FREQ / (16 * (BAUDRATE + 1)); //baudrate
+    SPBRG = _XTAL_FREQ / (4 * (BAUDRATE + 1)); //baudrate
 
     RCSTAbits.SPEN = 1; //serial port enable    
     TXSTAbits.TXEN = 1; //tx enable    
