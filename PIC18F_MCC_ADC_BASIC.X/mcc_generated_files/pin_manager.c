@@ -1,21 +1,26 @@
 /**
-  Generated Main Source File
+  Generated Pin Manager File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    main.c
+    pin_manager.c
 
   Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the Pin Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
   Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+    This header file provides implementations for pin APIs for all pins selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
         Device            :  PIC18F45K20
-        Driver Version    :  2.00
+        Driver Version    :  2.11
+    The generated drivers are tested against the following:
+        Compiler          :  XC8 2.05 and above
+        MPLAB             :  MPLAB X 5.20
+
+    Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
 */
 
 /*
@@ -41,51 +46,57 @@
     SOFTWARE.
 */
 
-#include "mcc_generated_files/mcc.h"
-#include <conio.h>
+#include "pin_manager.h"
 
-extern volatile uint8_t eusartRxCount;
-bool uartFlag = false;
 
-/*
-                         Main application
- */
-void main(void)
+
+
+
+void PIN_MANAGER_Initialize(void)
 {
-    // Initialize the device
-    SYSTEM_Initialize();
+    /**
+    LATx registers
+    */
+    LATE = 0x00;
+    LATD = 0x00;
+    LATA = 0x00;
+    LATB = 0x00;
+    LATC = 0x00;
 
-    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
-    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
-    // Use the following macros to:
+    /**
+    TRISx registers
+    */
+    TRISE = 0x07;
+    TRISA = 0xFF;
+    TRISB = 0xFF;
+    TRISC = 0xBF;
+    TRISD = 0xFF;
 
-    // Enable the Global Interrupts
-    INTERRUPT_GlobalInterruptEnable();
+    /**
+    ANSELx registers
+    */
+    ANSEL = 0xFF;
+    ANSELH = 0x1F;
 
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
+    /**
+    WPUx registers
+    */
+    WPUB = 0x00;
+    INTCON2bits.nRBPU = 1;
 
-    // Enable the Peripheral Interrupts
-    INTERRUPT_PeripheralInterruptEnable();
 
-    // Disable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptDisable();
+
+
+
+
+   
     
-    while (1)
-    {
-        // Add your application code
-        if(uartFlag)
-        {
-            uartFlag = false;
-            printf("### %s CRLF Received...\r\n", "PIC18F");
-            LED0_Toggle();
-            
-            while(eusartRxCount > 0)
-            {                
-                putch(getch());
-            }
-        }
-    }
+}
+  
+void PIN_MANAGER_IOC(void)
+{   
+	// Clear global Interrupt-On-Change flag
+    INTCONbits.RBIF = 0;
 }
 
 /**

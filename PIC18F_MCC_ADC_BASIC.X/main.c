@@ -42,10 +42,8 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-#include <conio.h>
 
-extern volatile uint8_t eusartRxCount;
-bool uartFlag = false;
+bool adcFlag = false;
 
 /*
                          Main application
@@ -71,23 +69,24 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
+    ADC_SelectChannel(channel_AN0);
+    ADC_StartConversion();
+
     while (1)
     {
         // Add your application code
-        if(uartFlag)
+        if(adcFlag)
         {
-            uartFlag = false;
-            printf("### %s CRLF Received...\r\n", "PIC18F");
-            LED0_Toggle();
+            adcFlag = false;            
+            uint16_t adcVal = ADC_GetConversionResult();            
+            printf("ADC Val: %u\r\n", adcVal);
             
-            while(eusartRxCount > 0)
-            {                
-                putch(getch());
-            }
+            __delay_ms(1000);
+            
+            ADC_StartConversion();
         }
     }
 }
-
 /**
  End of File
 */

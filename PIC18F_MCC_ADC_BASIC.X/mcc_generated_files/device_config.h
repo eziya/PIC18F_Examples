@@ -1,21 +1,24 @@
 /**
-  Generated Main Source File
+  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Header File
 
-  Company:
+  @Company:
     Microchip Technology Inc.
 
-  File Name:
-    main.c
+  @File Name:
+    mcc.c
 
-  Summary:
-    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+  @Summary:
+    This is the device_config.h file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
-  Description:
+  @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
         Device            :  PIC18F45K20
         Driver Version    :  2.00
+    The generated drivers are tested against the following:
+        Compiler          :  XC8 2.05 and above or later
+        MPLAB             :  MPLAB X 5.20
 */
 
 /*
@@ -41,53 +44,12 @@
     SOFTWARE.
 */
 
-#include "mcc_generated_files/mcc.h"
-#include <conio.h>
+#ifndef DEVICE_CONFIG_H
+#define	DEVICE_CONFIG_H
 
-extern volatile uint8_t eusartRxCount;
-bool uartFlag = false;
+#define _XTAL_FREQ 16000000
 
-/*
-                         Main application
- */
-void main(void)
-{
-    // Initialize the device
-    SYSTEM_Initialize();
-
-    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
-    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
-    // Use the following macros to:
-
-    // Enable the Global Interrupts
-    INTERRUPT_GlobalInterruptEnable();
-
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
-
-    // Enable the Peripheral Interrupts
-    INTERRUPT_PeripheralInterruptEnable();
-
-    // Disable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptDisable();
-    
-    while (1)
-    {
-        // Add your application code
-        if(uartFlag)
-        {
-            uartFlag = false;
-            printf("### %s CRLF Received...\r\n", "PIC18F");
-            LED0_Toggle();
-            
-            while(eusartRxCount > 0)
-            {                
-                putch(getch());
-            }
-        }
-    }
-}
-
+#endif	/* DEVICE_CONFIG_H */
 /**
  End of File
 */
