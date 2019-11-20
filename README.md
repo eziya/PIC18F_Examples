@@ -1,4 +1,4 @@
-# PIC18F_Examples
+# PIC18F Examples
 
 I've used the Open18F4520 board from Waveshare.(https://www.waveshare.com/wiki/Open18F4520) <br>
 But, replaced PIC18F4520 with PIC18F45K20 to make these examples.<br>
