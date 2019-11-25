@@ -8,9 +8,9 @@ void setPWMDuty(uint8_t duty);
 void __interrupt() ISR(void) {
     if (INTCONbits.INT0IF) {
         
-        __delay_ms(100);    //button debounce
+        __delay_ms(50);    //not optimized debounce
         
-        if (INTCONbits.INT0IF) {
+        if (PORTBbits.RB0 == 0) {
             flagINT0 = 1; //switch direction            
         }
 

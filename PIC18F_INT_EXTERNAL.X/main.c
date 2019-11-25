@@ -10,9 +10,9 @@
 void __interrupt(high_priority) highISR(void) {
     if (INTCONbits.INT0IF) {
         
-        __delay_ms(100);    //button debounce
+        __delay_ms(50);    //not optimized debounce
         
-        if (INTCONbits.INT0IF) {
+        if (PORTBbits.RB0 == 0) {
             LATBbits.LATB6 = ~LATBbits.LATB6;       //led6 toggle
             INTCON3bits.INT1F = 0;                  //exit lowISR
         }
@@ -24,9 +24,9 @@ void __interrupt(high_priority) highISR(void) {
 void __interrupt(low_priority) lowISR(void) {
     if (INTCON3bits.INT1F) {
         
-        __delay_ms(100);    //button debounce
+        __delay_ms(50);    //not optimized debounce
 
-        if (INTCON3bits.INT1F) {
+        if (PORTBbits.RB1 == 0) {
             
             while (INTCON3bits.INT1F) {             // stupid infinite loop to test interrupt priority
                 LATBbits.LATB7 = ~LATBbits.LATB7;   //led7 toggle
