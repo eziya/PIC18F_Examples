@@ -1,8 +1,7 @@
-# PIC18F_Examples
+# PIC18F Examples
 
 I've used the Open18F4520 board from Waveshare.(https://www.waveshare.com/wiki/Open18F4520) <br>
-But, replaced PIC18F4520 with PIC18F45K20 to make these examples.
-I've tried to make them more useful for real products or projects.<br>
+But, replaced PIC18F4520 with PIC18F45K20 to make these examples.<br>
 
 [ Tutorials(Written in Korean) ]<br>
 1. Clock (https://blog.naver.com/eziya76/221594589828)
