@@ -19,14 +19,14 @@ void main(void) {
     SPI_Init(); //init spi
     UART_Init(); //init uart
 
-    EEPROM_Writeuint8_t(0x00, 'A'); //write 'A' at 0x00
-    data = EEPROM_Readuint8_t(0x00); //read data
+    EEPROM_Write(0x00, 'A'); //write 'A' at 0x00
+    data = EEPROM_Read(0x00); //read data
 
-    if (data != 'A') UART_puts("EEPROM_Writeuint8_t 'A' Failed.\r\n");
-    else UART_puts("EEPROM_Writeuint8_t 'A' OK.\r\n");
+    if (data != 'A') UART_puts("EEPROM_Write 'A' Failed.\r\n");
+    else UART_puts("EEPROM_Write 'A' OK.\r\n");
 
-    EEPROM_Writeuint8_t(0x01, 'B'); //write 'B' at 0x01
-    data = EEPROM_Readuint8_t(0x01); //read data
+    EEPROM_Write(0x01, 'B'); //write 'B' at 0x01
+    data = EEPROM_Read(0x01); //read data
 
     if (data != 'B') UART_puts("EEPROM_Writeuint8_t 'B' Failed.\r\n");
     else UART_puts("EEPROM_Writeuint8_t 'B' OK.\r\n");
@@ -35,11 +35,11 @@ void main(void) {
     EEPROM_ReadBuffer(0x02, (uint8_t*) rcvBuffer, strlen(sndBuffer)); //read string
     UART_puts(rcvBuffer);
 
-    EEPROdeviceinfo.eraseModeAll(); //erase all
-    data = EEPROM_Readuint8_t(0x00); //read data at 0x00
+    EEPROM_EraseAll(); //erase all
+    data = EEPROM_Read(0x00); //read data at 0x00
 
-    if (data != 0) UART_puts("EEPROdeviceinfo.eraseModeAll Failed.\r\n");
-    else UART_puts("EEPROdeviceinfo.eraseModeAll OK.\r\n");
+    if (data != 0) UART_puts("EEPROM_EraseAll Failed.\r\n");
+    else UART_puts("EEPROM_EraseAll OK.\r\n");
 
     while (1) {
     }

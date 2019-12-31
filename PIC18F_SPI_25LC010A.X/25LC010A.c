@@ -7,7 +7,7 @@ void EEPROM_WriteEnable(void) {
     SPI_Deselect();
 }
 
-uint8_t EEPROM_Readuint8_t(uint8_t address) {
+uint8_t EEPROM_Read(uint8_t address) {
     uint8_t data;
 
     SPI_Select();
@@ -21,11 +21,11 @@ uint8_t EEPROM_Readuint8_t(uint8_t address) {
 
 void EEPROM_ReadBuffer(uint8_t address, uint8_t *buffer, uint8_t length) {
     for (uint8_t i = 0; i < length; i++) {
-        buffer[i] = EEPROM_Readuint8_t(address + i);
+        buffer[i] = EEPROM_Read(address + i);
     }
 }
 
-void EEPROM_Writeuint8_t(uint8_t address, uint8_t data) {
+void EEPROM_Write(uint8_t address, uint8_t data) {
     EEPROM_WriteEnable();
     SPI_Select();
     SPI_Tx(EEPROM_CMD_WRITE);
@@ -59,7 +59,7 @@ void EEPROM_WriteBuffer(uint8_t address, uint8_t *buffer, uint8_t length) {
     __delay_ms(5); //write cycle interval
 }
 
-void EEPROdeviceinfo.eraseModeAll(void) {
+void EEPROM_EraseAll(void) {
     uint8_t address = 0;
 
     EEPROM_WriteEnable();
