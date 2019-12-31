@@ -59,7 +59,7 @@ void EEPROM_WriteBuffer(uint8_t address, uint8_t *buffer, uint8_t length) {
     __delay_ms(5); //write cycle interval
 }
 
-void EEPROdeviceinfo.eraseModeAll(void) {
+void EEPROM_EraseAll(void) {
     uint8_t address = 0;
 
     EEPROM_WriteEnable();
